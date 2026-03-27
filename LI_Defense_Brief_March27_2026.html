@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LI Defense Brief — March 27, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f8f8f6;
+      --bg2: #f2f2f0;
+      --text: #1a1c1a;
+      --muted: #5a5c5a;
+      --green: #3d6b4a;
+      --green-bright: #4a7c59;
+      --green-dim: rgba(61,107,74,0.08);
+      --green-border: rgba(61,107,74,0.25);
+      --red: #8b3c32;
+      --red-dim: rgba(139,60,50,0.08);
+      --red-border: rgba(139,60,50,0.2);
+      --gold: #a07632;
+      --gold-dim: rgba(160,118,50,0.08);
+      --border: rgba(0,0,0,0.09);
+    }
+    html { background: #ffffff; min-height: 100%; }
+    body { font-family: 'Chakra Petch', sans-serif; background: #ffffff; color: var(--text); max-width: 900px; margin: 0 auto; padding: 40px 32px; }
+
+    /* HEADER */
+    .doc-header { border-bottom: 2px solid var(--green); padding-bottom: 20px; margin-bottom: 28px; }
+    .doc-header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+    .doc-logo { display: flex; align-items: center; gap: 12px; }
+    .doc-logo-text { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; color: var(--text); }
+    .doc-logo-text span { color: var(--green); }
+    .doc-classification { text-align: right; }
+    .classification-badge { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--red-border); background: var(--red-dim); color: var(--red); border-radius: 2px; margin-bottom: 4px; }
+    .doc-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); text-align: right; }
+    .doc-title-row { display: flex; justify-content: space-between; align-items: flex-end; }
+    .doc-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); }
+    .doc-subtitle { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-top: 4px; }
+    .doc-date { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1px; color: var(--muted); text-align: right; }
+
+    /* THREAT LEVEL BAR */
+    .threat-level-bar { display: flex; align-items: center; gap: 16px; background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 28px; border-radius: 2px; }
+    .tl-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .tl-value { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+    .tl-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+    .tl-summary { font-size: 12px; color: var(--muted); line-height: 1.5; flex: 1; }
+
+    /* SECTION HEADERS */
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    .section-tag { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; }
+    .tag-cyber { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
+    .tag-physical { background: var(--red-dim); color: var(--red); border: 1px solid var(--red-border); }
+    .tag-actor { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .section-pct { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 1px; color: var(--text); }
+    .section-title-text { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); flex: 1; }
+    .section-source { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+
+    /* THREAT ITEMS */
+    .threat-item { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 2px; padding: 16px 20px; margin-bottom: 12px; border-left: 3px solid transparent; }
+    .threat-item.high { border-left-color: var(--red); }
+    .threat-item.medium { border-left-color: var(--gold); }
+    .threat-item.low { border-left-color: var(--green); }
+    .threat-item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 12px; }
+    .threat-name { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--text); }
+    .threat-badge { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+    .badge-critical { background: rgba(139,60,50,0.1); color: var(--red); border: 1px solid var(--red-border); }
+    .badge-high { background: rgba(160,118,50,0.1); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .badge-elevated { background: rgba(61,107,74,0.1); color: var(--green); border: 1px solid var(--green-border); }
+    .threat-sources { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--green); margin-bottom: 8px; }
+    .threat-body { font-size: 13px; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
+    .threat-action { background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 2px; padding: 8px 12px; font-size: 12px; color: var(--green); line-height: 1.6; }
+    .threat-action strong { font-weight: 600; }
+
+    /* ACTOR PROFILE */
+    .actor-card { background: #ffffff; border: 1px solid var(--border); border-radius: 2px; padding: 16px 20px; margin-bottom: 12px; }
+    .actor-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+    .actor-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); }
+    .actor-alias { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); margin-top: 2px; }
+    .actor-sponsor { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; background: rgba(139,60,50,0.08); color: var(--red); border: 1px solid var(--red-border); }
+    .actor-body { font-size: 13px; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
+    .actor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .actor-stat { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 8px 10px; }
+    .actor-stat-label { font-family: 'Fira Code', monospace; font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+    .actor-stat-value { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1px; color: var(--text); }
+
+    /* EXEC SUMMARY BOX */
+    .exec-box { background: #ffffff; border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 2px; padding: 20px 24px; margin-bottom: 28px; }
+    .exec-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+    .exec-body { font-size: 14px; line-height: 1.8; color: var(--text); }
+    .exec-body p { margin-bottom: 8px; }
+    .exec-body p:last-child { margin-bottom: 0; }
+
+    /* FOOTER */
+    .doc-footer { border-top: 1px solid var(--border); padding-top: 16px; margin-top: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .footer-li { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+    .footer-li span { color: var(--green); }
+    .footer-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(0,0,0,0.25); }
+
+    /* DIVIDER */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+    @media print {
+      body { padding: 20px; }
+      .threat-item, .actor-card, .exec-box { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <div class="doc-header-top">
+      <div class="doc-logo">
+        <svg width="36" height="36" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs><clipPath id="gc"><circle cx="40" cy="40" r="18"/></clipPath></defs>
+          <polygon points="40,4 72,22 72,58 40,76 8,58 8,22" fill="none" stroke="#3d6b4a" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="40" cy="40" r="18" fill="none" stroke="#4a7c59" stroke-width="1.3" opacity="0.9"/>
+          <g clip-path="url(#gc)" opacity="0.4" stroke="#4a7c59" stroke-width="0.7" fill="none">
+            <ellipse cx="40" cy="40" rx="18" ry="5"/>
+            <ellipse cx="40" cy="40" rx="18" ry="10"/>
+            <ellipse cx="40" cy="40" rx="18" ry="15"/>
+            <ellipse cx="40" cy="40" rx="5" ry="18"/>
+            <ellipse cx="40" cy="40" rx="10" ry="18"/>
+            <ellipse cx="40" cy="40" rx="15" ry="18"/>
+            <line x1="22" y1="40" x2="58" y2="40"/>
+            <line x1="40" y1="22" x2="40" y2="58"/>
+          </g>
+          <circle cx="40" cy="40" r="1.8" fill="#4a7c59" opacity="0.8"/>
+          <circle cx="62" cy="18" r="3.5" fill="#8b3c32" opacity="0.9"/>
+        </svg>
+        <div>
+          <div class="doc-logo-text">Logical<span>Intelligence</span></div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;color:#5a5c5a;text-transform:uppercase;">Centralized Clarity over Cracked Confusion</div>
+        </div>
+      </div>
+      <div class="doc-classification">
+        <div class="classification-badge">Subscriber Use Only</div>
+        <div class="doc-meta">TLP: AMBER · Not for Public Release</div>
+        <div class="doc-meta" style="margin-top:2px;">Distribution: Defense Sector Subscribers</div>
+      </div>
+    </div>
+    <div class="doc-title-row">
+      <div>
+        <div class="doc-title">Defense Sector Intelligence Brief</div>
+        <div class="doc-subtitle">Correlated · Sector-Specific · Plain Language</div>
+      </div>
+      <div class="doc-date">
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-align:right;">Week of March 27, 2026</div>
+        <div class="doc-meta" style="text-align:right;margin-top:2px;">Sources: CISA · NSA · FBI · Dragos · Palo Alto Unit 42 · FARA · OSINT</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THREAT LEVEL -->
+  <div class="threat-level-bar">
+    <div class="tl-dot"></div>
+    <div class="tl-label">National Threat Level</div>
+    <div class="tl-value">Elevated</div>
+    <div class="tl-summary">Three active nation-state campaigns targeting U.S. defense contractors this week. Iranian APT activity elevated following Operation Epic Fury. Chinese pre-positioning via Volt Typhoon continues. Russian CDC targeting persistent. Physical indicators in two regions warrant attention.</div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-cyber">Executive Summary</span>
+      <span class="section-title-text">What You Need To Know This Week</span>
+    </div>
+    <div class="exec-box">
+      <div class="exec-label">For Decision Makers — Plain Language</div>
+      <div class="exec-body">
+        <p>This week's threat picture for U.S. defense contractors is dominated by three converging campaigns. Iranian cyber actors have significantly elevated activity following the U.S.-Israel Operation Epic Fury strikes, retaliating against defense industrial base targets with opportunistic exploitation of known vulnerabilities. Simultaneously, Chinese state-sponsored actor Volt Typhoon continues embedding inside critical infrastructure networks — not attacking yet, but positioning. Russian actors remain persistent against cleared defense contractors, using credential theft and spearphishing to access weapons development and communications data.</p>
+        <p>On the physical layer, two FARA-flagged entities have been identified operating in proximity to defense facilities in the Ohio corridor — relevant to organizations in the Columbus and Dayton regions. This aligns with the known pattern of physical pre-positioning preceding cyber escalation.</p>
+        <p>The bottom line: your organization faces elevated risk on both digital and physical fronts this week. Immediate priority actions are listed under each threat item below.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CYBER THREATS 80% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-cyber">Cyber Threats</span>
+      <span class="section-pct">80%</span>
+      <span class="section-title-text">Active Campaigns Targeting Defense Sector</span>
+      <span class="section-source">CISA · NSA · FBI · Dragos · Unit 42</span>
+    </div>
+
+    <!-- THREAT 1 -->
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Iranian APT Retaliation — Elevated Post-Epic Fury</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: CISA CVIE March 2026 · Qualys Threat Dashboard · Joint FBI/CISA Advisory</div>
+      <div class="threat-body">Following the U.S.-Israel Operation Epic Fury strikes on Iran beginning February 28, 2026, CISA issued a Cyber Vulnerability Insights Estimate identifying 136 CVEs that Iranian government-sponsored actors have shown active interest in, targeted, or successfully exploited. Defense contractors are priority targets. Iranian-affiliated actors exploit unpatched software, default passwords, and internet-connected industrial control systems. Their tactics are lower sophistication but highly scalable — they don't need a zero-day when your VPN hasn't been patched in six months. Dragos additionally identified a new Iranian-linked group, Pyroxene (overlapping with IRGC's Imperial Kitten/APT35), conducting supply chain attacks targeting defense and critical infrastructure sectors, now expanding into North America from the Middle East.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Audit all internet-facing systems against CISA's CVIE catalog immediately. Priority patch: any unpatched Fortinet, Ivanti, Cisco, or Palo Alto edge devices. Enable MFA on all remote access. Report anomalous authentication attempts to ic3.gov.</div>
+    </div>
+
+    <!-- THREAT 2 -->
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Volt Typhoon — Active Pre-Positioning in Defense Industrial Base</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: CISA AA24-038A · Dragos 2026 Annual Report · Palo Alto Unit 42 · DefenseScoop</div>
+      <div class="threat-body">Volt Typhoon (PRC state-sponsored, also tracked as Voltzite by Dragos) continued embedding inside U.S. critical infrastructure throughout 2025 and into 2026. Critically, Dragos CEO Robert Lee confirmed in February 2026 that Voltzite was getting "inside the control loop" of utility systems — not just maintaining access, but positioning for future disruption. The Air Force publicly warned this week that Volt Typhoon's persistent access to CIKR could enable China to wage "total war" against the U.S. by targeting base utilities. Defense contractors dependent on public utilities are directly in the blast radius. Tactics: living-off-the-land using legitimate Windows tools (wmic, netsh, PowerShell), SOHO router compromise for C2 traffic masking, credential harvesting via NTDS.dit extraction.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Hunt for LOLBin abuse in your environment. Review SOHO/edge device logs for unusual outbound connections. Audit Active Directory for unauthorized NTDS.dit access. Implement CISA CPG 2.0 OT-specific controls if any OT systems are present. Do not assume prior FBI disruption of KV Botnet eliminated the threat — it has been rebuilt.</div>
+    </div>
+
+    <!-- THREAT 3 -->
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Russian State-Sponsored — Cleared Defense Contractor Targeting</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: CISA/FBI/NSA Joint Advisory AA22-047A (ongoing) · CISA Emergency Directive 26-03</div>
+      <div class="threat-body">Russian state-sponsored actors continue persistent targeting of U.S. cleared defense contractors (CDCs) supporting Army, Air Force, Navy, Space Force, and Intelligence Community programs. Primary objectives: weapons platform development timelines, communications infrastructure plans, export-controlled technology. TTPs include brute force credential attacks against M365 accounts, spearphishing with malicious domain links, harvested credentials combined with known CVEs for privilege escalation, and Active Directory mapping. In several documented instances, actors maintained persistent access for over six months using legitimate credentials. Additionally, CISA Emergency Directive 26-03 this week calls on federal agencies to inventory SD-WAN systems and apply mitigations for CVE-2026-20127 and CVE-2022-20775 — relevant for any contractor with federal network adjacency.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Enforce MFA on all M365 and cloud accounts immediately. Review authentication logs for impossible logins and VPS-originated access. Audit SD-WAN infrastructure against CVE-2026-20127 and CVE-2022-20775. Implement centralized SIEM logging if not already in place.</div>
+    </div>
+
+    <!-- THREAT 4 -->
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">ICS/OT Vulnerabilities — Defense Industrial Base Exposure</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: CISA ICS Advisories · Industrial Cyber · CISA CPG 2.0 December 2025</div>
+      <div class="threat-body">CISA recently flagged critical vulnerabilities in industrial control systems deployed across defense industrial base, critical manufacturing, and transportation sectors. Affected vendors include Siemens, Schneider Electric, Rockwell, and National Instruments LabView — common in defense manufacturing environments. CVSS scores ranging 7.8–8.2. Successful exploitation allows arbitrary code execution and information disclosure. Separately, Claroty reports that 82% of CPS attacks in 2025 used remote access protocols, with hacktivists actively targeting HMIs and SCADA systems at scale. CISA CPG 2.0, released December 2025, now addresses IT and OT holistically with new zero-trust requirements for lateral movement prevention.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Inventory all ICS/OT systems against CISA's recent advisories. Patch or isolate affected Siemens, Schneider, Rockwell, and LabView systems. Restrict remote access protocols to OT environments. Review CPG 2.0 zero-trust goals for OT applicability.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PHYSICAL & PROXIMITY 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-physical">Physical & Proximity</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Pre-Positioning & Proximity Indicators</span>
+      <span class="section-source">FARA Filings · OSINT · Open Corporate Records</span>
+    </div>
+
+    <!-- PHYSICAL 1 -->
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Ohio Corridor — FARA-Flagged Entities Near Defense Facilities</div>
+        <span class="threat-badge badge-critical">Monitor</span>
+      </div>
+      <div class="threat-sources">Sources: FARA Registration Database · OSINT Corporate Filings · DOJ Public Records</div>
+      <div class="threat-body">Two entities with foreign principal registrations under FARA have been identified operating within proximity of defense facilities in the Ohio corridor — relevant to organizations in Columbus and the Dayton/Wright-Patterson AFB region. One entity, registered as a consulting firm, lists a principal office within 4 miles of a known defense contractor cluster. A second entity, registered under a separate foreign principal, has incorporated a subsidiary in the Columbus metro area within the past 18 months. Neither registration alone constitutes illegal activity. The aggregate pattern — proximity to defense infrastructure, recent incorporation timing, and foreign principal connections — is consistent with documented pre-positioning behavior. This is a watch item, not a confirmed threat. Organizations in this region should be aware.</div>
+      <div class="threat-action"><strong>Action Required:</strong> No immediate action required. Heighten physical security awareness at facilities in the Columbus/Dayton corridor. Report any unusual physical surveillance or unexpected vendor/visitor activity to your security officer. Cross-reference any new vendor relationships against FARA registration database.</div>
+    </div>
+
+    <!-- PHYSICAL 2 -->
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Supply Chain Physical Access — Contractor Vetting Gap</div>
+        <span class="threat-badge badge-high">Elevated</span>
+      </div>
+      <div class="threat-sources">Sources: Flashpoint 2026 GTIR · FBI Counterintelligence · OSINT</div>
+      <div class="threat-body">Flashpoint's 2026 Global Threat Intelligence Report documented 91,321 instances of insider recruiting activity in 2025, averaging 1,162 insider-related posts per month — with extortionist groups specifically targeting employees at defense and critical infrastructure organizations to financially motivate insider access. Physical access through contractors and vendors represents the fastest growing non-cyber threat vector. The IRGC-linked group Pyroxene has been documented using recruitment-themed social engineering via fake social media profiles before delivering targeted spearphishing. The insider threat is not purely digital — it begins with physical and social access.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Review contractor vetting procedures. Ensure all third-party physical access is logged and badged. Brief employees on recruitment-themed social engineering — especially those with public LinkedIn profiles listing cleared positions. Establish a clear insider threat reporting mechanism.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KNOWN ACTORS 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-actor">Known Actors</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Active Threat Actor Profiles — Defense Sector</span>
+      <span class="section-source">MITRE ATT&CK · Unit 42 · CISA · Dragos</span>
+    </div>
+
+    <!-- ACTOR 1 -->
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Volt Typhoon (Voltzite)</div>
+          <div class="actor-alias">Also known as: Bronze Silhouette · Vanguard Panda · Insidious Taurus · Dev-0391</div>
+        </div>
+        <span class="actor-sponsor">PRC State-Sponsored</span>
+      </div>
+      <div class="actor-body">Active since mid-2021. Primary mission: pre-position inside U.S. critical infrastructure for future disruption during geopolitical conflict — particularly a potential Taiwan scenario. FBI Director Wray called this group "the defining threat of our generation." As of February 2026, confirmed embedded inside U.S. utility control loops. Defense contractors dependent on public utilities are directly exposed. Does not need to attack your network to affect your operations.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">LOLBins, SOHO Router C2, Credential Theft</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Defense, Energy, Telecom, Transportation</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active · Elevated</div></div>
+      </div>
+    </div>
+
+    <!-- ACTOR 2 -->
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Pyroxene (IRGC-linked)</div>
+          <div class="actor-alias">Overlaps with: Imperial Kitten · APT35 · Parisite (initial access provider)</div>
+        </div>
+        <span class="actor-sponsor">Iranian State-Sponsored</span>
+      </div>
+      <div class="actor-body">Newly identified by Dragos in 2025. Conducts supply chain-leveraged attacks targeting defense, critical infrastructure, and industrial sectors. Expanding operations from Middle East into North America and Western Europe. Uses recruitment-themed social engineering via fake social media profiles before delivering spearphishing. Works with Parisite as an initial access broker into target networks. Elevated activity following Operation Epic Fury.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Supply Chain, Social Engineering, Spearphishing</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Defense, Critical Infrastructure, Industrial</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active · Expanding</div></div>
+      </div>
+    </div>
+
+    <!-- ACTOR 3 -->
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Russian GRU / SVR — CDC Targeting Units</div>
+          <div class="actor-alias">Associated with: Cozy Bear · Fancy Bear · historical CDC intrusion campaigns</div>
+        </div>
+        <span class="actor-sponsor">Russian State-Sponsored</span>
+      </div>
+      <div class="actor-body">Long-running persistent campaign against U.S. cleared defense contractors. Primary objective is acquisition of weapons platform data, communications infrastructure plans, and export-controlled technology. Documented targeting of Army, Air Force, Navy, Space Force, and Intelligence Community contractors. Maintained access for 6+ months in multiple documented incidents using legitimate credentials. Pattern: brute force → credential theft → lateral movement → persistent access → long-term exfiltration.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Credential Theft, Spearphishing, M365 Compromise</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Cleared Defense Contractors (CDCs)</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#a07632;">Persistent · Ongoing</div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRIORITY ACTIONS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-cyber">Priority Actions</span>
+      <span class="section-title-text">This Week's Non-Negotiables</span>
+    </div>
+    <div style="background:white;border:1px solid var(--border);border-radius:2px;padding:20px 24px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Immediate — This Week</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Audit all internet-facing systems against CISA CVIE catalog<br>
+            2. Patch Fortinet, Ivanti, Cisco edge devices<br>
+            3. Enforce MFA on all M365 and cloud accounts<br>
+            4. Inventory SD-WAN systems — patch CVE-2026-20127<br>
+            5. Hunt for LOLBin abuse in Windows environments
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Near-Term — 30 Days</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Implement CISA CPG 2.0 zero-trust OT controls<br>
+            2. Review contractor vetting and physical access logs<br>
+            3. Brief employees on recruitment-themed social engineering<br>
+            4. Establish centralized SIEM if not in place<br>
+            5. Cross-reference vendors against FARA registration database
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="footer-li">Logical<span>Intelligence</span></div>
+    <div class="footer-meta">LogicalIntelligence.us · Week of March 27, 2026 · Defense Sector Brief · TLP: AMBER · Subscriber Use Only</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;color:rgba(0,0,0,0.25);">Correlated from public sources. Not classified. For security awareness purposes.</div>
+  </div>
+
+</body>
+</html>
