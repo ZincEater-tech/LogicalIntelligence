@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logical Intelligence — Centralized Clarity over Cracked Confusion</title>
+  <meta name="description" content="One destination for correlated, sector-specific, plain-language threat intelligence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080a08;
+      --bg2: #0b0e0b;
+      --text: #dfe8dc;
+      --muted: rgba(223,232,220,0.55);
+      --green: #4a7c59;
+      --green-bright: #5c9970;
+      --green-dim: rgba(74,124,89,0.12);
+      --green-border: rgba(74,124,89,0.28);
+      --border: rgba(255,255,255,0.07);
+      --card: rgba(255,255,255,0.03);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Chakra Petch', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+    #dropsCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.38; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; background: rgba(8,10,8,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: 3px; text-transform: uppercase; }
+    .nav-logo span { color: var(--green-bright); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-family: 'Fira Code', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green-bright); }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 40px 80px; position: relative; z-index: 1; overflow: hidden; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(74,124,89,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(74,124,89,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+    .hero-eyebrow { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 24px; display: inline-block; padding: 6px 16px; border: 1px solid var(--green-border); border-radius: 2px; background: var(--green-dim); }
+    .hero h1 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(48px, 7vw, 82px); line-height: 1.0; color: #fff; margin-bottom: 28px; letter-spacing: 4px; text-transform: uppercase; }
+    .hero h1 em { font-style: normal; color: var(--green-bright); }
+    .hero-sub { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 560px; margin: 0 auto 40px; }
+    .hero-tagline { font-family: 'Fira Code', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(74,124,89,0.5); margin-bottom: 48px; }
+    .waitlist-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto 20px; }
+    .waitlist-form input { flex: 1; padding: 14px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 2px; color: var(--text); font-family: 'Chakra Petch', sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; }
+    .waitlist-form input::placeholder { color: var(--muted); }
+    .waitlist-form input:focus { border-color: var(--green); }
+    .waitlist-form button { padding: 14px 24px; background: var(--green); color: #dfe8dc; border: none; border-radius: 2px; font-family: 'Fira Code', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+    .waitlist-form button:hover { background: var(--green-bright); }
+    .form-note { font-family: 'Fira Code', monospace; font-size: 10px; color: rgba(223,232,220,0.28); letter-spacing: 1px; }
+    .success-msg { display: none; color: var(--green-bright); font-family: 'Fira Code', monospace; font-size: 12px; letter-spacing: 1px; margin-top: 12px; }
+    section { padding: 100px 48px; position: relative; z-index: 1; }
+    .section-label { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 16px; }
+    .section-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 50px); color: #fff; line-height: 1.05; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase; }
+    .section-body { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 580px; }
+    .problem { background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .problem-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .problem-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 2px; padding: 24px; }
+    .stat-number { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 44px; color: var(--green-bright); margin-bottom: 6px; letter-spacing: 2px; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .how { max-width: 1100px; margin: 0 auto; }
+    .how-header { margin-bottom: 56px; }
+    .how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .step { background: var(--card); border: 1px solid var(--border); border-top: 2px solid var(--green); border-radius: 2px; padding: 32px 28px; }
+    .step-num { font-family: 'Fira Code', monospace; font-size: 11px; color: var(--green-bright); letter-spacing: 2px; margin-bottom: 16px; }
+    .step h3 { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 22px; color: #fff; margin-bottom: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .step p { font-size: 13px; line-height: 1.75; color: var(--muted); }
+    .sources { background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .sources-inner { max-width: 1100px; margin: 0 auto; }
+    .sources-header { margin-bottom: 40px; }
+    .sources-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .source-pill { font-family: 'Fira Code', monospace; font-size: 11px; padding: 8px 18px; border-radius: 2px; background: rgba(74,124,89,0.06); border: 1px solid rgba(74,124,89,0.18); color: rgba(223,232,220,0.65); letter-spacing: 0.5px; transition: border-color 0.2s, color 0.2s; }
+    .source-pill:hover { border-color: var(--green-border); color: var(--green-bright); }
+    .sectors { max-width: 1100px; margin: 0 auto; }
+    .sectors-header { margin-bottom: 48px; }
+    .sectors-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .sector-card { background: var(--card); border: 1px solid var(--border); border-radius: 2px; padding: 28px; display: flex; align-items: flex-start; gap: 20px; transition: border-color 0.2s; }
+    .sector-card:hover { border-color: var(--green-border); }
+    .sector-icon { width: 40px; height: 40px; background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+    .sector-info h4 { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 16px; color: #fff; margin-bottom: 6px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .sector-info p { font-size: 13px; line-height: 1.7; color: var(--muted); }
+    .philosophy { background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); }
+    .philosophy-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .philosophy blockquote { font-family: 'Chakra Petch', sans-serif; font-style: italic; font-size: clamp(17px, 2.5vw, 23px); line-height: 1.7; color: rgba(223,232,220,0.85); border-left: 3px solid var(--green); padding-left: 32px; text-align: left; margin: 40px 0; }
+    .philosophy-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .phil-point { padding: 20px; border: 1px solid var(--border); border-top: 2px solid var(--green); border-radius: 2px; background: var(--card); }
+    .phil-point h5 { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 8px; }
+    .phil-point p { font-size: 13px; line-height: 1.65; color: var(--muted); }
+    .founder { max-width: 1100px; margin: 0 auto; }
+    .founder-card { background: var(--card); border: 1px solid var(--border); border-radius: 2px; padding: 48px; display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; }
+    .founder-avatar { width: 100px; height: 100px; background: var(--green-dim); border: 2px solid var(--green-border); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 3px; color: var(--green-bright); flex-shrink: 0; }
+    .founder-info h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 28px; color: #fff; margin-bottom: 6px; letter-spacing: 2px; text-transform: uppercase; }
+    .founder-creds { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1.5px; color: var(--green-bright); text-transform: uppercase; margin-bottom: 16px; }
+    .founder-bio { font-size: 14px; line-height: 1.8; color: var(--muted); }
+    .cta { background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); text-align: center; }
+    .cta-inner { max-width: 600px; margin: 0 auto; }
+    .cta h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 48px); color: #fff; margin-bottom: 16px; letter-spacing: 3px; text-transform: uppercase; }
+    .cta p { font-size: 15px; color: var(--muted); margin-bottom: 36px; line-height: 1.75; }
+    footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+    .footer-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: rgba(223,232,220,0.35); }
+    .footer-logo span { color: var(--green); }
+    .footer-right { font-family: 'Fira Code', monospace; font-size: 10px; color: rgba(223,232,220,0.18); letter-spacing: 1px; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-content > * { animation: fadeUp 0.7s ease both; }
+    .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+    .hero-content > *:nth-child(6) { animation-delay: 0.6s; }
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; } .nav-links { display: none; } section { padding: 72px 24px; }
+      .problem-inner { grid-template-columns: 1fr; gap: 40px; } .how-steps { grid-template-columns: 1fr; }
+      .sectors-grid { grid-template-columns: 1fr; } .philosophy-points { grid-template-columns: 1fr; }
+      .founder-card { grid-template-columns: 1fr; text-align: center; } .founder-avatar { margin: 0 auto; }
+      .waitlist-form { flex-direction: column; } footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="dropsCanvas"></canvas>
+
+<nav>
+  <a href="#" class="nav-logo">Logical<span>Intelligence</span></a>
+  <ul class="nav-links">
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#waitlist">Early Access</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Threat Intelligence Platform</span>
+    <h1>The threat picture is <em>clear.</em><br>Your feeds aren't.</h1>
+    <p class="hero-sub">Logical Intelligence aggregates every authoritative public threat source — CISA, NSA, FBI, DOD, IBM, Splunk, Cloudflare and more — correlates them in real time, and delivers sector-specific intelligence in plain language.</p>
+    <p class="hero-tagline">Centralized Clarity over Cracked Confusion</p>
+    <div class="waitlist-form" id="waitlist">
+      <input type="email" id="email-input" placeholder="your@organization.com">
+      <button onclick="submitWaitlist()">Request Access</button>
+    </div>
+    <p class="form-note">No spam. Early access only. Defense, healthcare, energy, finance.</p>
+    <p class="success-msg" id="success-msg">You're on the list. We'll be in touch.</p>
+  </div>
+</section>
+
+<section class="problem" id="problem">
+  <div class="problem-inner">
+    <div>
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Fragmented intelligence is a vulnerability.</h2>
+      <p class="section-body">Security teams across critical sectors are drowning in disconnected feeds. CISA posts an advisory. FBI releases a flash alert. IBM X-Force reports related indicators. Cloudflare sees matching traffic patterns. Nobody connects the dots. The threat is known. The posture stays reactive. Adversaries count on this.</p>
+    </div>
+    <div class="problem-stats">
+      <div class="stat-card"><div class="stat-number">70%</div><div class="stat-desc">of attacks target critical infrastructure sectors</div></div>
+      <div class="stat-card"><div class="stat-number">11+</div><div class="stat-desc">federal legacy systems most at risk remain unmodernized</div></div>
+      <div class="stat-card"><div class="stat-number">4+</div><div class="stat-desc">major agencies publishing advisories with no correlation layer</div></div>
+      <div class="stat-card"><div class="stat-number">0</div><div class="stat-desc">platforms aggregating all of them in one place, by sector</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="how">
+    <div class="how-header">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Aggregate. Correlate. Deliver.</h2>
+      <p class="section-body">Three steps between raw government intelligence and a security team that knows exactly what to do next.</p>
+    </div>
+    <div class="how-steps">
+      <div class="step"><div class="step-num">01 — Aggregate</div><h3>Every source. One place.</h3><p>We pull from CISA, NSA, FBI, DOD, IBM X-Force, Splunk Threat Research, Cloudflare Radar, DHS, NIST, and more — continuously, in real time. No manual monitoring required.</p></div>
+      <div class="step"><div class="step-num">02 — Correlate</div><h3>Connect the dots automatically.</h3><p>When multiple sources reference the same threat actor, campaign, or indicator — we surface one unified alert. Not three separate feeds from three different agencies saying the same thing.</p></div>
+      <div class="step"><div class="step-num">03 — Deliver</div><h3>Plain language. Your sector.</h3><p>Intelligence filtered to your industry. Written for decision-makers, not just analysts. Actionable steps, not raw IOC dumps. You know what's happening and what to do about it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sources">
+  <div class="sources-inner">
+    <div class="sources-header">
+      <div class="section-label">Aggregated Sources</div>
+      <h2 class="section-title">Every authoritative voice. One destination.</h2>
+    </div>
+    <div class="sources-grid">
+      <span class="source-pill">CISA</span><span class="source-pill">NSA Cybersecurity</span><span class="source-pill">FBI Flash Alerts</span><span class="source-pill">DOD</span><span class="source-pill">DHS</span><span class="source-pill">IBM X-Force</span><span class="source-pill">Splunk Threat Research</span><span class="source-pill">Cloudflare Radar</span><span class="source-pill">NIST</span><span class="source-pill">GAO Reports</span><span class="source-pill">Joint Cybersecurity Advisories</span><span class="source-pill">NIST SP 800 Series</span><span class="source-pill">Presidential Policy Directives</span><span class="source-pill">DC3</span><span class="source-pill">CYBERCOM</span>
+    </div>
+  </div>
+</section>
+
+<section id="sectors">
+  <div class="sectors">
+    <div class="sectors-header">
+      <div class="section-label">Sectors</div>
+      <h2 class="section-title">Built for the industries that matter most.</h2>
+      <p class="section-body">Sector-specific filtering means your team sees threats relevant to your industry — not everything, everywhere, all at once.</p>
+    </div>
+    <div class="sectors-grid">
+      <div class="sector-card"><div class="sector-icon">🛡</div><div class="sector-info"><h4>Defense Contractors</h4><p>Automated weapons systems, supply chain threats, CMMC compliance gaps. The attack surface is expanding. Your intelligence should too.</p></div></div>
+      <div class="sector-card"><div class="sector-icon">⚡</div><div class="sector-info"><h4>Energy &amp; Utilities</h4><p>SCADA vulnerabilities, ICS threats, grid-targeting campaigns. Critical infrastructure is the primary target. Stay left of boom.</p></div></div>
+      <div class="sector-card"><div class="sector-icon">🏥</div><div class="sector-info"><h4>Healthcare</h4><p>Ransomware targeting hospitals, PHI exfiltration, legacy medical systems. HIPAA compliance meets real-world threat intelligence.</p></div></div>
+      <div class="sector-card"><div class="sector-icon">🏦</div><div class="sector-info"><h4>Financial Services</h4><p>Nation-state financial targeting, BEC campaigns, regulatory exposure. Where money moves, adversaries follow.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="philosophy-inner">
+    <div class="section-label">Philosophy</div>
+    <h2 class="section-title">Resilience isn't surviving the attack.</h2>
+    <blockquote>"It's never being surprised by it — because you never stopped watching the watcher."</blockquote>
+    <p class="section-body" style="margin: 0 auto;">Offense always outpaces defense. That's not a reason to give up — it's a reason to get proactive. The organizations that get compromised aren't the ones that lacked technology. They're the ones that stayed reactive while adversaries were patient, persistent, and already inside their perimeter.</p>
+    <div class="philosophy-points">
+      <div class="phil-point"><h5>Left of Boom</h5><p>Detect pre-positioning before it becomes action. The watching is the threat.</p></div>
+      <div class="phil-point"><h5>Proactive by Design</h5><p>Advisories after the fact don't stop exploitation. Early awareness does.</p></div>
+      <div class="phil-point"><h5>Clarity Over Complexity</h5><p>Common sense applied to complex problems. Intelligence that makes sense.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="founder">
+    <div class="section-label" style="margin-bottom:32px;">Founder</div>
+    <div class="founder-card">
+      <div class="founder-avatar">JS</div>
+      <div class="founder-info">
+        <h3>Josh Salamon</h3>
+        <div class="founder-creds">M.S. Cybersecurity · Criminology &amp; Sociology · National Security</div>
+        <p class="founder-bio">Logical Intelligence was built at the intersection of threat intelligence, behavioral science, and national security policy. With a background spanning cybersecurity, criminology, and criminal justice, the insight driving this platform is simple: the watching is the threat. Adversaries don't win because they're sophisticated — they win because defenders are fragmented, reactive, and drowning in noise. Centralized Clarity over Cracked Confusion isn't just a tagline. It's the entire reason this exists.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-inner">
+    <div class="section-label">Early Access</div>
+    <h2>Be first when we launch.</h2>
+    <p>We're building for defense contractors, healthcare systems, energy utilities, and financial services. If your organization needs one destination for correlated, sector-specific threat intelligence — get on the list.</p>
+    <div class="waitlist-form">
+      <input type="email" id="email-input-2" placeholder="your@organization.com">
+      <button onclick="submitWaitlist2()">Request Access</button>
+    </div>
+    <p class="form-note" style="margin-top:12px;">No spam. Early access only.</p>
+    <p class="success-msg" id="success-msg-2">You're on the list. We'll be in touch.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Logical<span>Intelligence</span></div>
+  <div class="footer-right">LOGICALINTELLIGENCE.US · CENTRALIZED CLARITY OVER CRACKED CONFUSION</div>
+</footer>
+
+<script>
+  const canvas = document.getElementById('dropsCanvas');
+  const ctx = canvas.getContext('2d');
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const drops = [];
+  for (let i = 0; i < 42; i++) {
+    drops.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 2.4 + 1.0,
+      speed: Math.random() * 0.65 + 0.2,
+      opacity: Math.random() * 0.55 + 0.18,
+      tail: Math.random() * 14 + 7
+    });
+  }
+
+  function drawDrop(d) {
+    const grad = ctx.createLinearGradient(d.x, d.y - d.tail, d.x, d.y + d.r * 2);
+    grad.addColorStop(0, 'rgba(175,50,50,0)');
+    grad.addColorStop(1, `rgba(175,50,50,${d.opacity * 0.55})`);
+    ctx.beginPath();
+    ctx.moveTo(d.x - d.r * 0.35, d.y - d.tail);
+    ctx.lineTo(d.x + d.r * 0.35, d.y - d.tail);
+    ctx.lineTo(d.x + d.r * 0.5, d.y);
+    ctx.lineTo(d.x - d.r * 0.5, d.y);
+    ctx.closePath();
+    ctx.fillStyle = grad;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(d.x, d.y + d.r, d.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(175,50,50,${d.opacity})`;
+    ctx.fill();
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drops.forEach(d => {
+      drawDrop(d);
+      d.y += d.speed;
+      if (d.y > canvas.height + 20) {
+        d.y = -20;
+        d.x = Math.random() * canvas.width;
+        d.opacity = Math.random() * 0.55 + 0.18;
+      }
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  function submitWaitlist() {
+    const e = document.getElementById('email-input');
+    if (!e.value || !e.value.includes('@')) { e.focus(); return; }
+    document.querySelectorAll('.waitlist-form')[0].style.display = 'none';
+    document.querySelectorAll('.form-note')[0].style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+  }
+
+  function submitWaitlist2() {
+    const e = document.getElementById('email-input-2');
+    if (!e.value || !e.value.includes('@')) { e.focus(); return; }
+    document.querySelectorAll('.waitlist-form')[1].style.display = 'none';
+    document.querySelectorAll('.form-note')[1].style.display = 'none';
+    document.getElementById('success-msg-2').style.display = 'block';
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
