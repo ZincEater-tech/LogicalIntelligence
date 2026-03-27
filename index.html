@@ -308,6 +308,71 @@
   </div>
 </section>
 
+<!-- LIVE THREAT MAP -->
+<section style="background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="map">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Live Threat Map</div>
+    <h2 class="section-title">Every subscriber. One map. Shared awareness.</h2>
+    <p class="section-body" style="margin-bottom: 16px;">Each dot is a subscribing organization. Click it and see exactly what threats are active in their region, sector, and proximity. Filter by industry. Watch the picture emerge.</p>
+    <p class="section-body" style="margin-bottom: 40px; color: rgba(223,232,220,0.4);">This is what coordinated resilience looks like. A defense contractor in Columbus can see that Anduril in Austin is watching the same threat. A bank in New York sees other financial institutions on the same platform. Shared awareness changes behavior. That's not just a product feature — that's a culture shift.</p>
+
+    <div class="map-wrap-site">
+      <div class="map-header-site">
+        <div class="map-title-site">Logical<span>Intelligence</span> — Live Threat Map</div>
+        <div class="map-header-right-site">
+          <div class="map-live-site"><div class="live-dot-site"></div> Live Feed Active</div>
+          <div class="last-updated-site" id="last-updated-site">Last updated: just now</div>
+        </div>
+      </div>
+
+      <div class="threat-status-bar-site">
+        <div class="threat-status-left-site">
+          <div class="threat-status-dot-site"></div>
+          <div class="threat-status-label-site">National Threat Level</div>
+          <div class="threat-status-value-site">Elevated</div>
+        </div>
+        <div class="threat-levels-site">
+          <div class="level-block-site" style="background:#4a7c59;opacity:0.9;"></div>
+          <div class="level-block-site" style="background:#7a7c3a;opacity:0.9;"></div>
+          <div class="level-block-site" style="background:#c8922a;opacity:0.9;"></div>
+          <div class="level-block-site" style="background:rgba(139,60,50,0.25);border:1px solid rgba(139,60,50,0.3);"></div>
+          <div class="level-block-site" style="background:rgba(139,60,50,0.15);border:1px solid rgba(139,60,50,0.2);"></div>
+        </div>
+      </div>
+
+      <div class="filters-site">
+        <button class="filter-btn-site active" onclick="setFilterSite('all',this)">All</button>
+        <button class="filter-btn-site" onclick="setFilterSite('defense',this)">Defense</button>
+        <button class="filter-btn-site" onclick="setFilterSite('energy',this)">Energy</button>
+        <button class="filter-btn-site" onclick="setFilterSite('healthcare',this)">Healthcare</button>
+        <button class="filter-btn-site" onclick="setFilterSite('finance',this)">Finance</button>
+      </div>
+
+      <div class="map-container-site" id="map-container-site">
+        <div class="scanlines-site"></div>
+        <div class="tooltip-site" id="tooltip-site">
+          <div class="tt-name-site" id="tt-name-site"></div>
+          <div class="tt-sector-site" id="tt-sector-site"></div>
+          <div class="tt-threat-site" id="tt-threat-site"></div>
+          <div style="display:flex;align-items:center;gap:6px;margin-top:8px;">
+            <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(223,232,220,0.4);">Threat</div>
+            <div style="flex:1;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div id="tt-bar-site" style="height:100%;border-radius:2px;background:#8b3c32;"></div></div>
+          </div>
+        </div>
+        <svg id="map-svg-site" viewBox="0 0 960 600" style="display:block;width:100%;height:auto;"></svg>
+      </div>
+
+      <div class="map-footer-site">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="display:flex;align-items:center;gap:6px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.4);"><div style="width:8px;height:8px;border-radius:50%;background:#8b3c32;"></div>Active Subscriber</div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.4);"><div style="width:8px;height:8px;border-radius:50%;background:rgba(139,60,50,0.3);border:1px solid #8b3c32;"></div>Elevated Threat</div>
+        </div>
+        <div id="dot-count-site" style="font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1px;color:rgba(74,124,89,0.6);">7 organizations monitored</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PHILOSOPHY -->
 <section class="philosophy">
   <div class="philosophy-inner">
@@ -466,5 +531,139 @@
     });
   });
 </script>
+  <style>
+    .map-wrap-site { background: #080a08; border-radius: 4px; padding: 20px; font-family: 'Chakra Petch', sans-serif; color: #dfe8dc; border: 1px solid rgba(255,255,255,0.07); }
+    .map-header-site { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+    .map-title-site { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
+    .map-title-site span { color: #5c9970; }
+    .map-header-right-site { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+    .map-live-site { display: flex; align-items: center; gap: 6px; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #5c9970; }
+    .live-dot-site { width: 6px; height: 6px; border-radius: 50%; background: #5c9970; animation: livePulse 2s ease-in-out infinite; }
+    .last-updated-site { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(223,232,220,0.25); }
+    .threat-status-bar-site { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 2px; padding: 8px 14px; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+    .threat-status-left-site { display: flex; align-items: center; gap: 10px; }
+    .threat-status-label-site { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(223,232,220,0.35); }
+    .threat-status-value-site { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: #c8922a; }
+    .threat-status-dot-site { width: 7px; height: 7px; border-radius: 50%; background: #c8922a; animation: livePulse 1.5s ease-in-out infinite; }
+    .threat-levels-site { display: flex; gap: 4px; align-items: center; }
+    .level-block-site { width: 28px; height: 6px; border-radius: 1px; }
+    .filters-site { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .filter-btn-site { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; border: 1px solid rgba(74,124,89,0.3); background: transparent; color: rgba(223,232,220,0.5); cursor: pointer; transition: all 0.2s; }
+    .filter-btn-site.active { background: rgba(74,124,89,0.15); border-color: #5c9970; color: #5c9970; }
+    .filter-btn-site:hover:not(.active) { border-color: rgba(74,124,89,0.5); color: rgba(223,232,220,0.8); }
+    .map-container-site { position: relative; background: #0b0e0b; border: 1px solid rgba(74,124,89,0.2); border-radius: 4px; overflow: hidden; }
+    .scanlines-site { position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(74,124,89,0.018) 3px, rgba(74,124,89,0.018) 4px); pointer-events: none; z-index: 2; }
+    .state-site { fill: #0a0f0a; stroke: #4a7c59; stroke-width: 0.5; transition: fill 0.2s; }
+    .state-site:hover { fill: #0d140d; }
+    .tooltip-site { position: absolute; background: #0f150f; border: 1px solid rgba(74,124,89,0.4); border-radius: 4px; padding: 12px 16px; font-family: 'Chakra Petch', sans-serif; font-size: 12px; color: #dfe8dc; pointer-events: none; display: none; z-index: 10; min-width: 200px; max-width: 240px; }
+    .tt-name-site { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; margin-bottom: 4px; }
+    .tt-sector-site { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #5c9970; margin-bottom: 8px; }
+    .tt-threat-site { font-size: 11px; color: rgba(223,232,220,0.7); line-height: 1.5; border-top: 1px solid rgba(74,124,89,0.2); padding-top: 8px; margin-top: 4px; }
+    .map-footer-site { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; flex-wrap: wrap; gap: 8px; }
+    @keyframes pingSite { 0%{r:6;opacity:0.7} 100%{r:16;opacity:0} }
+    .ping-ring-site { animation: pingSite 2s ease-out infinite; }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script>
+    const siteOrgs = [
+      { name: 'Pacific Northwest Defense Hub', sector: 'Defense · Seattle, WA', filter: 'defense', threat: 'Active APT targeting aerospace supply chain. CISA Advisory AA24-290A cross-referenced with FBI Flash CU-000187.', level: 82, lat: 47.6, lng: -122.3 },
+      { name: 'Bay Area Financial Network', sector: 'Finance · San Francisco, CA', filter: 'finance', threat: 'Iranian-linked actors targeting fintech APIs. Physical: CCP-affiliated entity acquired property 2.1mi from primary data center.', level: 68, lat: 37.7, lng: -122.4 },
+      { name: 'Texas Energy Grid Corridor', sector: 'Energy · Dallas, TX', filter: 'energy', threat: 'Elevated SCADA threat. NSA advisory on ICS targeting active. Volt Typhoon pre-positioning indicators confirmed in region.', level: 91, lat: 32.7, lng: -97.3 },
+      { name: 'Great Lakes Health System', sector: 'Healthcare · Chicago, IL', filter: 'healthcare', threat: 'Ransomware campaign targeting Midwest hospital networks. Joint FBI/CISA advisory issued 72hrs ago. Patch CVE-2024-3400 immediately.', level: 74, lat: 41.8, lng: -87.6 },
+      { name: 'DC Metro Defense Cluster', sector: 'Defense · Washington, DC', filter: 'defense', threat: 'Spear phishing targeting cleared contractors. Physical: FARA-flagged entities operating near DHS HQ. Threat level: critical.', level: 95, lat: 38.9, lng: -77.0 },
+      { name: 'Arsenal-1 Defense Corridor', sector: 'Defense · Columbus, OH', filter: 'defense', threat: 'Anduril Arsenal-1 region. Chinese nationals with proximity to Wright-Patterson AFB flagged in OSINT sweep. Elevated monitoring active.', level: 78, lat: 39.9, lng: -82.9 },
+      { name: 'New York Financial District', sector: 'Finance · New York, NY', filter: 'finance', threat: 'Nation-state targeting of SWIFT infrastructure. Dark web chatter references major NY institution. Correlated across 4 sources this week.', level: 86, lat: 40.7, lng: -74.0 },
+    ];
+
+    let siteSeconds = 0;
+    setInterval(function() {
+      siteSeconds++;
+      const el = document.getElementById('last-updated-site');
+      if (!el) return;
+      if (siteSeconds < 60) el.textContent = 'Last updated: ' + siteSeconds + 's ago';
+      else el.textContent = 'Last updated: ' + Math.floor(siteSeconds/60) + ' min ago';
+    }, 1000);
+
+    async function initSiteMap() {
+      const svg = d3.select('#map-svg-site');
+      const width = 960, height = 600;
+      const projection = d3.geoAlbersUsa().scale(1100).translate([width/2, height/2]);
+      const path = d3.geoPath().projection(projection);
+      const us = await d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
+      const states = topojson.feature(us, us.objects.states);
+
+      svg.selectAll('.state-site')
+        .data(states.features)
+        .enter()
+        .append('path')
+        .attr('class', 'state-site')
+        .attr('d', path);
+
+      const container = document.getElementById('map-container-site');
+      const tooltip = document.getElementById('tooltip-site');
+      const delays = [0, 0.5, 1.0, 0.3, 0.8, 1.3, 0.6];
+
+      siteOrgs.forEach((org, i) => {
+        const coords = projection([org.lng, org.lat]);
+        if (!coords) return;
+        const [x, y] = coords;
+
+        svg.append('circle')
+          .attr('class', 'ping-ring-site')
+          .attr('cx', x).attr('cy', y)
+          .attr('r', 6)
+          .attr('fill', 'none')
+          .attr('stroke', '#8b3c32')
+          .attr('stroke-width', 1)
+          .attr('data-filter', org.filter)
+          .style('animation-delay', delays[i] + 's');
+
+        svg.append('circle')
+          .attr('cx', x).attr('cy', y)
+          .attr('r', 5.5)
+          .attr('fill', '#8b3c32')
+          .attr('opacity', 0.92)
+          .attr('data-filter', org.filter)
+          .attr('class', 'threat-dot-site')
+          .style('cursor', 'pointer')
+          .on('mouseenter', function(event) {
+            document.getElementById('tt-name-site').textContent = org.name;
+            document.getElementById('tt-sector-site').textContent = org.sector;
+            document.getElementById('tt-threat-site').textContent = org.threat;
+            document.getElementById('tt-bar-site').style.width = org.level + '%';
+            const rect = container.getBoundingClientRect();
+            let tx = event.clientX - rect.left + 14;
+            let ty = event.clientY - rect.top - 10;
+            if (tx + 250 > rect.width) tx = tx - 265;
+            if (ty < 0) ty = ty + 40;
+            tooltip.style.left = tx + 'px';
+            tooltip.style.top = ty + 'px';
+            tooltip.style.display = 'block';
+          })
+          .on('mouseleave', function() { tooltip.style.display = 'none'; });
+      });
+    }
+
+    initSiteMap();
+
+    function setFilterSite(filter, btn) {
+      document.querySelectorAll('.filter-btn-site').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      let count = 0;
+      document.querySelectorAll('.threat-dot-site').forEach(dot => {
+        const show = filter === 'all' || dot.getAttribute('data-filter') === filter;
+        dot.setAttribute('opacity', show ? '0.92' : '0.08');
+        if (show) count++;
+      });
+      document.querySelectorAll('.ping-ring-site').forEach(ring => {
+        const show = filter === 'all' || ring.getAttribute('data-filter') === filter;
+        ring.style.opacity = show ? '1' : '0';
+      });
+      document.getElementById('dot-count-site').textContent = count + ' organization' + (count !== 1 ? 's' : '') + ' monitored';
+      document.getElementById('tooltip-site').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
