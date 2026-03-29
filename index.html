@@ -225,10 +225,34 @@
       <div class="hero-tagline-dot"></div>
     </div>
     <p class="hero-sub">Logical Intelligence delivers a unified intelligence picture — 80% cyber threats, 10% physical and proximity threats, 10% known actors and behavioral patterns. Every authoritative source. One destination. Your sector.</p>
-    <div class="waitlist-form" id="waitlist">
-      <input type="email" id="email-input" placeholder="your@organization.com">
-      <button onclick="submitWaitlist()">Request Access</button>
-    </div>
+    <form id="waitlist-form-1" action="https://formspree.io/f/meepaerp" method="POST" style="width:100%;max-width:480px;margin:0 auto 20px;">
+      <div class="waitlist-form" style="margin-bottom:10px;">
+        <input type="email" name="email" id="email-input" placeholder="your@organization.com" required>
+        <button type="submit">Request Access</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+        <input type="text" name="name" placeholder="Your name" style="padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;color:var(--text);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
+        <input type="text" name="organization" placeholder="Organization" style="padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;color:var(--text);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <select name="sector" style="padding:10px 14px;background:#0d120d;border:1px solid var(--border);border-radius:2px;color:var(--muted);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
+          <option value="" disabled selected>Sector</option>
+          <option value="Defense">Defense</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Energy">Energy & Utilities</option>
+          <option value="Finance">Financial Services</option>
+          <option value="Other">Other</option>
+        </select>
+        <select name="role" style="padding:10px 14px;background:#0d120d;border:1px solid var(--border);border-radius:2px;color:var(--muted);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
+          <option value="" disabled selected>Your Role</option>
+          <option value="CISO">CISO</option>
+          <option value="Security Director">Security Director</option>
+          <option value="Security Analyst">Security Analyst</option>
+          <option value="Executive">Executive</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </form>
     <p class="form-note">No spam. Early access only. Defense, healthcare, energy, finance.</p>
     <p class="success-msg" id="success-msg">You're on the list. We'll be in touch.</p>
     <div style="margin-top: 24px;">
@@ -435,10 +459,34 @@
     <div class="section-label">Early Access</div>
     <h2>Be first when we launch.</h2>
     <p>We're building for defense contractors, healthcare systems, energy utilities, and financial services. If your organization needs one destination for correlated, sector-specific threat intelligence — get on the list.</p>
-    <div class="waitlist-form">
-      <input type="email" id="email-input-2" placeholder="your@organization.com">
-      <button onclick="submitWaitlist2()">Request Access</button>
-    </div>
+    <form id="waitlist-form-2" action="https://formspree.io/f/meepaerp" method="POST" style="width:100%;max-width:480px;margin:0 auto 20px;">
+      <div class="waitlist-form" style="margin-bottom:10px;">
+        <input type="email" name="email" id="email-input-2" placeholder="your@organization.com" required>
+        <button type="submit">Request Access</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+        <input type="text" name="name" placeholder="Your name" style="padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;color:var(--text);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
+        <input type="text" name="organization" placeholder="Organization" style="padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;color:var(--text);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <select name="sector" style="padding:10px 14px;background:#0d120d;border:1px solid var(--border);border-radius:2px;color:var(--muted);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
+          <option value="" disabled selected>Sector</option>
+          <option value="Defense">Defense</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Energy">Energy & Utilities</option>
+          <option value="Finance">Financial Services</option>
+          <option value="Other">Other</option>
+        </select>
+        <select name="role" style="padding:10px 14px;background:#0d120d;border:1px solid var(--border);border-radius:2px;color:var(--muted);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
+          <option value="" disabled selected>Your Role</option>
+          <option value="CISO">CISO</option>
+          <option value="Security Director">Security Director</option>
+          <option value="Security Analyst">Security Analyst</option>
+          <option value="Executive">Executive</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </form>
     <p class="form-note" style="margin-top:12px;">No spam. Early access only.</p>
     <p class="success-msg" id="success-msg-2">You're on the list. We'll be in touch.</p>
   </div>
