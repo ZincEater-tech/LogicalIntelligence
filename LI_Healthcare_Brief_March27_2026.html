@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LI Healthcare Brief — March 27, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJEFLCXBV2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJEFLCXBV2');
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff;
+      --bg2: #f8f8f6;
+      --text: #1a1c1a;
+      --muted: #5a5c5a;
+      --green: #3d6b4a;
+      --green-bright: #4a7c59;
+      --green-dim: rgba(61,107,74,0.08);
+      --green-border: rgba(61,107,74,0.25);
+      --red: #8b3c32;
+      --red-dim: rgba(139,60,50,0.08);
+      --red-border: rgba(139,60,50,0.2);
+      --gold: #a07632;
+      --gold-dim: rgba(160,118,50,0.08);
+      --border: rgba(0,0,0,0.09);
+      --blue: #2d5a8a;
+      --blue-dim: rgba(45,90,138,0.08);
+      --blue-border: rgba(45,90,138,0.2);
+    }
+    html { background: #ffffff; min-height: 100%; }
+    body { font-family: 'Chakra Petch', sans-serif; background: #ffffff; color: var(--text); max-width: 900px; margin: 0 auto; padding: 40px 32px; }
+
+    .doc-header { border-bottom: 2px solid var(--blue); padding-bottom: 20px; margin-bottom: 28px; }
+    .doc-header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+    .doc-logo { display: flex; align-items: center; gap: 12px; }
+    .doc-logo-text { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; color: var(--text); }
+    .doc-logo-text span { color: var(--green); }
+    .doc-classification { text-align: right; }
+    .classification-badge { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--red-border); background: var(--red-dim); color: var(--red); border-radius: 2px; margin-bottom: 4px; }
+    .doc-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); text-align: right; }
+    .doc-title-row { display: flex; justify-content: space-between; align-items: flex-end; }
+    .doc-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); }
+    .doc-subtitle { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-top: 4px; }
+    .doc-date { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1px; color: var(--muted); text-align: right; }
+
+    .threat-level-bar { display: flex; align-items: center; gap: 16px; background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--red); padding: 10px 16px; margin-bottom: 28px; border-radius: 2px; flex-wrap: wrap; }
+    .tl-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .tl-value { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); }
+    .tl-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+    .tl-summary { font-size: 12px; color: var(--muted); line-height: 1.5; flex: 1; }
+
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .section-tag { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; }
+    .tag-cyber { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
+    .tag-physical { background: var(--red-dim); color: var(--red); border: 1px solid var(--red-border); }
+    .tag-actor { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .tag-hipaa { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+    .section-pct { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 1px; color: var(--text); }
+    .section-title-text { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); flex: 1; }
+    .section-source { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+
+    .threat-item { background: #ffffff; border: 1px solid var(--border); border-radius: 2px; padding: 16px 20px; margin-bottom: 12px; border-left: 3px solid transparent; }
+    .threat-item.high { border-left-color: var(--red); }
+    .threat-item.medium { border-left-color: var(--gold); }
+    .threat-item.low { border-left-color: var(--green); }
+    .threat-item.blue { border-left-color: var(--blue); }
+    .threat-item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 12px; flex-wrap: wrap; }
+    .threat-name { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--text); }
+    .threat-badge { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+    .badge-critical { background: rgba(139,60,50,0.1); color: var(--red); border: 1px solid var(--red-border); }
+    .badge-high { background: rgba(160,118,50,0.1); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .badge-elevated { background: rgba(61,107,74,0.1); color: var(--green); border: 1px solid var(--green-border); }
+    .badge-compliance { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+    .threat-sources { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--green); margin-bottom: 8px; }
+    .threat-body { font-size: 13px; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
+    .threat-action { background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 2px; padding: 8px 12px; font-size: 12px; color: var(--green); line-height: 1.6; }
+    .threat-action strong { font-weight: 600; }
+
+    .actor-card { background: #ffffff; border: 1px solid var(--border); border-radius: 2px; padding: 16px 20px; margin-bottom: 12px; }
+    .actor-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+    .actor-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); }
+    .actor-alias { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); margin-top: 2px; }
+    .actor-sponsor { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; background: rgba(139,60,50,0.08); color: var(--red); border: 1px solid var(--red-border); }
+    .actor-body { font-size: 13px; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
+    .actor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .actor-stat { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 8px 10px; }
+    .actor-stat-label { font-family: 'Fira Code', monospace; font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+    .actor-stat-value { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1px; color: var(--text); }
+
+    .exec-box { background: #ffffff; border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 2px; padding: 20px 24px; margin-bottom: 28px; }
+    .exec-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .exec-body { font-size: 14px; line-height: 1.8; color: var(--text); }
+    .exec-body p { margin-bottom: 8px; }
+    .exec-body p:last-child { margin-bottom: 0; }
+
+    .stat-highlight { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+    .stat-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 16px; text-align: center; }
+    .stat-box-number { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 2px; margin-bottom: 4px; }
+    .stat-box-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); line-height: 1.4; }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+    .doc-footer { border-top: 1px solid var(--border); padding-top: 16px; margin-top: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .footer-li { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+    .footer-li span { color: var(--green); }
+    .footer-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(0,0,0,0.25); }
+
+    @media print {
+      body { padding: 20px; }
+      .threat-item, .actor-card, .exec-box { break-inside: avoid; }
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 20px 16px; }
+      .doc-header-top { flex-direction: column; gap: 16px; }
+      .doc-classification { text-align: left; }
+      .doc-title-row { flex-direction: column; gap: 8px; }
+      .doc-date { text-align: left; }
+      .doc-title { font-size: 22px; }
+      .threat-level-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .section-header { flex-wrap: wrap; gap: 8px; }
+      .threat-item-header { flex-direction: column; gap: 6px; }
+      .actor-header { flex-direction: column; gap: 8px; }
+      .actor-grid { grid-template-columns: 1fr; }
+      .stat-highlight { grid-template-columns: 1fr 1fr; }
+      .doc-footer { flex-direction: column; gap: 8px; }
+      div[style*="grid-template-columns: 1fr 1fr"] { display: block !important; }
+      div[style*="grid-template-columns: 1fr 1fr"] > div { margin-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="doc-header">
+    <div class="doc-header-top">
+      <div class="doc-logo">
+        <svg width="36" height="36" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs><clipPath id="gc"><circle cx="40" cy="40" r="18"/></clipPath></defs>
+          <polygon points="40,4 72,22 72,58 40,76 8,58 8,22" fill="none" stroke="#3d6b4a" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="40" cy="40" r="18" fill="none" stroke="#4a7c59" stroke-width="1.3" opacity="0.9"/>
+          <g clip-path="url(#gc)" opacity="0.4" stroke="#4a7c59" stroke-width="0.7" fill="none">
+            <ellipse cx="40" cy="40" rx="18" ry="5"/>
+            <ellipse cx="40" cy="40" rx="18" ry="10"/>
+            <ellipse cx="40" cy="40" rx="18" ry="15"/>
+            <ellipse cx="40" cy="40" rx="5" ry="18"/>
+            <ellipse cx="40" cy="40" rx="10" ry="18"/>
+            <ellipse cx="40" cy="40" rx="15" ry="18"/>
+            <line x1="22" y1="40" x2="58" y2="40"/>
+            <line x1="40" y1="22" x2="40" y2="58"/>
+          </g>
+          <circle cx="40" cy="40" r="1.8" fill="#4a7c59" opacity="0.8"/>
+          <circle cx="62" cy="18" r="3.5" fill="#8b3c32" opacity="0.9"/>
+        </svg>
+        <div>
+          <div class="doc-logo-text">Logical<span>Intelligence</span></div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;color:#5a5c5a;text-transform:uppercase;">Centralized Clarity over Cracked Confusion</div>
+        </div>
+      </div>
+      <div class="doc-classification">
+        <div class="classification-badge">Subscriber Use Only</div>
+        <div class="doc-meta">TLP: AMBER · Not for Public Release</div>
+        <div class="doc-meta" style="margin-top:2px;">Distribution: Healthcare Sector Subscribers</div>
+      </div>
+    </div>
+    <div class="doc-title-row">
+      <div>
+        <div class="doc-title">Healthcare Sector Intelligence Brief</div>
+        <div class="doc-subtitle">Correlated · Sector-Specific · Plain Language</div>
+      </div>
+      <div class="doc-date">
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-align:right;">Week of March 27, 2026</div>
+        <div class="doc-meta" style="text-align:right;margin-top:2px;">Sources: CISA · FBI · HHS · MS-ISAC · HelpNet Security · HIPAA Journal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="threat-level-bar">
+    <div class="tl-dot"></div>
+    <div class="tl-label">Sector Threat Level</div>
+    <div class="tl-value">Critical</div>
+    <div class="tl-summary">Healthcare remains the most targeted critical infrastructure sector in 2026. 93% of U.S. healthcare organizations experienced at least one cyberattack in the past year. Two major hospital systems hit by ransomware this month alone. Iranian-linked actors escalating post-Epic Fury. Physical supply chain threat emerging through medical device manufacturers.</div>
+  </div>
+
+  <!-- KEY STATS -->
+  <div class="stat-highlight">
+    <div class="stat-box">
+      <div class="stat-box-number" style="color:#8b3c32;">93%</div>
+      <div class="stat-box-label">of US health orgs hit by cyberattack in past year</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-number" style="color:#a07632;">$10.2M</div>
+      <div class="stat-box-label">average cost of a healthcare data breach in 2026</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-number" style="color:#8b3c32;">190M</div>
+      <div class="stat-box-label">Americans affected by Change Healthcare breach</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-number" style="color:#a07632;">72%</div>
+      <div class="stat-box-label">of attacks disrupted direct patient care</div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Executive Summary</span>
+      <span class="section-title-text">What You Need To Know This Week</span>
+    </div>
+    <div class="exec-box">
+      <div class="exec-label">For Decision Makers — Plain Language</div>
+      <div class="exec-body">
+        <p>Healthcare is under siege. This week's threat picture combines active ransomware campaigns, Iranian-linked actor escalation, a fresh medical device manufacturer breach, and a HIPAA regulatory environment that is tightening enforcement. The University of Mississippi Medical Center just reopened after a February ransomware attack took their Epic EHR system offline for over a week. Stryker — a major medical equipment manufacturer — was hit by Iranian-linked group Handala in March. The supply chain is now a direct threat vector into hospital operations.</p>
+        <p>The financial stakes are unprecedented. The Change Healthcare breach affected 190 million Americans — the largest healthcare data breach in history — and the legal fallout is still expanding with state AG lawsuits moving forward. A single successful ransomware attack now costs an average of $10.22 million. Yet only 3% of healthcare organizations have cybersecurity features beyond basic monitoring.</p>
+        <p>The bottom line: your organization is almost certainly being targeted right now. The question is whether you'll know before they're inside — or after your EHR goes offline and you're diverting patients.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CYBER THREATS 80% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-cyber">Cyber Threats</span>
+      <span class="section-pct">80%</span>
+      <span class="section-title-text">Active Campaigns Targeting Healthcare</span>
+      <span class="section-source">CISA · FBI · HHS · MS-ISAC · HIPAA Journal</span>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Medusa Ransomware-as-a-Service — Active Healthcare Targeting</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: FBI/CISA/MS-ISAC Joint Advisory · Healthcare IT News</div>
+      <div class="threat-body">FBI, CISA, and MS-ISAC issued a joint advisory warning healthcare organizations about Medusa ransomware affiliates actively exploiting unpatched software vulnerabilities. Medusa has compromised over 300 victims across critical infrastructure sectors since 2021, including a state health insurer. Operating as ransomware-as-a-service, Medusa affiliates use double and triple extortion — they encrypt your data, threaten to publicly release it, and may demand an additional ransom on top. The group specifically targets unpatched CVEs and commonly exploited vulnerabilities. Healthcare's legacy systems and underfunded IT departments make it a primary target.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Audit all internet-facing systems for unpatched CVEs immediately. Verify backups are air-gapped and cannot be encrypted. Enable MFA on all clinical systems and EHR access. Brief IT staff on Medusa TTPs from the joint advisory. Report any suspicious activity to FBI CyWatch at (855) 292-3937.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Interlock Ransomware — Aggressive Healthcare Facility Targeting</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: FBI/CISA/HHS/MS-ISAC Joint Advisory AA25-163A · CISA StopRansomware</div>
+      <div class="threat-body">The Interlock ransomware group is aggressively targeting healthcare facilities. FBI, CISA, HHS, and MS-ISAC released a joint advisory disseminating known Interlock IOCs and TTPs identified through FBI investigations as recently as June 2025. Interlock uses double extortion and specifically targets healthcare organizations where operational disruption creates maximum pressure to pay. The group exploits unpatched remote monitoring and management software — particularly SimpleHelp RMM — which is widely deployed across healthcare IT environments.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Audit all remote monitoring and management tools — especially SimpleHelp. Review CISA Advisory AA25-163A for specific IOCs and detection signatures. Ensure all RMM tools are patched and access is MFA-protected. Restrict RMM tool access to known, authorized IP ranges only.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Akira Ransomware — SMB and Hospital Targeting</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: FBI/CISA/DC3/HHS Joint Advisory · CISA StopRansomware</div>
+      <div class="threat-body">Akira ransomware primarily targets small and medium-sized healthcare organizations but has also conducted operations against larger hospital systems. FBI statement: "Akira ransomware doesn't just steal money — it disrupts the systems that power our hospitals." The group exploits unpatched VPNs and remote access tools for initial access, then moves laterally to encrypt systems and exfiltrate data. Healthcare's reliance on legacy VPN infrastructure makes it particularly vulnerable. Akira has been active across healthcare, finance, manufacturing, and education sectors.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Patch all VPN and remote access infrastructure immediately. Enforce MFA on all remote access. Review authentication logs for unusual login patterns. Implement network segmentation between clinical and administrative systems.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">IoMT Device Vulnerabilities — 89% of Organizations Exposed</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: HelpNet Security · HHS · CISA Medical Device Advisories</div>
+      <div class="threat-body">89% of healthcare organizations have the top 1% of riskiest Internet of Medical Things devices — containing known exploitable vulnerabilities linked to active ransomware campaigns — connected to their networks. Smart infusion pumps, wireless patient monitors, and IoT-enabled imaging systems are direct entry points into clinical networks. By 2026 smart hospitals will deploy over 7 million IoMT devices. 22% of healthcare organizations have already experienced cyberattacks that directly impacted medical devices, with 75% of those incidents disrupting patient care including patient transfers to other facilities.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Conduct an IoMT device inventory immediately. Segment medical devices onto isolated network VLANs separate from administrative systems. Prioritize patching of devices with KEVs linked to active ransomware campaigns. Establish a medical device security policy if one does not exist.</div>
+    </div>
+
+    <div class="threat-item blue">
+      <div class="threat-item-header">
+        <div class="threat-name">HIPAA Security Rule Update — Mandatory MFA Now Required</div>
+        <span class="threat-badge badge-compliance">Compliance</span>
+      </div>
+      <div class="threat-sources">Sources: HHS Office for Civil Rights · HIPAA Journal · Nebraska AG Lawsuit</div>
+      <div class="threat-body">HHS Office for Civil Rights has proposed a major update to the HIPAA Security Rule requiring mandatory multifactor authentication across all HIPAA-regulated entities. The Change Healthcare breach — which gained access through a Citrix portal without MFA enabled — was the direct catalyst. OCR is maintaining strong enforcement focus in 2026 with penalties for significant security lapses. The Nebraska AG lawsuit against Change Healthcare is proceeding, alleging failures including legacy systems and poor network segmentation. Since 2018 OCR has seen a 100% increase in large data breaches and a 264% increase in ransomware-related breaches.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Implement MFA on all systems now — do not wait for the rule to be finalized. Audit network segmentation between clinical and administrative environments. Review your HIPAA risk assessment — it may not reflect current threat landscape. Engage legal counsel on Change Healthcare breach exposure if your organization processes claims through their network.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PHYSICAL 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-physical">Physical & Supply Chain</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Medical Device & Supply Chain Physical Threats</span>
+      <span class="section-source">Chief Healthcare Executive · Wired · OSINT</span>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Stryker Cyberattack — Iranian Group Handala — Supply Chain Alert</div>
+        <span class="threat-badge badge-critical">Monitor</span>
+      </div>
+      <div class="threat-sources">Sources: Chief Healthcare Executive · Wired · Stryker Corporate Statement · March 13, 2026</div>
+      <div class="threat-body">Iranian-linked hacktivist group Handala claimed responsibility for a cyberattack on Stryker — a Michigan-based medical technology company producing surgical and medical equipment — on March 13, 2026. Stryker confirmed a "global network disruption to our Microsoft environment." The attack coincides with elevated Iranian cyber activity following Operation Epic Fury. While no direct hospital impacts have been confirmed, the American Hospital Association is actively monitoring for supply chain effects. This is the physical supply chain threat made real — a medical device manufacturer breach can cascade directly into hospital operations, equipment availability, and patient safety.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Audit your Stryker equipment and software dependencies. Monitor Stryker communications for updates on system restoration. Identify any critical procedures that rely on Stryker equipment and establish contingency plans. Brief clinical operations leadership on potential supply chain disruption scenarios.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Insider Threat — Healthcare Staff Recruitment by Criminal Groups</div>
+        <span class="threat-badge badge-high">Elevated</span>
+      </div>
+      <div class="threat-sources">Sources: Flashpoint 2026 GTIR · FBI Counterintelligence</div>
+      <div class="threat-body">Flashpoint documented 91,321 instances of insider recruiting activity in 2025. Telecommunications was the most targeted sector but healthcare ranks high due to PHI value and clinical access. Ransomware groups and extortionists are specifically targeting healthcare employees via Telegram and increasingly Signal following Telegram bans. Recruitment offers financial incentives to employees with access to EHR systems, billing data, and administrative credentials. The human entry point is often cheaper and more reliable than technical exploitation for sophisticated actors.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Brief all staff — especially those with EHR and billing access — on insider recruitment tactics. Establish a confidential reporting mechanism. Monitor for unusual data access patterns among staff. Remind employees that responding to unsolicited contact about their workplace credentials is a reportable incident.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KNOWN ACTORS 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-actor">Known Actors</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Active Threat Actor Profiles — Healthcare Sector</span>
+      <span class="section-source">MITRE ATT&CK · FBI · CISA · Flashpoint</span>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Medusa Ransomware Group</div>
+          <div class="actor-alias">RaaS model — formerly closed, now affiliate-based with centralized negotiation</div>
+        </div>
+        <span class="actor-sponsor">Financially Motivated</span>
+      </div>
+      <div class="actor-body">Active since 2021. Operates as ransomware-as-a-service with centralized ransom negotiation controlled by core developers. Over 300 confirmed victims across critical infrastructure including healthcare. Uses double and triple extortion — encrypt, threaten to publish, demand additional ransom. Specifically targets unpatched internet-facing systems. Healthcare's legacy infrastructure and low MFA adoption make it a priority target. FBI/CISA joint advisory issued in 2026.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Unpatched CVE Exploitation, Double Extortion</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Healthcare, Finance, Critical Infrastructure</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active · Expanding</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Handala</div>
+          <div class="actor-alias">Iranian-linked hacktivist group — claimed Stryker attack March 2026</div>
+        </div>
+        <span class="actor-sponsor">Iranian-Linked</span>
+      </div>
+      <div class="actor-body">Iranian-linked hacktivist group that claimed responsibility for the Stryker medical technology cyberattack in March 2026. Elevated activity following Operation Epic Fury. Historically focused on politically motivated disruption rather than financial gain — targeting U.S. companies to send geopolitical signals. Medical device and healthcare supply chain infrastructure represents a high-value disruption target. Not primarily financially motivated which makes negotiation ineffective as a response strategy.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Network Disruption, Microsoft Environment Attacks</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Medical Technology, Healthcare Supply Chain</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active · Escalating Post-Epic Fury</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">RansomHub</div>
+          <div class="actor-alias">Formerly Cyclops and Knight — attracted high-profile affiliates from LockBit and ALPHV</div>
+        </div>
+        <span class="actor-sponsor">Financially Motivated</span>
+      </div>
+      <div class="actor-body">RansomHub is a fast-growing ransomware-as-a-service operation that attracted affiliates from LockBit and ALPHV following law enforcement disruption of those groups. Known for targeting healthcare directly — was involved in the Change Healthcare extortion following the BlackCat breach. FBI, CISA, HHS, and MS-ISAC have all issued advisories on RansomHub. The group is "efficient and successful" according to CISA and has established itself as one of the most prolific RaaS operations in 2025-2026.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">RaaS, Data Theft Extortion, Supply Chain</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Healthcare, Finance, Critical Infrastructure</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active · High Volume</div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRIORITY ACTIONS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Priority Actions</span>
+      <span class="section-title-text">This Week's Non-Negotiables</span>
+    </div>
+    <div style="background:#ffffff;border:1px solid var(--border);border-radius:2px;padding:20px 24px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Immediate — This Week</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Enable MFA on ALL clinical and administrative systems<br>
+            2. Audit Stryker equipment and software dependencies<br>
+            3. Patch all VPN and remote access infrastructure<br>
+            4. Review Medusa and Interlock IOCs from joint advisories<br>
+            5. Audit SimpleHelp RMM and all remote monitoring tools
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Near-Term — 30 Days</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Conduct IoMT device inventory and network segmentation<br>
+            2. Brief all staff on insider recruitment tactics<br>
+            3. Update HIPAA risk assessment to reflect current threat landscape<br>
+            4. Establish air-gapped backup verification process<br>
+            5. Develop clinical operations contingency plan for EHR outage
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div class="footer-li">Logical<span>Intelligence</span></div>
+    <div class="footer-meta">LogicalIntelligence.us · Week of March 27, 2026 · Healthcare Sector Brief · TLP: AMBER · Subscriber Use Only</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;color:rgba(0,0,0,0.25);">Correlated from public sources. Not classified. For security awareness purposes.</div>
+  </div>
+
+</body>
+</html>
