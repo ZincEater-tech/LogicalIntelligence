@@ -183,6 +183,44 @@
   </ul>
 </nav>
 
+<!-- THREAT TICKER -->
+<div style="position:fixed;top:57px;left:0;right:0;z-index:99;background:rgba(8,10,8,0.95);border-bottom:1px solid rgba(139,60,50,0.3);padding:7px 0;overflow:hidden;">
+  <div style="display:flex;align-items:center;gap:0;">
+    <div style="flex-shrink:0;display:flex;align-items:center;gap:8px;padding:0 16px;border-right:1px solid rgba(139,60,50,0.3);margin-right:16px;">
+      <div style="width:6px;height:6px;border-radius:50%;background:#af3232;animation:livePulse 1.5s ease-in-out infinite;"></div>
+      <span style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#af3232;white-space:nowrap;">Live Threats</span>
+    </div>
+    <div style="overflow:hidden;flex:1;">
+      <div id="ticker-inner" style="display:flex;gap:48px;white-space:nowrap;animation:tickerScroll 45s linear infinite;">
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Iranian APT targeting defense contractors post-Epic Fury — CISA CVIE March 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Volt Typhoon embedded inside US utility control loops — Dragos February 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> SD-WAN vulnerability CVE-2026-20127 actively exploited — CISA Emergency Directive 26-03</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Russian state-sponsored actors targeting cleared defense contractors — FBI/NSA/CISA</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> Pyroxene supply chain attacks expanding into North America — Dragos 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> ICS vulnerabilities in Siemens, Schneider, Rockwell across defense industrial base — CISA</span>
+        <span class="tick-item"><span class="tick-level elevated">ELEVATED</span> FARA-flagged entities operating near Ohio defense corridor — OSINT March 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Iranian APT targeting defense contractors post-Epic Fury — CISA CVIE March 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Volt Typhoon embedded inside US utility control loops — Dragos February 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> SD-WAN vulnerability CVE-2026-20127 actively exploited — CISA Emergency Directive 26-03</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Russian state-sponsored actors targeting cleared defense contractors — FBI/NSA/CISA</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> Pyroxene supply chain attacks expanding into North America — Dragos 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> ICS vulnerabilities in Siemens, Schneider, Rockwell across defense industrial base — CISA</span>
+        <span class="tick-item"><span class="tick-level elevated">ELEVATED</span> FARA-flagged entities operating near Ohio defense corridor — OSINT March 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .tick-item { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1px; color: rgba(223,232,220,0.55); white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; }
+  .tick-level { font-size: 9px; letter-spacing: 1.5px; padding: 2px 7px; border-radius: 2px; font-weight: 500; }
+  .tick-level.critical { background: rgba(139,60,50,0.2); color: #c44040; border: 1px solid rgba(139,60,50,0.35); }
+  .tick-level.high { background: rgba(160,118,50,0.15); color: #c8922a; border: 1px solid rgba(160,118,50,0.3); }
+  .tick-level.elevated { background: rgba(74,124,89,0.12); color: #5c9970; border: 1px solid rgba(74,124,89,0.25); }
+  .hero { padding-top: 160px !important; }
+</style>
+
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-grid"></div>
