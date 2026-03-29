@@ -106,6 +106,32 @@
       body { padding: 20px; }
       .threat-item, .actor-card, .exec-box { break-inside: avoid; }
     }
+
+    @media (max-width: 768px) {
+      body { padding: 20px 16px; }
+      .doc-header-top { flex-direction: column; gap: 16px; }
+      .doc-classification { text-align: left; }
+      .doc-title-row { flex-direction: column; gap: 8px; }
+      .doc-date { text-align: left; }
+      .doc-title { font-size: 22px; }
+      .threat-level-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .threat-status-bar { flex-direction: column; gap: 8px; }
+      .section-header { flex-wrap: wrap; gap: 8px; }
+      .threat-item-header { flex-direction: column; gap: 6px; }
+      .actor-header { flex-direction: column; gap: 8px; }
+      .actor-grid { grid-template-columns: 1fr; }
+      .doc-footer { flex-direction: column; gap: 8px; text-align: left; }
+      .section-pct { font-size: 14px; }
+      .actor-name { font-size: 13px; }
+      .threat-name { font-size: 12px; }
+      .exec-body { font-size: 13px; }
+      .threat-body { font-size: 12px; }
+      .doc-logo-text { font-size: 18px; }
+      .doc-logo { gap: 8px; }
+      .tl-summary { font-size: 11px; }
+      div[style*="grid-template-columns: 1fr 1fr"] { display: block !important; }
+      div[style*="grid-template-columns: 1fr 1fr"] > div { margin-bottom: 20px; }
+    }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJEFLCXBV2"></script>
   <script>
