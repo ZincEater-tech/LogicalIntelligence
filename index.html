@@ -293,11 +293,22 @@
     </form>
     <p class="form-note">No spam. Early access only. Defense, healthcare, energy, finance.</p>
     <p class="success-msg" id="success-msg">You're on the list. We'll be in touch.</p>
-    <div style="margin-top: 24px;">
-      <a href="LI_Defense_Brief_March27_2026.html" target="_blank" style="display:inline-flex;align-items:center;gap:10px;font-family:'Fira Code',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(223,232,220,0.55);border:1px solid rgba(223,232,220,0.15);border-radius:2px;padding:10px 20px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.color='#dfe8dc';this.style.borderColor='rgba(223,232,220,0.35)'" onmouseout="this.style.color='rgba(223,232,220,0.55)';this.style.borderColor='rgba(223,232,220,0.15)'">
+    <div style="margin-top: 24px; position: relative; display: inline-block;" id="brief-dropdown-wrap">
+      <button onclick="toggleBriefMenu()" style="display:inline-flex;align-items:center;gap:10px;font-family:'Fira Code',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(223,232,220,0.55);border:1px solid rgba(223,232,220,0.15);border-radius:2px;padding:10px 20px;background:transparent;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.color='#dfe8dc';this.style.borderColor='rgba(223,232,220,0.35)'" onmouseout="this.style.color='rgba(223,232,220,0.55)';this.style.borderColor='rgba(223,232,220,0.15)'">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="7" height="9" rx="1" stroke="currentColor" stroke-width="1"/><line x1="3" y1="4" x2="6" y2="4" stroke="currentColor" stroke-width="0.8"/><line x1="3" y1="6" x2="7" y2="6" stroke="currentColor" stroke-width="0.8"/><line x1="3" y1="8" x2="5" y2="8" stroke="currentColor" stroke-width="0.8"/></svg>
-        View Sample Brief
-      </a>
+        Sample Briefs
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 2.5L4 5.5L7 2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </button>
+      <div id="brief-menu" style="display:none;position:absolute;top:calc(100% + 6px);left:0;background:#0f150f;border:1px solid rgba(74,124,89,0.3);border-radius:2px;min-width:220px;z-index:200;overflow:hidden;">
+        <a href="LI_Defense_Brief_March27_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.6);text-decoration:none;border-bottom:1px solid rgba(74,124,89,0.15);transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
+          <div style="width:6px;height:6px;border-radius:50%;background:#4a7c59;flex-shrink:0;"></div>
+          Defense Sector
+        </a>
+        <a href="LI_Healthcare_Brief_March27_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.6);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
+          <div style="width:6px;height:6px;border-radius:50%;background:#4a7c59;flex-shrink:0;"></div>
+          Healthcare Sector
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -633,6 +644,17 @@
     document.querySelectorAll('.form-note')[1].style.display='none';
     document.getElementById('success-msg-2').style.display='block';
   }
+
+  function toggleBriefMenu() {
+    const menu = document.getElementById('brief-menu');
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+  }
+  document.addEventListener('click', function(e) {
+    const wrap = document.getElementById('brief-dropdown-wrap');
+    if (wrap && !wrap.contains(e.target)) {
+      document.getElementById('brief-menu').style.display = 'none';
+    }
+  });
 
   // SMOOTH SCROLL
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
