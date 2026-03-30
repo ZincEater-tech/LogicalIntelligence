@@ -152,6 +152,8 @@
     gtag('js', new Date());
     gtag('config', 'G-RJEFLCXBV2');
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 </head>
 <body>
 
@@ -699,8 +701,6 @@
     .ping-ring-site { animation: pingSite 2s ease-out infinite; }
   </style>
 
-  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
   <script>
     const siteOrgs = [
       { name: 'Pacific Northwest Defense Hub', sector: 'Defense · Seattle, WA', filter: 'defense', threat: 'Active APT targeting aerospace supply chain. CISA Advisory AA24-290A cross-referenced with FBI Flash CU-000187.', level: 82, lat: 47.6, lng: -122.3 },
@@ -786,7 +786,13 @@
       }
     }
 
-    initSiteMap();
+    window.addEventListener('load', function() {
+      if (typeof d3 !== 'undefined' && typeof topojson !== 'undefined') {
+        initSiteMap();
+      } else {
+        setTimeout(initSiteMap, 1000);
+      }
+    });
 
     function setFilterSite(filter, btn) {
       document.querySelectorAll('.filter-btn-site').forEach(b => b.classList.remove('active'));
