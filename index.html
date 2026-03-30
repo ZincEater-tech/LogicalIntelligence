@@ -727,7 +727,7 @@
       const width = 960, height = 600;
       const projection = d3.geoAlbersUsa().scale(1100).translate([width/2, height/2]);
       const path = d3.geoPath().projection(projection);
-      const us = await d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
+      const us = await d3.json('./states-10m.json');
       const states = topojson.feature(us, us.objects.states);
 
       svg.selectAll('.state-site')
