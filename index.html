@@ -786,13 +786,11 @@
       }
     }
 
-    window.addEventListener('load', function() {
+    setTimeout(function() {
       if (typeof d3 !== 'undefined' && typeof topojson !== 'undefined') {
         initSiteMap();
-      } else {
-        setTimeout(initSiteMap, 1000);
       }
-    });
+    }, 500);
 
     function setFilterSite(filter, btn) {
       document.querySelectorAll('.filter-btn-site').forEach(b => b.classList.remove('active'));
