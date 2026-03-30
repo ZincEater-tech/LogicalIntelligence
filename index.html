@@ -699,7 +699,7 @@
     .ping-ring-site { animation: pingSite 2s ease-out infinite; }
   </style>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
   <script>
     const siteOrgs = [
@@ -722,6 +722,7 @@
     }, 1000);
 
     async function initSiteMap() {
+      try {
       const svg = d3.select('#map-svg-site');
       const width = 960, height = 600;
       const projection = d3.geoAlbersUsa().scale(1100).translate([width/2, height/2]);
@@ -779,6 +780,10 @@
           })
           .on('mouseleave', function() { tooltip.style.display = 'none'; });
       });
+      } catch(err) {
+        console.error('Map failed to load:', err);
+        document.getElementById('map-container-site').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:300px;font-family:Fira Code,monospace;font-size:12px;letter-spacing:2px;color:#4a7c59;text-transform:uppercase;">Map loading — refresh to retry</div>';
+      }
     }
 
     initSiteMap();
