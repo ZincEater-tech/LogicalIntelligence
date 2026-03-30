@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LI Energy Brief — March 30, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJEFLCXBV2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJEFLCXBV2');
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff;
+      --bg2: #f8f8f6;
+      --text: #1a1c1a;
+      --muted: #5a5c5a;
+      --green: #3d6b4a;
+      --green-bright: #4a7c59;
+      --green-dim: rgba(61,107,74,0.08);
+      --green-border: rgba(61,107,74,0.25);
+      --red: #8b3c32;
+      --red-dim: rgba(139,60,50,0.08);
+      --red-border: rgba(139,60,50,0.2);
+      --gold: #a07632;
+      --gold-dim: rgba(160,118,50,0.08);
+      --border: rgba(0,0,0,0.09);
+      --blue: #2d5a8a;
+      --blue-dim: rgba(45,90,138,0.08);
+      --blue-border: rgba(45,90,138,0.2);
+    }
+    html { background: #ffffff; min-height: 100%; }
+    body { font-family: 'Chakra Petch', sans-serif; background: #ffffff; color: var(--text); max-width: 900px; margin: 0 auto; padding: 40px 32px; }
+
+    .doc-header { border-bottom: 2px solid var(--blue); padding-bottom: 20px; margin-bottom: 28px; }
+    .doc-header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+    .doc-logo { display: flex; align-items: center; gap: 12px; }
+    .doc-logo-text { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; color: var(--text); }
+    .doc-logo-text span { color: var(--green); }
+    .doc-classification { text-align: right; }
+    .classification-badge { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--red-border); background: var(--red-dim); color: var(--red); border-radius: 2px; margin-bottom: 4px; }
+    .sample-badge { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--blue-border); background: var(--blue-dim); color: var(--blue); border-radius: 2px; margin-bottom: 6px; }
+    .doc-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); text-align: right; }
+    .doc-title-row { display: flex; justify-content: space-between; align-items: flex-end; }
+    .doc-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); }
+    .doc-subtitle { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-top: 4px; }
+    .doc-date { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1px; color: var(--muted); text-align: right; }
+
+    .threat-level-bar { display: flex; align-items: center; gap: 16px; background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--red); padding: 10px 16px; margin-bottom: 28px; border-radius: 2px; flex-wrap: wrap; }
+    .tl-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .tl-value { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); }
+    .tl-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+    .tl-summary { font-size: 12px; color: var(--muted); line-height: 1.5; flex: 1; }
+
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .section-tag { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; }
+    .tag-cyber { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
+    .tag-physical { background: var(--red-dim); color: var(--red); border: 1px solid var(--red-border); }
+    .tag-actor { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .tag-hipaa { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+    .section-pct { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 1px; color: var(--text); }
+    .section-title-text { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); flex: 1; }
+    .section-source { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+
+    .threat-item { background: #ffffff; border: 1px solid var(--border); border-radius: 2px; padding: 16px 20px; margin-bottom: 12px; border-left: 3px solid transparent; }
+    .threat-item.high { border-left-color: var(--red); }
+    .threat-item.medium { border-left-color: var(--gold); }
+    .threat-item.low { border-left-color: var(--green); }
+    .threat-item.blue { border-left-color: var(--blue); }
+    .threat-item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 12px; flex-wrap: wrap; }
+    .threat-name { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--text); }
+    .threat-badge { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+    .badge-critical { background: rgba(139,60,50,0.1); color: var(--red); border: 1px solid var(--red-border); }
+    .badge-high { background: rgba(160,118,50,0.1); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .badge-elevated { background: rgba(61,107,74,0.1); color: var(--green); border: 1px solid var(--green-border); }
+    .badge-compliance { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+    .threat-sources { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--green); margin-bottom: 8px; }
+    .threat-body { font-size: 13px; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
+    .threat-action { background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 2px; padding: 8px 12px; font-size: 12px; color: var(--green); line-height: 1.6; }
+    .threat-action strong { font-weight: 600; }
+
+    .actor-card { background: #ffffff; border: 1px solid var(--border); border-radius: 2px; padding: 16px 20px; margin-bottom: 12px; }
+    .actor-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+    .actor-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); }
+    .actor-alias { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); margin-top: 2px; }
+    .actor-sponsor { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; background: rgba(139,60,50,0.08); color: var(--red); border: 1px solid var(--red-border); }
+    .actor-body { font-size: 13px; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
+    .actor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .actor-stat { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 8px 10px; }
+    .actor-stat-label { font-family: 'Fira Code', monospace; font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+    .actor-stat-value { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1px; color: var(--text); }
+
+    .exec-box { background: #ffffff; border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 2px; padding: 20px 24px; margin-bottom: 28px; }
+    .exec-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .exec-body { font-size: 14px; line-height: 1.8; color: var(--text); }
+    .exec-body p { margin-bottom: 8px; }
+    .exec-body p:last-child { margin-bottom: 0; }
+
+    .stat-highlight { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+    .stat-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 16px; text-align: center; }
+    .stat-box-number { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 2px; margin-bottom: 4px; }
+    .stat-box-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); line-height: 1.4; }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+    .doc-footer { border-top: 1px solid var(--border); padding-top: 16px; margin-top: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .footer-li { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+    .footer-li span { color: var(--green); }
+    .footer-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(0,0,0,0.25); }
+
+    @media print {
+      body { padding: 20px; }
+      .threat-item, .actor-card, .exec-box { break-inside: avoid; }
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 20px 16px; }
+      .doc-header-top { flex-direction: column; gap: 16px; }
+      .doc-classification { text-align: left; }
+      .doc-title-row { flex-direction: column; gap: 8px; }
+      .doc-date { text-align: left; }
+      .doc-title { font-size: 22px; }
+      .threat-level-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .section-header { flex-wrap: wrap; gap: 8px; }
+      .threat-item-header { flex-direction: column; gap: 6px; }
+      .actor-header { flex-direction: column; gap: 8px; }
+      .actor-grid { grid-template-columns: 1fr; }
+      .stat-highlight { grid-template-columns: 1fr 1fr; }
+      .doc-footer { flex-direction: column; gap: 8px; }
+      div[style*="grid-template-columns: 1fr 1fr"] { display: block !important; }
+      div[style*="grid-template-columns: 1fr 1fr"] > div { margin-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="doc-header">
+    <div class="doc-header-top">
+      <div class="doc-logo">
+        <svg width="36" height="36" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs><clipPath id="gc"><circle cx="40" cy="40" r="18"/></clipPath></defs>
+          <polygon points="40,4 72,22 72,58 40,76 8,58 8,22" fill="none" stroke="#3d6b4a" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="40" cy="40" r="18" fill="none" stroke="#4a7c59" stroke-width="1.3" opacity="0.9"/>
+          <g clip-path="url(#gc)" opacity="0.4" stroke="#4a7c59" stroke-width="0.7" fill="none">
+            <ellipse cx="40" cy="40" rx="18" ry="5"/>
+            <ellipse cx="40" cy="40" rx="18" ry="10"/>
+            <ellipse cx="40" cy="40" rx="18" ry="15"/>
+            <ellipse cx="40" cy="40" rx="5" ry="18"/>
+            <ellipse cx="40" cy="40" rx="10" ry="18"/>
+            <ellipse cx="40" cy="40" rx="15" ry="18"/>
+            <line x1="22" y1="40" x2="58" y2="40"/>
+            <line x1="40" y1="22" x2="40" y2="58"/>
+          </g>
+          <circle cx="40" cy="40" r="1.8" fill="#4a7c59" opacity="0.8"/>
+          <circle cx="62" cy="18" r="3.5" fill="#8b3c32" opacity="0.9"/>
+        </svg>
+        <div>
+          <div class="doc-logo-text">Logical<span>Intelligence</span></div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;color:#5a5c5a;text-transform:uppercase;">Centralized Clarity over Cracked Confusion</div>
+        </div>
+      </div>
+      <div class="doc-classification">
+        <div class="sample-badge">Sample Brief &mdash; Preview of Subscriber Experience</div><br>
+        <div class="classification-badge">Subscriber Use Only</div>
+        <div class="doc-meta">TLP: AMBER &middot; Not for Public Release</div>
+        <div class="doc-meta" style="margin-top:2px;">Distribution: Energy &amp; Utilities Sector Subscribers</div>
+      </div>
+    </div>
+    <div class="doc-title-row">
+      <div>
+        <div class="doc-title">Energy &amp; Utilities Sector Intelligence Brief</div>
+        <div class="doc-subtitle">Correlated &middot; Sector-Specific &middot; Plain Language</div>
+      </div>
+      <div class="doc-date">
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-align:right;">Week of March 30, 2026</div>
+        <div class="doc-meta" style="text-align:right;margin-top:2px;">Sources: CISA &middot; NSA &middot; FBI &middot; Dragos &middot; DOE &middot; NERC &middot; FARA &middot; OSINT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="threat-level-bar">
+    <div class="tl-dot"></div>
+    <div class="tl-label">Sector Threat Level</div>
+    <div class="tl-value">Critical</div>
+    <div class="tl-summary">Volt Typhoon remains embedded inside U.S. utility control loops &mdash; confirmed inside the operational systems that manage energy grid processes. Iranian actors pre-positioned inside U.S. energy networks before Operation Epic Fury began. Pro-Russian hacktivists targeting ICS/SCADA at oil and gas facilities. ICS vulnerability disclosures nearly doubled in 2025. Three new OT-focused threat groups identified.</div>
+  </div>
+
+  <!-- KEY STATS -->
+  <div class="stat-highlight">
+    <div class="stat-box">
+      <div class="stat-box-number" style="color:#8b3c32;">300+</div>
+      <div class="stat-box-label">days Volt Typhoon dwelled inside a U.S. utility undetected</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-number" style="color:#a07632;">2,451</div>
+      <div class="stat-box-label">ICS vulnerabilities disclosed in 2025 &mdash; nearly double 2024</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-number" style="color:#8b3c32;">26</div>
+      <div class="stat-box-label">OT-focused threat groups worldwide &mdash; 11 active in 2025</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-number" style="color:#a07632;">136</div>
+      <div class="stat-box-label">CVEs in CISA&rsquo;s Iranian threat actor catalog (CVIE)</div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Executive Summary</span>
+      <span class="section-title-text">What You Need To Know This Week</span>
+    </div>
+    <div class="exec-box">
+      <div class="exec-label">For Decision Makers &mdash; Plain Language</div>
+      <div class="exec-body">
+        <p>The U.S. energy grid is under sustained, multi-nation-state cyber siege. Chinese state-sponsored actor Volt Typhoon (tracked as Voltzite by Dragos) is not merely accessing utility networks &mdash; it is inside the control loops that manage industrial processes. Dragos CEO Robert Lee confirmed in February 2026 that Voltzite was &ldquo;inside the control loop&rdquo; of utility systems, positioning for future disruption rather than immediate attack. The Dragos case study of Littleton Electric Light and Water Departments revealed Volt Typhoon maintained access for over 300 days, exfiltrating OT operating procedures and spatial layout data of energy grid operations &mdash; information specifically useful for planning physical disruption. The Air Force has publicly warned that this access could enable China to wage &ldquo;total war&rdquo; by targeting base utilities.</p>
+        <p>Iranian-linked actors had already established footholds inside U.S. energy company networks weeks before the February 28 Operation Epic Fury strikes began. Iranian-aligned groups have claimed compromises of industrial control systems in allied nations. CISA&rsquo;s Cyber Vulnerability Insights Estimate identifies 136 CVEs that Iranian actors have targeted or exploited &mdash; many affecting systems deployed in energy environments. Pro-Russian hacktivist groups have aligned with Iranian actors, creating coordinated multi-nation-state campaigns targeting energy infrastructure simultaneously.</p>
+        <p>The vulnerability landscape is expanding rapidly. ICS vulnerability disclosures nearly doubled from 2024 to 2025 &mdash; 2,451 vulnerabilities across 152 vendors. Siemens alone accounted for 1,175 of those. Hacktivists are increasingly targeting exposed HMI and SCADA systems at scale. A survey of over 100 energy facilities revealed widespread OT cybersecurity gaps including unpatched devices, insecure external connections, and weak network segmentation.</p>
+        <p>The bottom line: adversaries are already inside. The question is not whether your utility has been targeted &mdash; it is whether you have the visibility to know if they are already there. Immediate priority actions are listed under each threat item below.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CYBER THREATS 80% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-cyber">Cyber Threats</span>
+      <span class="section-pct">80%</span>
+      <span class="section-title-text">Active Campaigns Targeting Energy &amp; Utilities</span>
+      <span class="section-source">CISA &middot; NSA &middot; FBI &middot; Dragos &middot; DOE &middot; NERC</span>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Volt Typhoon &mdash; Inside the Control Loop of U.S. Utilities</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Dragos 2026 Annual Report &middot; CISA AA24-038A &middot; SecurityWeek &middot; Dark Reading &middot; The Register</div>
+      <div class="threat-body">Volt Typhoon (PRC state-sponsored, tracked as Voltzite by Dragos) represents the most significant cyber threat to U.S. energy infrastructure. Dragos confirmed in February 2026 that Voltzite is now &ldquo;inside the control loop&rdquo; &mdash; the operational systems that directly manage industrial processes at U.S. utilities. This is not reconnaissance. This is pre-positioned capability for disruption. The Dragos case study of LELWD (Littleton Electric Light and Water Departments) revealed the group maintained access for over 300 days, exfiltrating OT operating procedures and spatial layout data of energy grid operations &mdash; information specifically useful for planning where and how to cause physical disruption. Volt Typhoon has also compromised a large U.S. city&rsquo;s emergency services GIS network and conducted extensive reconnaissance of a telecommunications provider&rsquo;s external gateways. The group uses living-off-the-land techniques (wmic, netsh, PowerShell), SOHO router compromise for C2, and credential harvesting via NTDS.dit extraction. The KV Botnet has been rebuilt following FBI disruption. Dragos tracks 26 OT-focused threat groups worldwide &mdash; 11 were active in 2025, with three new groups identified. Voltzite is the most dangerous.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Hunt for LOLBin abuse in OT-adjacent networks &mdash; wmic, netsh, PowerShell execution in environments where these should not be running. Review all SOHO and edge device logs for anomalous outbound connections. Audit Active Directory for NTDS.dit access. Implement CISA CPG 2.0 OT-specific controls. Deploy OT-specific threat detection if not already in place. Monitor for SMB traversal and RDP lateral movement within OT segments. The best way to identify Volt Typhoon is behavioral monitoring &mdash; they blend in with trusted traffic.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Iranian Pre-Positioning &mdash; Footholds Established Before Epic Fury</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: CISA CVIE March 2026 &middot; Baker Botts Analysis &middot; Dragos 2026 &middot; Qualys &middot; FBI</div>
+      <div class="threat-body">Iranian state-affiliated hackers had established footholds inside U.S. energy company networks weeks before the February 28 Operation Epic Fury strikes began. CISA&rsquo;s Cyber Vulnerability Insights Estimate identifies 136 CVEs that Iranian government-sponsored actors have targeted or exploited &mdash; many affecting systems deployed in energy and utility environments. Dragos identified Pyroxene (IRGC-linked, overlapping with Imperial Kitten/APT35) conducting supply chain attacks targeting critical infrastructure sectors and expanding from the Middle East into North America. Iranian-aligned groups have claimed compromises of industrial control systems in Israel. Pro-Russian hacktivist groups have aligned with Iranian actors, pooling resources for coordinated campaigns against energy infrastructure. AI-assisted reconnaissance tools have lowered the technical barriers to targeting ICS, and Iran&rsquo;s dispersed hacker network &mdash; including groups like Handala &mdash; operates autonomously even as Iran&rsquo;s own command structure is disrupted.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Audit all internet-facing systems against CISA&rsquo;s CVIE catalog &mdash; priority patch any Fortinet, Ivanti, Cisco, or Palo Alto edge devices. Review ICS/SCADA systems for default credentials and internet exposure. Enable MFA on all remote access. Report anomalous authentication attempts to ic3.gov. Assume pre-positioning may already exist in your environment and hunt accordingly.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">ICS/SCADA Vulnerability Surge &mdash; 2,451 Disclosures in 2025</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Cyble Annual Threat Landscape Report 2025 &middot; CISA ICS Advisories &middot; Infosecurity Magazine</div>
+      <div class="threat-body">ICS vulnerability disclosures nearly doubled from 2024 to 2025 &mdash; 2,451 vulnerabilities across 152 vendors. Siemens was the most affected vendor with 1,175 reported vulnerabilities. The third quarter of 2025 alone accounted for 45% of the year&rsquo;s disclosures. Hacktivists and cybercriminals are increasingly targeting exposed HMI and SCADA systems, with groups like Z-Pentest conducting repeated intrusions against a wide range of industrial technologies. A survey of over 100 energy facilities revealed widespread OT cybersecurity gaps: unpatched devices, insecure external connections, VLAN misconfigurations, time synchronization errors, and weak network segmentation. CISA CPG 2.0, released December 2025, now addresses IT and OT holistically with new zero-trust requirements. Energy systems with 20-30 year physical asset lifespans cannot be patched or rebooted like IT systems &mdash; compensating controls are essential.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Inventory all ICS/OT systems against current CISA ICS advisories. Prioritize Siemens, Schneider Electric, and Rockwell systems for patching or compensating controls. Audit HMI and SCADA exposure &mdash; ensure nothing is internet-facing without proper segmentation. Deploy network-level intrusion detection in OT environments where endpoint agents cannot be installed. Review CPG 2.0 zero-trust goals for OT applicability. Document compensating controls for assets that cannot be patched.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Hacktivist Targeting of Oil, Gas, and Utility ICS/SCADA</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: CISA/FBI/EPA/DOE Alert &middot; SecurityWeek &middot; Cyble &middot; SC Media</div>
+      <div class="threat-body">CISA warned that unsophisticated cyber actors are increasingly targeting ICS/SCADA systems at oil and natural gas organizations. These are primarily hacktivist groups &mdash; or actors claiming hacktivist motivations &mdash; targeting SCADA and other ICS left exposed to the internet with default passwords or no authentication. While their claims are often exaggerated, industrial cybersecurity experts warn these attacks can have significant real-world impact. The Cyble report documented Z-Pentest as the most active hacktivist group targeting ICS in 2025, conducting repeated intrusions against a wide range of industrial technologies. Hacktivist groups heavily targeted energy and utilities organizations alongside transportation. The convergence of politically motivated hacktivists with nation-state capabilities &mdash; particularly the Russian-Iranian alignment &mdash; means even &ldquo;unsophisticated&rdquo; actors may have access to sophisticated tools and intelligence.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Ensure no ICS/SCADA systems are internet-facing without proper segmentation and authentication. Eliminate all default passwords on OT devices. Audit remote access to OT environments &mdash; restrict to known IPs with MFA. Monitor for hacktivist reconnaissance activity against your external infrastructure. Review CISA/FBI/EPA/DOE joint guidance on protecting OT in oil and gas environments.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Critical Vulnerabilities &mdash; F5 BIG-IP, Citrix NetScaler, Cisco Firewalls</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: CISA KEV Catalog &middot; BleepingComputer &middot; F5 Advisory &middot; Help Net Security &middot; March 2026</div>
+      <div class="threat-body"><strong>F5 BIG-IP APM (CVE-2025-53521):</strong> Reclassified to critical RCE on March 30 &mdash; active exploitation confirmed with webshell deployment. CVSS v4: 9.3. Widely used in enterprise and utility environments. <strong>Citrix NetScaler ADC (CVE-2026-3055):</strong> Critical flaw (CVSS 9.3) under active reconnaissance. Appliances configured as SAML Identity Providers are vulnerable. <strong>Cisco Firewall (CVE-2026-20131):</strong> Interlock ransomware exploited this as a zero-day for 36 days before a patch existed. Energy organizations using Cisco firewall infrastructure are at risk. <strong>Ivanti EPM (CVE-2026-1603):</strong> Authentication bypass allowing remote unauthenticated credential data leakage. Added to CISA KEV catalog. Any of these vulnerabilities in your environment represents an immediate pathway for adversary access.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Patch F5 BIG-IP APM immediately. Audit Citrix NetScaler for SAML IDP configuration exposure. Patch Cisco firewalls against CVE-2026-20131. Verify Ivanti EPM installations are updated. Cross-reference all internet-facing assets against the CISA KEV catalog weekly.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PHYSICAL 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-physical">Physical &amp; Proximity</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Infrastructure Proximity &amp; Physical Pre-Positioning</span>
+      <span class="section-source">FARA Filings &middot; OSINT &middot; FBI Counterintelligence &middot; Congressional Reports</span>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Foreign Land Purchases Near Critical Energy Infrastructure</div>
+        <span class="threat-badge badge-high">Elevated</span>
+      </div>
+      <div class="threat-sources">Sources: FARA Registration Database &middot; Congressional Reporting &middot; FBI Counterintelligence &middot; OSINT</div>
+      <div class="threat-body">Chinese nationals and CCP-linked entities continue purchasing farmland and property adjacent to military bases, energy infrastructure, pipelines, and water treatment facilities across the United States. This includes documented purchases in Maine, the Midwest, and other regions with critical grid infrastructure. The threat model is direct: physical proximity to a substation or grid infrastructure enables hardware implant placement, signals intelligence collection, physical security vulnerability mapping, and in worst-case scenarios, sabotage that could appear as equipment failure. This pattern is consistent with Volt Typhoon&rsquo;s cyber pre-positioning &mdash; both represent different layers of the same strategic objective: the ability to disrupt U.S. critical infrastructure during geopolitical conflict. FARA-flagged entities operating near energy facilities should be treated as a watch item in any utility&rsquo;s threat assessment.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Cross-reference any recent land sales or new business incorporations near your facilities against FARA registrations and public corporate records. Report any unusual physical surveillance, unexpected drone activity, or suspicious vendor approaches to your security officer and local FBI field office. Coordinate with local law enforcement on critical infrastructure awareness. This is a watch item &mdash; not a confirmed threat &mdash; but the pattern warrants attention.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Supply Chain &amp; Insider Recruitment Targeting Energy Sector</div>
+        <span class="threat-badge badge-high">Elevated</span>
+      </div>
+      <div class="threat-sources">Sources: Flashpoint 2026 GTIR &middot; FBI Counterintelligence &middot; Dragos 2026</div>
+      <div class="threat-body">Flashpoint documented 91,321 instances of insider recruiting activity in 2025, with extortionist groups specifically targeting employees at critical infrastructure organizations. The IRGC-linked group Pyroxene uses recruitment-themed social engineering via fake social media profiles before delivering targeted spearphishing. Energy sector employees with access to SCADA systems, grid operations data, or physical facility access represent high-value recruitment targets. The insider threat is not purely digital &mdash; it begins with physical and social access. Supply chain attacks against OT vendors have quadrupled over the past five years, with attackers targeting less-defended vendors to gain access to multiple utilities through a single compromise.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Review contractor and vendor vetting procedures for all personnel with OT or facility access. Ensure all third-party physical access is logged and badged. Brief employees &mdash; especially those with SCADA access or grid operations roles &mdash; on recruitment-themed social engineering. Establish a confidential insider threat reporting mechanism. Audit supply chain vendor security practices with specific attention to OT access.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KNOWN ACTORS 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-actor">Known Actors</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Active Threat Actor Profiles &mdash; Energy Sector</span>
+      <span class="section-source">MITRE ATT&CK &middot; Dragos &middot; CISA &middot; FBI &middot; Cyble</span>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Volt Typhoon (Voltzite)</div>
+          <div class="actor-alias">Also known as: Bronze Silhouette &middot; Vanguard Panda &middot; Insidious Taurus &middot; Dev-0391</div>
+        </div>
+        <span class="actor-sponsor" style="background:rgba(160,100,30,0.08);color:#a06420;border:1px solid rgba(160,100,30,0.25);">PRC State-Sponsored</span>
+      </div>
+      <div class="actor-body">The defining threat to U.S. energy infrastructure. Active since mid-2021. Primary mission: pre-position inside critical infrastructure for future disruption during geopolitical conflict &mdash; particularly a Taiwan scenario. Confirmed inside utility control loops as of February 2026. Dwelled inside a Massachusetts utility for over 300 days, exfiltrating OT operating procedures and energy grid spatial layout data. Has also compromised telecommunications providers, emergency services GIS networks, and military-adjacent infrastructure. Uses living-off-the-land techniques to blend with trusted traffic, making detection extremely difficult. KV Botnet rebuilt after FBI disruption. Dragos assesses Voltzite has Stage 2 ICS Cyber Kill Chain capability &mdash; meaning it can develop and test attacks on industrial control systems.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">LOLBins, SOHO Router C2, NTDS.dit, GIS Exfiltration</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Energy, Water, Telecom, Transportation</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Critical &middot; Embedded &middot; Pre-Positioned</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Pyroxene (IRGC-Linked)</div>
+          <div class="actor-alias">Overlaps with: Imperial Kitten &middot; APT35 &middot; Parisite (initial access provider)</div>
+        </div>
+        <span class="actor-sponsor">Iranian State-Sponsored</span>
+      </div>
+      <div class="actor-body">Newly identified by Dragos in 2025. Conducts supply chain attacks targeting critical infrastructure and industrial sectors, expanding from the Middle East into North America and Western Europe. Works with Parisite as an initial access broker. Uses recruitment-themed social engineering via fake social media profiles before delivering spearphishing. The IRGC has historically targeted energy infrastructure &mdash; CISA has documented Iranian techniques against U.S. water and energy systems. Elevated activity following Operation Epic Fury. Iran&rsquo;s disrupted command structure has dispersed cyber capability across autonomous groups, making the threat harder to predict and attribute.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Supply Chain, Social Engineering, Spearphishing</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Energy, Critical Infrastructure, Industrial</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active &middot; Expanding into North America</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Z-Pentest &amp; Pro-Russian Hacktivist Groups</div>
+          <div class="actor-alias">Multiple aligned groups targeting ICS/SCADA at energy and utilities</div>
+        </div>
+        <span class="actor-sponsor" style="background:rgba(80,80,80,0.08);color:#555;border:1px solid rgba(80,80,80,0.2);">Russian-Aligned Hacktivists</span>
+      </div>
+      <div class="actor-body">Z-Pentest was the most active hacktivist group targeting ICS in 2025, conducting repeated intrusions against a wide range of industrial technologies. Pro-Russian hacktivist groups have aligned with Iranian-linked actors, pooling resources and capabilities. They target SCADA and ICS systems exposed to the internet with default passwords or no authentication. While individual attacks may be unsophisticated, the volume is significant and the convergence with nation-state resources makes them increasingly dangerous. CISA, FBI, EPA, and DOE have issued joint guidance specifically addressing hacktivist targeting of oil and gas ICS/SCADA.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Internet-Exposed ICS, Default Credentials, HMI Takeover</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Energy, Oil &amp; Gas, Water, Transportation</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active &middot; High Volume &middot; Converging with Iran</div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRIORITY ACTIONS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Priority Actions</span>
+      <span class="section-title-text">This Week&rsquo;s Non-Negotiables</span>
+    </div>
+    <div style="background:#ffffff;border:1px solid var(--border);border-radius:2px;padding:20px 24px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Immediate &mdash; This Week</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Hunt for LOLBin abuse in OT-adjacent networks (wmic, netsh, PowerShell)<br>
+            2. Patch F5 BIG-IP APM and Cisco firewalls (CVE-2026-20131)<br>
+            3. Audit all internet-facing ICS/SCADA for exposure and default credentials<br>
+            4. Review systems against CISA CVIE Iranian threat catalog<br>
+            5. Audit Citrix NetScaler and Ivanti EPM configurations<br>
+            6. Verify OT network segmentation from IT and internet
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Near-Term &mdash; 30 Days</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Deploy OT-specific threat detection and behavioral monitoring<br>
+            2. Implement CISA CPG 2.0 zero-trust OT controls<br>
+            3. Conduct supply chain vendor security audit for OT access<br>
+            4. Brief employees on recruitment-themed social engineering<br>
+            5. Cross-reference nearby land sales and entities against FARA database<br>
+            6. Develop utility disruption contingency plan for Volt Typhoon scenarios
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div class="footer-li">Logical<span>Intelligence</span></div>
+    <div class="footer-meta">LogicalIntelligence.us &middot; Week of March 30, 2026 &middot; Energy &amp; Utilities Sector Brief &middot; TLP: AMBER &middot; Subscriber Use Only</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;color:rgba(0,0,0,0.25);">Correlated from public sources. Not classified. For security awareness purposes.</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;"><a href="mailto:logicalintelligence.us@gmail.com" style="color:#4a7c59;text-decoration:none;">logicalintelligence.us@gmail.com</a></div>
+  </div>
+
+</body>
+</html>
