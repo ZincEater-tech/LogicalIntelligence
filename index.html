@@ -25,8 +25,6 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Chakra Petch', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
     #dropsCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.38; }
-
-    /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 12px 48px; display: flex; justify-content: space-between; align-items: center; background: rgba(8,10,8,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .nav-logo-text { font-family: 'Rajdhani', sans-serif; font-size: 19px; font-weight: 700; color: #fff; letter-spacing: 3px; text-transform: uppercase; line-height: 1; }
@@ -34,8 +32,6 @@
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a { font-family: 'Fira Code', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--green-bright); }
-
-    /* HERO */
     .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 40px 80px; position: relative; z-index: 1; overflow: hidden; }
     .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(74,124,89,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(74,124,89,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
     .hero-content { position: relative; z-index: 1; max-width: 820px; display: flex; flex-direction: column; align-items: center; }
@@ -55,20 +51,16 @@
     .waitlist-form button:hover { background: var(--green-bright); }
     .form-note { font-family: 'Fira Code', monospace; font-size: 10px; color: rgba(223,232,220,0.28); letter-spacing: 1px; }
     .success-msg { display: none; color: var(--green-bright); font-family: 'Fira Code', monospace; font-size: 12px; letter-spacing: 1px; margin-top: 12px; }
-
-    /* SECTIONS */
     section { padding: 100px 48px; position: relative; z-index: 1; }
     .section-label { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 16px; }
     .section-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 50px); color: #fff; line-height: 1.05; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase; }
     .section-body { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 580px; }
-
     .problem { background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .problem-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .problem-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 2px; padding: 24px; }
     .stat-number { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 44px; color: var(--green-bright); margin-bottom: 6px; letter-spacing: 2px; }
     .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
-
     .how { max-width: 1100px; margin: 0 auto; }
     .how-header { margin-bottom: 56px; }
     .how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -76,14 +68,12 @@
     .step-num { font-family: 'Fira Code', monospace; font-size: 11px; color: var(--green-bright); letter-spacing: 2px; margin-bottom: 16px; }
     .step h3 { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 22px; color: #fff; margin-bottom: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
     .step p { font-size: 13px; line-height: 1.75; color: var(--muted); }
-
     .sources { background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .sources-inner { max-width: 1100px; margin: 0 auto; }
     .sources-header { margin-bottom: 40px; }
     .sources-grid { display: flex; flex-wrap: wrap; gap: 10px; }
     .source-pill { font-family: 'Fira Code', monospace; font-size: 11px; padding: 8px 18px; border-radius: 2px; background: rgba(74,124,89,0.06); border: 1px solid rgba(74,124,89,0.18); color: rgba(223,232,220,0.65); letter-spacing: 0.5px; transition: border-color 0.2s, color 0.2s; }
     .source-pill:hover { border-color: var(--green-border); color: var(--green-bright); }
-
     .sectors { max-width: 1100px; margin: 0 auto; }
     .sectors-header { margin-bottom: 48px; }
     .sectors-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -92,7 +82,6 @@
     .sector-icon { width: 40px; height: 40px; background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
     .sector-info h4 { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 16px; color: #fff; margin-bottom: 6px; letter-spacing: 1.5px; text-transform: uppercase; }
     .sector-info p { font-size: 13px; line-height: 1.7; color: var(--muted); }
-
     .philosophy { background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); }
     .philosophy-inner { max-width: 800px; margin: 0 auto; text-align: center; }
     .philosophy blockquote { font-family: 'Chakra Petch', sans-serif; font-style: italic; font-size: clamp(17px, 2.5vw, 23px); line-height: 1.7; color: rgba(223,232,220,0.85); border-left: 3px solid var(--green); padding-left: 32px; text-align: left; margin: 40px 0; }
@@ -100,26 +89,23 @@
     .phil-point { padding: 20px; border: 1px solid var(--border); border-top: 2px solid var(--green); border-radius: 2px; background: var(--card); }
     .phil-point h5 { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 8px; }
     .phil-point p { font-size: 13px; line-height: 1.65; color: var(--muted); }
-
     .founder { max-width: 1100px; margin: 0 auto; }
     .founder-card { background: var(--card); border: 1px solid var(--border); border-radius: 2px; padding: 48px; display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; }
     .founder-avatar { width: 100px; height: 100px; background: var(--green-dim); border: 2px solid var(--green-border); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 3px; color: var(--green-bright); flex-shrink: 0; }
     .founder-info h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 28px; color: #fff; margin-bottom: 6px; letter-spacing: 2px; text-transform: uppercase; }
     .founder-creds { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1.5px; color: var(--green-bright); text-transform: uppercase; margin-bottom: 16px; }
     .founder-bio { font-size: 14px; line-height: 1.8; color: var(--muted); }
-
     .cta { background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); text-align: center; }
     .cta-inner { max-width: 600px; margin: 0 auto; }
     .cta h2 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 48px); color: #fff; margin-bottom: 16px; letter-spacing: 3px; text-transform: uppercase; }
     .cta p { font-size: 15px; color: var(--muted); margin-bottom: 36px; line-height: 1.75; }
-
-    footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+    footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; flex-wrap: wrap; gap: 12px; }
     .footer-logo { display: flex; align-items: center; gap: 10px; }
     .footer-logo-text { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: rgba(223,232,220,0.35); }
     .footer-logo-text span { color: var(--green); }
     .footer-right { font-family: 'Fira Code', monospace; font-size: 10px; color: rgba(223,232,220,0.18); letter-spacing: 1px; }
-
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
     .hero-content > * { animation: fadeUp 0.7s ease both; }
     .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
     .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
@@ -128,7 +114,6 @@
     .hero-content > *:nth-child(5) { animation-delay: 0.55s; }
     .hero-content > *:nth-child(6) { animation-delay: 0.65s; }
     .hero-content > *:nth-child(7) { animation-delay: 0.75s; }
-
     @media (max-width: 768px) {
       nav { padding: 12px 24px; } .nav-links { display: none; } section { padding: 72px 24px; }
       .problem-inner { grid-template-columns: 1fr; gap: 40px; } .how-steps { grid-template-columns: 1fr; }
@@ -144,6 +129,43 @@
       .filters-site { gap: 6px; }
       .filter-btn-site { font-size: 9px; padding: 5px 10px; }
     }
+    @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .tick-item { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1px; color: rgba(223,232,220,0.55); white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; }
+    .tick-level { font-size: 9px; letter-spacing: 1.5px; padding: 2px 7px; border-radius: 2px; font-weight: 500; }
+    .tick-level.critical { background: rgba(139,60,50,0.2); color: #c44040; border: 1px solid rgba(139,60,50,0.35); }
+    .tick-level.high { background: rgba(160,118,50,0.15); color: #c8922a; border: 1px solid rgba(160,118,50,0.3); }
+    .tick-level.elevated { background: rgba(74,124,89,0.12); color: #5c9970; border: 1px solid rgba(74,124,89,0.25); }
+    .hero { padding-top: 160px !important; }
+    .map-wrap-site { background: #080a08; border-radius: 4px; padding: 20px; font-family: 'Chakra Petch', sans-serif; color: #dfe8dc; border: 1px solid rgba(255,255,255,0.07); }
+    .map-header-site { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+    .map-title-site { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
+    .map-title-site span { color: #5c9970; }
+    .map-header-right-site { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+    .map-live-site { display: flex; align-items: center; gap: 6px; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #5c9970; }
+    .live-dot-site { width: 6px; height: 6px; border-radius: 50%; background: #5c9970; animation: livePulse 2s ease-in-out infinite; }
+    .last-updated-site { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(223,232,220,0.25); }
+    .threat-status-bar-site { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 2px; padding: 8px 14px; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+    .threat-status-left-site { display: flex; align-items: center; gap: 10px; }
+    .threat-status-label-site { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(223,232,220,0.35); }
+    .threat-status-value-site { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: #c8922a; }
+    .threat-status-dot-site { width: 7px; height: 7px; border-radius: 50%; background: #c8922a; animation: livePulse 1.5s ease-in-out infinite; }
+    .threat-levels-site { display: flex; gap: 4px; align-items: center; }
+    .level-block-site { width: 28px; height: 6px; border-radius: 1px; }
+    .filters-site { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .filter-btn-site { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; border: 1px solid rgba(74,124,89,0.3); background: transparent; color: rgba(223,232,220,0.5); cursor: pointer; transition: all 0.2s; }
+    .filter-btn-site.active { background: rgba(74,124,89,0.15); border-color: #5c9970; color: #5c9970; }
+    .filter-btn-site:hover:not(.active) { border-color: rgba(74,124,89,0.5); color: rgba(223,232,220,0.8); }
+    .map-container-site { position: relative; background: #0b0e0b; border: 1px solid rgba(74,124,89,0.2); border-radius: 4px; overflow: hidden; }
+    .scanlines-site { position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(74,124,89,0.018) 3px, rgba(74,124,89,0.018) 4px); pointer-events: none; z-index: 2; }
+    .state-site { fill: #0a0f0a; stroke: #4a7c59; stroke-width: 0.5; transition: fill 0.2s; }
+    .state-site:hover { fill: #0d140d; }
+    .tooltip-site { position: absolute; background: #0f150f; border: 1px solid rgba(74,124,89,0.4); border-radius: 4px; padding: 12px 16px; font-family: 'Chakra Petch', sans-serif; font-size: 12px; color: #dfe8dc; pointer-events: none; display: none; z-index: 10; min-width: 200px; max-width: 240px; }
+    .tt-name-site { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; margin-bottom: 4px; }
+    .tt-sector-site { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #5c9970; margin-bottom: 8px; }
+    .tt-threat-site { font-size: 11px; color: rgba(223,232,220,0.7); line-height: 1.5; border-top: 1px solid rgba(74,124,89,0.2); padding-top: 8px; margin-top: 4px; }
+    .map-footer-site { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; flex-wrap: wrap; gap: 8px; }
+    @keyframes pingSite { 0%{r:6;opacity:0.7} 100%{r:16;opacity:0} }
+    .ping-ring-site { animation: pingSite 2s ease-out infinite; }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJEFLCXBV2"></script>
   <script>
@@ -152,14 +174,11 @@
     gtag('js', new Date());
     gtag('config', 'G-RJEFLCXBV2');
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 </head>
 <body>
 
 <canvas id="dropsCanvas"></canvas>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
     <svg id="nav-svg" width="32" height="32" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -185,7 +204,6 @@
   </ul>
 </nav>
 
-<!-- THREAT TICKER -->
 <div style="position:fixed;top:57px;left:0;right:0;z-index:99;background:rgba(8,10,8,0.95);border-bottom:1px solid rgba(139,60,50,0.3);padding:7px 0;overflow:hidden;">
   <div style="display:flex;align-items:center;gap:0;">
     <div style="flex-shrink:0;display:flex;align-items:center;gap:8px;padding:0 16px;border-right:1px solid rgba(139,60,50,0.3);margin-right:16px;">
@@ -213,23 +231,10 @@
   </div>
 </div>
 
-<style>
-  @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-  .tick-item { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1px; color: rgba(223,232,220,0.55); white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; }
-  .tick-level { font-size: 9px; letter-spacing: 1.5px; padding: 2px 7px; border-radius: 2px; font-weight: 500; }
-  .tick-level.critical { background: rgba(139,60,50,0.2); color: #c44040; border: 1px solid rgba(139,60,50,0.35); }
-  .tick-level.high { background: rgba(160,118,50,0.15); color: #c8922a; border: 1px solid rgba(160,118,50,0.3); }
-  .tick-level.elevated { background: rgba(74,124,89,0.12); color: #5c9970; border: 1px solid rgba(74,124,89,0.25); }
-  .hero { padding-top: 160px !important; }
-</style>
-
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-grid"></div>
   <div class="hero-content">
     <span class="hero-eyebrow">Threat Intelligence Platform</span>
-
-    <!-- Hero globe logo centerpiece -->
     <div class="hero-logo-wrap">
       <svg id="hero-svg" width="140" height="140" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
         <defs><clipPath id="hero-clip"><circle cx="40" cy="40" r="18"/></clipPath></defs>
@@ -257,7 +262,6 @@
         <circle id="hero-ring" cx="40" cy="4" r="3.2" fill="none" stroke="#af3232" stroke-width="0.9" opacity="0.4"/>
       </svg>
     </div>
-
     <h1>The threat picture is <em>clear.</em><br>Your feeds aren't.</h1>
     <div class="hero-tagline-row">
       <div class="hero-tagline-dot"></div>
@@ -265,7 +269,7 @@
       <div class="hero-tagline-dot"></div>
     </div>
     <p class="hero-sub">Logical Intelligence delivers a unified intelligence picture — 80% cyber threats, 10% physical and proximity threats, 10% known actors and behavioral patterns. Every authoritative source. One destination. Your sector. What takes a security team hours every day — correlated, translated, and delivered automatically.</p>
-    <form id="waitlist-form-1" action="https://formspree.io/f/meepaerp" method="POST" style="width:100%;max-width:480px;margin:0 auto 20px;">
+    <form id="waitlist-form-1" action="https://formspree.io/f/meepaerp" method="POST" style="width:100%;max-width:480px;margin:0 auto 20px;" id="waitlist">
       <div class="waitlist-form" style="margin-bottom:10px;">
         <input type="email" name="email" id="email-input" placeholder="your@organization.com" required>
         <button type="submit">Request Access</button>
@@ -279,7 +283,7 @@
           <option value="" disabled selected>Sector</option>
           <option value="Defense">Defense</option>
           <option value="Healthcare">Healthcare</option>
-          <option value="Energy">Energy & Utilities</option>
+          <option value="Energy">Energy &amp; Utilities</option>
           <option value="Finance">Financial Services</option>
           <option value="Other">Other</option>
         </select>
@@ -315,7 +319,6 @@
   </div>
 </section>
 
-<!-- PROBLEM -->
 <section class="problem" id="problem">
   <div class="problem-inner">
     <div>
@@ -332,7 +335,6 @@
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section id="how">
   <div class="how">
     <div class="how-header">
@@ -348,7 +350,6 @@
   </div>
 </section>
 
-<!-- SOURCES -->
 <section class="sources">
   <div class="sources-inner">
     <div class="sources-header">
@@ -361,18 +362,12 @@
   </div>
 </section>
 
-<!-- INTELLIGENCE BREAKDOWN -->
 <section style="background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div style="max-width: 1100px; margin: 0 auto;">
     <div class="section-label">Intelligence Breakdown</div>
     <h2 class="section-title">Full spectrum. Not just cyber.</h2>
     <p class="section-body" style="margin-bottom: 48px;">Most platforms stop at cyber. We don't. The threat picture is physical, behavioral, and digital — simultaneously. So is our intelligence.</p>
     <div class="breakdown-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-      <style>
-        @media (max-width: 768px) {
-          .breakdown-grid { grid-template-columns: 1fr !important; }
-  
-      </style>
       <div style="background: var(--card); border: 1px solid var(--border); border-top: 2px solid var(--green); border-radius: 2px; padding: 32px 28px;">
         <div style="font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 52px; color: var(--green-bright); letter-spacing: 2px; margin-bottom: 8px;">80%</div>
         <div style="font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 12px;">Cyber Threats</div>
@@ -380,19 +375,18 @@
       </div>
       <div style="background: var(--card); border: 1px solid rgba(139,60,50,0.25); border-top: 2px solid #8b3c32; border-radius: 2px; padding: 32px 28px;">
         <div style="font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 52px; color: #a04840; letter-spacing: 2px; margin-bottom: 8px;">10%</div>
-        <div style="font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #a04840; margin-bottom: 12px;">Physical & Proximity</div>
+        <div style="font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #a04840; margin-bottom: 12px;">Physical &amp; Proximity</div>
         <p style="font-size: 13px; line-height: 1.75; color: var(--muted);">Land purchases near critical infrastructure, known foreign national proximity to sensitive sites, FARA filing anomalies, physical surveillance indicators and pre-positioning patterns.</p>
       </div>
       <div style="background: var(--card); border: 1px solid rgba(160,118,50,0.25); border-top: 2px solid #a07632; border-radius: 2px; padding: 32px 28px;">
         <div style="font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 52px; color: #b8882e; letter-spacing: 2px; margin-bottom: 8px;">10%</div>
-        <div style="font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #b8882e; margin-bottom: 12px;">Known Actors & Patterns</div>
+        <div style="font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #b8882e; margin-bottom: 12px;">Known Actors &amp; Patterns</div>
         <p style="font-size: 13px; line-height: 1.75; color: var(--muted);">Profiles of active nation-state threat actors, historical behavioral patterns, known TTPs, attribution confidence levels, and early indicators that precede escalation.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECTORS -->
 <section id="sectors">
   <div class="sectors">
     <div class="sectors-header">
@@ -401,22 +395,20 @@
       <p class="section-body">Sector-specific filtering means your team sees threats relevant to your industry — not everything, everywhere, all at once.</p>
     </div>
     <div class="sectors-grid">
-      <div class="sector-card"><div class="sector-icon">🛡</div><div class="sector-info"><h4>Defense Contractors</h4><p>Automated weapons systems, supply chain threats, CMMC compliance gaps. The attack surface is expanding. Your intelligence should too.</p></div></div>
-      <div class="sector-card"><div class="sector-icon">⚡</div><div class="sector-info"><h4>Energy &amp; Utilities</h4><p>SCADA vulnerabilities, ICS threats, grid-targeting campaigns. Critical infrastructure is the primary target. Stay left of boom.</p></div></div>
-      <div class="sector-card"><div class="sector-icon">🏥</div><div class="sector-info"><h4>Healthcare</h4><p>Ransomware targeting hospitals, PHI exfiltration, legacy medical systems. HIPAA compliance meets real-world threat intelligence.</p></div></div>
-      <div class="sector-card"><div class="sector-icon">🏦</div><div class="sector-info"><h4>Financial Services</h4><p>Nation-state financial targeting, BEC campaigns, regulatory exposure. Where money moves, adversaries follow.</p></div></div>
+      <div class="sector-card"><div class="sector-icon">&#128737;</div><div class="sector-info"><h4>Defense Contractors</h4><p>Automated weapons systems, supply chain threats, CMMC compliance gaps. The attack surface is expanding. Your intelligence should too.</p></div></div>
+      <div class="sector-card"><div class="sector-icon">&#9889;</div><div class="sector-info"><h4>Energy &amp; Utilities</h4><p>SCADA vulnerabilities, ICS threats, grid-targeting campaigns. Critical infrastructure is the primary target. Stay left of boom.</p></div></div>
+      <div class="sector-card"><div class="sector-icon">&#127973;</div><div class="sector-info"><h4>Healthcare</h4><p>Ransomware targeting hospitals, PHI exfiltration, legacy medical systems. HIPAA compliance meets real-world threat intelligence.</p></div></div>
+      <div class="sector-card"><div class="sector-icon">&#127968;</div><div class="sector-info"><h4>Financial Services</h4><p>Nation-state financial targeting, BEC campaigns, regulatory exposure. Where money moves, adversaries follow.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- LIVE THREAT MAP -->
 <section style="background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="map">
   <div style="max-width: 1100px; margin: 0 auto;">
     <div class="section-label">Live Threat Map</div>
     <h2 class="section-title">Every subscriber. One map. Shared awareness.</h2>
     <p class="section-body" style="margin-bottom: 16px;">Each dot is a subscribing organization. Click it and see exactly what threats are active in their region, sector, and proximity. Filter by industry. Watch the picture emerge.</p>
     <p class="section-body" style="margin-bottom: 40px; color: rgba(223,232,220,0.4);">This is what coordinated resilience looks like. A defense contractor in Columbus can see that Anduril in Austin is watching the same threat. A bank in New York sees other financial institutions on the same platform. Shared awareness changes behavior. That's not just a product feature — that's a culture shift.</p>
-
     <div class="map-wrap-site">
       <div class="map-header-site">
         <div class="map-title-site">Logical<span>Intelligence</span> — Live Threat Map</div>
@@ -425,7 +417,6 @@
           <div class="last-updated-site" id="last-updated-site">Last updated: just now</div>
         </div>
       </div>
-
       <div class="threat-status-bar-site">
         <div class="threat-status-left-site">
           <div class="threat-status-dot-site"></div>
@@ -440,7 +431,6 @@
           <div class="level-block-site" style="background:rgba(139,60,50,0.15);border:1px solid rgba(139,60,50,0.2);"></div>
         </div>
       </div>
-
       <div class="filters-site">
         <button class="filter-btn-site active" onclick="setFilterSite('all',this)">All</button>
         <button class="filter-btn-site" onclick="setFilterSite('defense',this)">Defense</button>
@@ -448,7 +438,6 @@
         <button class="filter-btn-site" onclick="setFilterSite('healthcare',this)">Healthcare</button>
         <button class="filter-btn-site" onclick="setFilterSite('finance',this)">Finance</button>
       </div>
-
       <div class="map-container-site" id="map-container-site">
         <div class="scanlines-site"></div>
         <div class="tooltip-site" id="tooltip-site">
@@ -462,7 +451,6 @@
         </div>
         <svg id="map-svg-site" viewBox="0 0 960 600" style="display:block;width:100%;height:auto;"></svg>
       </div>
-
       <div class="map-footer-site">
         <div style="display:flex;align-items:center;gap:16px;">
           <div style="display:flex;align-items:center;gap:6px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.4);"><div style="width:8px;height:8px;border-radius:50%;background:#8b3c32;"></div>Active Subscriber</div>
@@ -474,7 +462,6 @@
   </div>
 </section>
 
-<!-- PHILOSOPHY -->
 <section class="philosophy">
   <div class="philosophy-inner">
     <div class="section-label">Philosophy</div>
@@ -489,7 +476,6 @@
   </div>
 </section>
 
-<!-- FOUNDER -->
 <section id="founder">
   <div class="founder">
     <div class="section-label" style="margin-bottom:32px;">Founder</div>
@@ -504,7 +490,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <div class="cta-inner">
     <div class="section-label">Early Access</div>
@@ -524,7 +509,7 @@
           <option value="" disabled selected>Sector</option>
           <option value="Defense">Defense</option>
           <option value="Healthcare">Healthcare</option>
-          <option value="Energy">Energy & Utilities</option>
+          <option value="Energy">Energy &amp; Utilities</option>
           <option value="Finance">Financial Services</option>
           <option value="Other">Other</option>
         </select>
@@ -543,7 +528,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">
     <svg width="24" height="24" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -561,242 +545,111 @@
     <div class="footer-logo-text">Logical<span>Intelligence</span></div>
   </div>
   <div class="footer-right">LOGICALINTELLIGENCE.US · CENTRALIZED CLARITY OVER CRACKED CONFUSION</div>
-  <div style="font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1px;color:rgba(74,124,89,0.5);"><a href="/cdn-cgi/l/email-protection#4f232028262c2e2326213b2a232326282a212c2a613a3c0f28222e2623612c2022" style="color:rgba(74,124,89,0.5);text-decoration:none;"><span class="__cf_email__" data-cfemail="234f4c444a40424f4a4d57464f4f4a44464d40460d565063444e424a4f0d404c4e">[email&#160;protected]</span></a></div>
+  <div style="font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1px;color:rgba(74,124,89,0.5);"><a href="mailto:logicalintelligence.us@gmail.com" style="color:rgba(74,124,89,0.5);text-decoration:none;">logicalintelligence.us@gmail.com</a></div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // HEX PATH ANIMATION
-  const hexVerts = [
-    {x:40,y:4},{x:72,y:22},{x:72,y:58},
-    {x:40,y:76},{x:8,y:58},{x:8,y:22}
-  ];
+<script>
+  const hexVerts = [{x:40,y:4},{x:72,y:22},{x:72,y:58},{x:40,y:76},{x:8,y:58},{x:8,y:22}];
   function edgeLen(a,b){return Math.sqrt((b.x-a.x)**2+(b.y-a.y)**2);}
   const edges=[];let totalLen=0;
-  for(let i=0;i<6;i++){
-    const a=hexVerts[i],b=hexVerts[(i+1)%6],len=edgeLen(a,b);
-    edges.push({a,b,len});totalLen+=len;
-  }
-  function hexPoint(t){
-    const d=((t%1)+1)%1*totalLen;let acc=0;
-    for(const e of edges){
-      if(acc+e.len>=d){const f=(d-acc)/e.len;return{x:e.a.x+f*(e.b.x-e.a.x),y:e.a.y+f*(e.b.y-e.a.y)};}
-      acc+=e.len;
-    }
-    return hexVerts[0];
-  }
-
-  const dotSets=[
-    {dot:document.getElementById('hero-dot'), ring:document.getElementById('hero-ring')},
-    {dot:document.getElementById('nav-dot'),  ring:null},
-    {dot:document.getElementById('footer-dot'), ring:null},
-  ];
-
+  for(let i=0;i<6;i++){const a=hexVerts[i],b=hexVerts[(i+1)%6],len=edgeLen(a,b);edges.push({a,b,len});totalLen+=len;}
+  function hexPoint(t){const d=((t%1)+1)%1*totalLen;let acc=0;for(const e of edges){if(acc+e.len>=d){const f=(d-acc)/e.len;return{x:e.a.x+f*(e.b.x-e.a.x),y:e.a.y+f*(e.b.y-e.a.y)};}acc+=e.len;}return hexVerts[0];}
+  const dotSets=[{dot:document.getElementById('hero-dot'),ring:document.getElementById('hero-ring')},{dot:document.getElementById('nav-dot'),ring:null},{dot:document.getElementById('footer-dot'),ring:null}];
   const PERIOD=14000;
-
-  function animateDots(ts){
-    const t=(ts%PERIOD)/PERIOD;
-    const pos=hexPoint(t);
-    dotSets.forEach(({dot,ring})=>{
-      if(dot){dot.setAttribute('cx',pos.x);dot.setAttribute('cy',pos.y);}
-      if(ring){
-        ring.setAttribute('cx',pos.x);ring.setAttribute('cy',pos.y);
-        const pulse=3.2+Math.sin(ts/500)*2.8;
-        ring.setAttribute('r',Math.max(3.2,pulse));
-        ring.setAttribute('opacity',0.1+0.3*(1-(Math.max(0,pulse-3.2))/2.8));
-
-    });
-    requestAnimationFrame(animateDots);
-  }
+  function animateDots(ts){const t=(ts%PERIOD)/PERIOD;const pos=hexPoint(t);dotSets.forEach(({dot,ring})=>{if(dot){dot.setAttribute('cx',pos.x);dot.setAttribute('cy',pos.y);}if(ring){ring.setAttribute('cx',pos.x);ring.setAttribute('cy',pos.y);const pulse=3.2+Math.sin(ts/500)*2.8;ring.setAttribute('r',Math.max(3.2,pulse));ring.setAttribute('opacity',0.1+0.3*(1-(Math.max(0,pulse-3.2))/2.8));}});requestAnimationFrame(animateDots);}
   requestAnimationFrame(animateDots);
 
-  // FALLING RED DROPLETS
   const canvas=document.getElementById('dropsCanvas');
   const ctx=canvas.getContext('2d');
   function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
   resize();window.addEventListener('resize',resize);
   const drops=[];
-  for(let i=0;i<42;i++){
-    drops.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,r:Math.random()*2.4+1.0,speed:Math.random()*0.65+0.2,opacity:Math.random()*0.55+0.18,tail:Math.random()*14+7});
-  }
-  function drawDrop(d){
-    const grad=ctx.createLinearGradient(d.x,d.y-d.tail,d.x,d.y+d.r*2);
-    grad.addColorStop(0,'rgba(175,50,50,0)');
-    grad.addColorStop(1,`rgba(175,50,50,${d.opacity*0.55})`);
-    ctx.beginPath();ctx.moveTo(d.x-d.r*0.35,d.y-d.tail);ctx.lineTo(d.x+d.r*0.35,d.y-d.tail);ctx.lineTo(d.x+d.r*0.5,d.y);ctx.lineTo(d.x-d.r*0.5,d.y);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
-    ctx.beginPath();ctx.arc(d.x,d.y+d.r,d.r,0,Math.PI*2);ctx.fillStyle=`rgba(175,50,50,${d.opacity})`;ctx.fill();
-  }
-  function animateDrops(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    drops.forEach(d=>{drawDrop(d);d.y+=d.speed;if(d.y>canvas.height+20){d.y=-20;d.x=Math.random()*canvas.width;d.opacity=Math.random()*0.55+0.18;}});
-    requestAnimationFrame(animateDrops);
-  }
+  for(let i=0;i<42;i++){drops.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,r:Math.random()*2.4+1.0,speed:Math.random()*0.65+0.2,opacity:Math.random()*0.55+0.18,tail:Math.random()*14+7});}
+  function drawDrop(d){const grad=ctx.createLinearGradient(d.x,d.y-d.tail,d.x,d.y+d.r*2);grad.addColorStop(0,'rgba(175,50,50,0)');grad.addColorStop(1,`rgba(175,50,50,${d.opacity*0.55})`);ctx.beginPath();ctx.moveTo(d.x-d.r*0.35,d.y-d.tail);ctx.lineTo(d.x+d.r*0.35,d.y-d.tail);ctx.lineTo(d.x+d.r*0.5,d.y);ctx.lineTo(d.x-d.r*0.5,d.y);ctx.closePath();ctx.fillStyle=grad;ctx.fill();ctx.beginPath();ctx.arc(d.x,d.y+d.r,d.r,0,Math.PI*2);ctx.fillStyle=`rgba(175,50,50,${d.opacity})`;ctx.fill();}
+  function animateDrops(){ctx.clearRect(0,0,canvas.width,canvas.height);drops.forEach(d=>{drawDrop(d);d.y+=d.speed;if(d.y>canvas.height+20){d.y=-20;d.x=Math.random()*canvas.width;d.opacity=Math.random()*0.55+0.18;}});requestAnimationFrame(animateDrops);}
   animateDrops();
 
-  // FORMS
-  function submitWaitlist(){
-    const e=document.getElementById('email-input');
-    if(!e.value||!e.value.includes('@')){e.focus();return;}
-    document.querySelectorAll('.waitlist-form')[0].style.display='none';
-    document.querySelectorAll('.form-note')[0].style.display='none';
-    document.getElementById('success-msg').style.display='block';
-  }
-  function submitWaitlist2(){
-    const e=document.getElementById('email-input-2');
-    if(!e.value||!e.value.includes('@')){e.focus();return;}
-    document.querySelectorAll('.waitlist-form')[1].style.display='none';
-    document.querySelectorAll('.form-note')[1].style.display='none';
-    document.getElementById('success-msg-2').style.display='block';
-  }
+  function toggleBriefMenu(){const menu=document.getElementById('brief-menu');menu.style.display=menu.style.display==='none'?'block':'none';}
+  document.addEventListener('click',function(e){const wrap=document.getElementById('brief-dropdown-wrap');if(wrap&&!wrap.contains(e.target)){document.getElementById('brief-menu').style.display='none';}});
 
-  function toggleBriefMenu() {
-    const menu = document.getElementById('brief-menu');
-    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-  }
-  document.addEventListener('click', function(e) {
-    const wrap = document.getElementById('brief-dropdown-wrap');
-    if (wrap && !wrap.contains(e.target)) {
-      document.getElementById('brief-menu').style.display = 'none';
-    }
-  });
-
-  // SMOOTH SCROLL
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      e.preventDefault();
-      const t=document.querySelector(a.getAttribute('href'));
-      if(t)t.scrollIntoView({behavior:'smooth'});
-    });
-  });
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
 </script>
-  <style>
-    .map-wrap-site { background: #080a08; border-radius: 4px; padding: 20px; font-family: 'Chakra Petch', sans-serif; color: #dfe8dc; border: 1px solid rgba(255,255,255,0.07); }
-    .map-header-site { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
-    .map-title-site { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
-    .map-title-site span { color: #5c9970; }
-    .map-header-right-site { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-    .map-live-site { display: flex; align-items: center; gap: 6px; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #5c9970; }
-    .live-dot-site { width: 6px; height: 6px; border-radius: 50%; background: #5c9970; animation: livePulse 2s ease-in-out infinite; }
-    .last-updated-site { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(223,232,220,0.25); }
-    .threat-status-bar-site { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 2px; padding: 8px 14px; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
-    .threat-status-left-site { display: flex; align-items: center; gap: 10px; }
-    .threat-status-label-site { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(223,232,220,0.35); }
-    .threat-status-value-site { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: #c8922a; }
-    .threat-status-dot-site { width: 7px; height: 7px; border-radius: 50%; background: #c8922a; animation: livePulse 1.5s ease-in-out infinite; }
-    .threat-levels-site { display: flex; gap: 4px; align-items: center; }
-    .level-block-site { width: 28px; height: 6px; border-radius: 1px; }
-    .filters-site { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-    .filter-btn-site { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; border: 1px solid rgba(74,124,89,0.3); background: transparent; color: rgba(223,232,220,0.5); cursor: pointer; transition: all 0.2s; }
-    .filter-btn-site.active { background: rgba(74,124,89,0.15); border-color: #5c9970; color: #5c9970; }
-    .filter-btn-site:hover:not(.active) { border-color: rgba(74,124,89,0.5); color: rgba(223,232,220,0.8); }
-    .map-container-site { position: relative; background: #0b0e0b; border: 1px solid rgba(74,124,89,0.2); border-radius: 4px; overflow: hidden; }
-    .scanlines-site { position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(74,124,89,0.018) 3px, rgba(74,124,89,0.018) 4px); pointer-events: none; z-index: 2; }
-    .state-site { fill: #0a0f0a; stroke: #4a7c59; stroke-width: 0.5; transition: fill 0.2s; }
-    .state-site:hover { fill: #0d140d; }
-    .tooltip-site { position: absolute; background: #0f150f; border: 1px solid rgba(74,124,89,0.4); border-radius: 4px; padding: 12px 16px; font-family: 'Chakra Petch', sans-serif; font-size: 12px; color: #dfe8dc; pointer-events: none; display: none; z-index: 10; min-width: 200px; max-width: 240px; }
-    .tt-name-site { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; margin-bottom: 4px; }
-    .tt-sector-site { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #5c9970; margin-bottom: 8px; }
-    .tt-threat-site { font-size: 11px; color: rgba(223,232,220,0.7); line-height: 1.5; border-top: 1px solid rgba(74,124,89,0.2); padding-top: 8px; margin-top: 4px; }
-    .map-footer-site { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; flex-wrap: wrap; gap: 8px; }
-    @keyframes pingSite { 0%{r:6;opacity:0.7} 100%{r:16;opacity:0} }
-    .ping-ring-site { animation: pingSite 2s ease-out infinite; }
-  </style>
 
-  <script>
-    const siteOrgs = [
-      { name: 'Pacific Northwest Defense Hub', sector: 'Defense · Seattle, WA', filter: 'defense', threat: 'Active APT targeting aerospace supply chain. CISA Advisory AA24-290A cross-referenced with FBI Flash CU-000187.', level: 82, lat: 47.6, lng: -122.3 },
-      { name: 'Bay Area Financial Network', sector: 'Finance · San Francisco, CA', filter: 'finance', threat: 'Iranian-linked actors targeting fintech APIs. Physical: CCP-affiliated entity acquired property 2.1mi from primary data center.', level: 68, lat: 37.7, lng: -122.4 },
-      { name: 'Texas Energy Grid Corridor', sector: 'Energy · Dallas, TX', filter: 'energy', threat: 'Elevated SCADA threat. NSA advisory on ICS targeting active. Volt Typhoon pre-positioning indicators confirmed in region.', level: 91, lat: 32.7, lng: -97.3 },
-      { name: 'Great Lakes Health System', sector: 'Healthcare · Chicago, IL', filter: 'healthcare', threat: 'Ransomware campaign targeting Midwest hospital networks. Joint FBI/CISA advisory issued 72hrs ago. Patch CVE-2024-3400 immediately.', level: 74, lat: 41.8, lng: -87.6 },
-      { name: 'DC Metro Defense Cluster', sector: 'Defense · Washington, DC', filter: 'defense', threat: 'Spear phishing targeting cleared contractors. Physical: FARA-flagged entities operating near DHS HQ. Threat level: critical.', level: 95, lat: 38.9, lng: -77.0 },
-      { name: 'Arsenal-1 Defense Corridor', sector: 'Defense · Columbus, OH', filter: 'defense', threat: 'Anduril Arsenal-1 region. Chinese nationals with proximity to Wright-Patterson AFB flagged in OSINT sweep. Elevated monitoring active.', level: 78, lat: 39.9, lng: -82.9 },
-      { name: 'New York Financial District', sector: 'Finance · New York, NY', filter: 'finance', threat: 'Nation-state targeting of SWIFT infrastructure. Dark web chatter references major NY institution. Correlated across 4 sources this week.', level: 86, lat: 40.7, lng: -74.0 },
-    ];
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+  const siteOrgs = [
+    { name: 'Pacific Northwest Defense Hub', sector: 'Defense · Seattle, WA', filter: 'defense', threat: 'Active APT targeting aerospace supply chain. CISA Advisory AA24-290A cross-referenced with FBI Flash CU-000187.', level: 82, lat: 47.6, lng: -122.3 },
+    { name: 'Bay Area Financial Network', sector: 'Finance · San Francisco, CA', filter: 'finance', threat: 'Iranian-linked actors targeting fintech APIs. Physical: CCP-affiliated entity acquired property 2.1mi from primary data center.', level: 68, lat: 37.7, lng: -122.4 },
+    { name: 'Texas Energy Grid Corridor', sector: 'Energy · Dallas, TX', filter: 'energy', threat: 'Elevated SCADA threat. NSA advisory on ICS targeting active. Volt Typhoon pre-positioning indicators confirmed in region.', level: 91, lat: 32.7, lng: -97.3 },
+    { name: 'Great Lakes Health System', sector: 'Healthcare · Chicago, IL', filter: 'healthcare', threat: 'Ransomware campaign targeting Midwest hospital networks. Joint FBI/CISA advisory issued 72hrs ago. Patch CVE-2024-3400 immediately.', level: 74, lat: 41.8, lng: -87.6 },
+    { name: 'DC Metro Defense Cluster', sector: 'Defense · Washington, DC', filter: 'defense', threat: 'Spear phishing targeting cleared contractors. Physical: FARA-flagged entities operating near DHS HQ. Threat level: critical.', level: 95, lat: 38.9, lng: -77.0 },
+    { name: 'Arsenal-1 Defense Corridor', sector: 'Defense · Columbus, OH', filter: 'defense', threat: 'Anduril Arsenal-1 region. Chinese nationals with proximity to Wright-Patterson AFB flagged in OSINT sweep. Elevated monitoring active.', level: 78, lat: 39.9, lng: -82.9 },
+    { name: 'New York Financial District', sector: 'Finance · New York, NY', filter: 'finance', threat: 'Nation-state targeting of SWIFT infrastructure. Dark web chatter references major NY institution. Correlated across 4 sources this week.', level: 86, lat: 40.7, lng: -74.0 },
+  ];
 
-    let siteSeconds = 0;
-    setInterval(function() {
-      siteSeconds++;
-      const el = document.getElementById('last-updated-site');
-      if (!el) return;
-      if (siteSeconds < 60) el.textContent = 'Last updated: ' + siteSeconds + 's ago';
-      else el.textContent = 'Last updated: ' + Math.floor(siteSeconds/60) + ' min ago';
-    }, 1000);
+  let siteSeconds = 0;
+  setInterval(function() {
+    siteSeconds++;
+    const el = document.getElementById('last-updated-site');
+    if (!el) return;
+    if (siteSeconds < 60) el.textContent = 'Last updated: ' + siteSeconds + 's ago';
+    else el.textContent = 'Last updated: ' + Math.floor(siteSeconds/60) + ' min ago';
+  }, 1000);
 
-    async function initSiteMap() {
-      try {
-      const svg = d3.select('#map-svg-site');
-      const width = 960, height = 600;
-      const projection = d3.geoAlbersUsa().scale(1100).translate([width/2, height/2]);
-      const path = d3.geoPath().projection(projection);
-      const us = await d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
-      const states = topojson.feature(us, us.objects.states);
+  async function initSiteMap() {
+    const svg = d3.select('#map-svg-site');
+    const width = 960, height = 600;
+    const projection = d3.geoAlbersUsa().scale(1100).translate([width/2, height/2]);
+    const path = d3.geoPath().projection(projection);
+    const us = await d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
+    const states = topojson.feature(us, us.objects.states);
+    svg.selectAll('.state-site').data(states.features).enter().append('path').attr('class', 'state-site').attr('d', path);
+    const container = document.getElementById('map-container-site');
+    const tooltip = document.getElementById('tooltip-site');
+    const delays = [0, 0.5, 1.0, 0.3, 0.8, 1.3, 0.6];
+    siteOrgs.forEach((org, i) => {
+      const coords = projection([org.lng, org.lat]);
+      if (!coords) return;
+      const [x, y] = coords;
+      svg.append('circle').attr('class', 'ping-ring-site').attr('cx', x).attr('cy', y).attr('r', 6).attr('fill', 'none').attr('stroke', '#8b3c32').attr('stroke-width', 1).attr('data-filter', org.filter).style('animation-delay', delays[i] + 's');
+      svg.append('circle').attr('cx', x).attr('cy', y).attr('r', 5.5).attr('fill', '#8b3c32').attr('opacity', 0.92).attr('data-filter', org.filter).attr('class', 'threat-dot-site').style('cursor', 'pointer')
+        .on('mouseenter', function(event) {
+          document.getElementById('tt-name-site').textContent = org.name;
+          document.getElementById('tt-sector-site').textContent = org.sector;
+          document.getElementById('tt-threat-site').textContent = org.threat;
+          document.getElementById('tt-bar-site').style.width = org.level + '%';
+          const rect = container.getBoundingClientRect();
+          let tx = event.clientX - rect.left + 14;
+          let ty = event.clientY - rect.top - 10;
+          if (tx + 250 > rect.width) tx = tx - 265;
+          if (ty < 0) ty = ty + 40;
+          tooltip.style.left = tx + 'px';
+          tooltip.style.top = ty + 'px';
+          tooltip.style.display = 'block';
+        })
+        .on('mouseleave', function() { tooltip.style.display = 'none'; });
+    });
+  }
 
-      svg.selectAll('.state-site')
-        .data(states.features)
-        .enter()
-        .append('path')
-        .attr('class', 'state-site')
-        .attr('d', path);
+  initSiteMap();
 
-      const container = document.getElementById('map-container-site');
-      const tooltip = document.getElementById('tooltip-site');
-      const delays = [0, 0.5, 1.0, 0.3, 0.8, 1.3, 0.6];
-
-      siteOrgs.forEach((org, i) => {
-        const coords = projection([org.lng, org.lat]);
-        if (!coords) return;
-        const [x, y] = coords;
-
-        svg.append('circle')
-          .attr('class', 'ping-ring-site')
-          .attr('cx', x).attr('cy', y)
-          .attr('r', 6)
-          .attr('fill', 'none')
-          .attr('stroke', '#8b3c32')
-          .attr('stroke-width', 1)
-          .attr('data-filter', org.filter)
-          .style('animation-delay', delays[i] + 's');
-
-        svg.append('circle')
-          .attr('cx', x).attr('cy', y)
-          .attr('r', 5.5)
-          .attr('fill', '#8b3c32')
-          .attr('opacity', 0.92)
-          .attr('data-filter', org.filter)
-          .attr('class', 'threat-dot-site')
-          .style('cursor', 'pointer')
-          .on('mouseenter', function(event) {
-            document.getElementById('tt-name-site').textContent = org.name;
-            document.getElementById('tt-sector-site').textContent = org.sector;
-            document.getElementById('tt-threat-site').textContent = org.threat;
-            document.getElementById('tt-bar-site').style.width = org.level + '%';
-            const rect = container.getBoundingClientRect();
-            let tx = event.clientX - rect.left + 14;
-            let ty = event.clientY - rect.top - 10;
-            if (tx + 250 > rect.width) tx = tx - 265;
-            if (ty < 0) ty = ty + 40;
-            tooltip.style.left = tx + 'px';
-            tooltip.style.top = ty + 'px';
-            tooltip.style.display = 'block';
-    )
-          .on('mouseleave', function() { tooltip.style.display = 'none'; });
-);
- catch(err) {
-        console.error('Map failed to load:', err);
-        document.getElementById('map-container-site').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:300px;font-family:Fira Code,monospace;font-size:12px;letter-spacing:2px;color:#4a7c59;text-transform:uppercase;">Map loading — refresh to retry</div>';
-
-    }
-
-    initSiteMap();
-
-    function setFilterSite(filter, btn) {
-      document.querySelectorAll('.filter-btn-site').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      let count = 0;
-      document.querySelectorAll('.threat-dot-site').forEach(dot => {
-        const show = filter === 'all' || dot.getAttribute('data-filter') === filter;
-        dot.setAttribute('opacity', show ? '0.92' : '0.08');
-        if (show) count++;
-);
-      document.querySelectorAll('.ping-ring-site').forEach(ring => {
-        const show = filter === 'all' || ring.getAttribute('data-filter') === filter;
-        ring.style.op
+  function setFilterSite(filter, btn) {
+    document.querySelectorAll('.filter-btn-site').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    let count = 0;
+    document.querySelectorAll('.threat-dot-site').forEach(dot => {
+      const show = filter === 'all' || dot.getAttribute('data-filter') === filter;
+      dot.setAttribute('opacity', show ? '0.92' : '0.08');
+      if (show) count++;
+    });
+    document.querySelectorAll('.ping-ring-site').forEach(ring => {
+      const show = filter === 'all' || ring.getAttribute('data-filter') === filter;
+      ring.style.opacity = show ? '1' : '0';
+    });
+    document.getElementById('dot-count-site').textContent = count + ' organization' + (count !== 1 ? 's' : '') + ' monitored';
+    document.getElementById('tooltip-site').style.display = 'none';
+  }
+</script>
+</body>
+</html>
