@@ -371,7 +371,7 @@
       <style>
         @media (max-width: 768px) {
           .breakdown-grid { grid-template-columns: 1fr !important; }
-        }
+  
       </style>
       <div style="background: var(--card); border: 1px solid var(--border); border-top: 2px solid var(--green); border-radius: 2px; padding: 32px 28px;">
         <div style="font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 52px; color: var(--green-bright); letter-spacing: 2px; margin-bottom: 8px;">80%</div>
@@ -603,7 +603,7 @@
         const pulse=3.2+Math.sin(ts/500)*2.8;
         ring.setAttribute('r',Math.max(3.2,pulse));
         ring.setAttribute('opacity',0.1+0.3*(1-(Math.max(0,pulse-3.2))/2.8));
-      }
+
     });
     requestAnimationFrame(animateDots);
   }
@@ -727,7 +727,7 @@
       const width = 960, height = 600;
       const projection = d3.geoAlbersUsa().scale(1100).translate([width/2, height/2]);
       const path = d3.geoPath().projection(projection);
-      const us = await d3.json('./states-10m.json');
+      const us = await d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
       const states = topojson.feature(us, us.objects.states);
 
       svg.selectAll('.state-site')
@@ -777,20 +777,16 @@
             tooltip.style.left = tx + 'px';
             tooltip.style.top = ty + 'px';
             tooltip.style.display = 'block';
-          })
+    )
           .on('mouseleave', function() { tooltip.style.display = 'none'; });
-      });
-      } catch(err) {
+);
+ catch(err) {
         console.error('Map failed to load:', err);
         document.getElementById('map-container-site').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:300px;font-family:Fira Code,monospace;font-size:12px;letter-spacing:2px;color:#4a7c59;text-transform:uppercase;">Map loading — refresh to retry</div>';
-      }
+
     }
 
-    setTimeout(function() {
-      if (typeof d3 !== 'undefined' && typeof topojson !== 'undefined') {
-        initSiteMap();
-      }
-    }, 500);
+    initSiteMap();
 
     function setFilterSite(filter, btn) {
       document.querySelectorAll('.filter-btn-site').forEach(b => b.classList.remove('active'));
@@ -800,7 +796,7 @@
         const show = filter === 'all' || dot.getAttribute('data-filter') === filter;
         dot.setAttribute('opacity', show ? '0.92' : '0.08');
         if (show) count++;
-      });
+);
       document.querySelectorAll('.ping-ring-site').forEach(ring => {
         const show = filter === 'all' || ring.getAttribute('data-filter') === filter;
         ring.style.op
