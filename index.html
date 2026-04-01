@@ -200,7 +200,7 @@
     <li><a href="#problem">Problem</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#sectors">Sectors</a></li>
-    <li><a href="#waitlist">Early Access</a></li>
+    <li><a href="#waitlist">Get Coordinated</a></li>
   </ul>
 </nav>
 
@@ -234,7 +234,7 @@
 <section class="hero" id="home">
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow">Threat Intelligence Platform</span>
+    <span class="hero-eyebrow">Coordinated CTI Platform</span>
     <div class="hero-logo-wrap">
       <svg id="hero-svg" width="140" height="140" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
         <defs><clipPath id="hero-clip"><circle cx="40" cy="40" r="18"/></clipPath></defs>
@@ -262,17 +262,17 @@
         <circle id="hero-ring" cx="40" cy="4" r="3.2" fill="none" stroke="#af3232" stroke-width="0.9" opacity="0.4"/>
       </svg>
     </div>
-    <h1>The threat picture is <em>clear.</em><br>Your feeds aren't.</h1>
+    <h1>The coordination that decades of directives and agencies couldn't accomplish — <em>built into one platform.</em></h1>
     <div class="hero-tagline-row">
       <div class="hero-tagline-dot"></div>
       <div class="hero-tagline">Centralized Clarity over Cracked Confusion</div>
       <div class="hero-tagline-dot"></div>
     </div>
-    <p class="hero-sub">Logical Intelligence delivers a unified intelligence picture — 80% cyber threats, 10% physical and proximity threats, 10% known actors and behavioral patterns. Every authoritative source. One destination. Your sector. What takes a security team hours every day — correlated, translated, and delivered automatically.</p>
+    <p class="hero-sub">Every critical infrastructure organization defends alone. Same threats, same adversaries, same sector — no shared awareness. Logical Intelligence changes that. Correlated intelligence across sectors, regions, and organizations — 80% cyber threats, 10% physical and proximity indicators, 10% known actor behavioral patterns. One map. Every defender. Coordinated.</p>
     <form id="waitlist-form-1" action="https://formspree.io/f/meepaerp" method="POST" style="width:100%;max-width:480px;margin:0 auto 20px;" id="waitlist">
       <div class="waitlist-form" style="margin-bottom:10px;">
         <input type="email" name="email" id="email-input" placeholder="your@organization.com" required>
-        <button type="submit">Request Access</button>
+        <button type="submit">Get on the Map</button>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
         <input type="text" name="name" placeholder="Your name" style="padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;color:var(--text);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
@@ -327,18 +327,78 @@
   </div>
 </section>
 
+<section style="background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="map">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Live Threat Map</div>
+    <h2 class="section-title">Every subscriber. One map. Shared awareness.</h2>
+    <p class="section-body" style="margin-bottom: 16px;">Each dot is a subscribing organization. A defense contractor in Columbus can see that a peer in Austin is watching the same threat. A bank in New York sees other financial institutions on the same platform. Filter by industry. Watch the picture emerge.</p>
+    <p class="section-body" style="margin-bottom: 40px; color: rgba(223,232,220,0.4);">Shared awareness changes behavior. This is what coordinated defense actually looks like — and it's something no directive, no agency, and no existing platform has been able to build.</p>
+    <div class="map-wrap-site">
+      <div class="map-header-site">
+        <div class="map-title-site">Logical<span>Intelligence</span> — Live Threat Map</div>
+        <div class="map-header-right-site">
+          <div class="map-live-site"><div class="live-dot-site"></div> Live Feed Active</div>
+          <div class="last-updated-site" id="last-updated-site">Last updated: just now</div>
+        </div>
+      </div>
+      <div class="threat-status-bar-site">
+        <div class="threat-status-left-site">
+          <div class="threat-status-dot-site"></div>
+          <div class="threat-status-label-site">National Threat Level</div>
+          <div class="threat-status-value-site">Critical</div>
+        </div>
+        <div class="threat-levels-site">
+          <div class="level-block-site" style="background:#4a7c59;opacity:0.9;"></div>
+          <div class="level-block-site" style="background:#7a7c3a;opacity:0.9;"></div>
+          <div class="level-block-site" style="background:#c8922a;opacity:0.9;"></div>
+          <div class="level-block-site" style="background:#8b3c32;opacity:0.9;"></div>
+          <div class="level-block-site" style="background:rgba(139,60,50,0.15);border:1px solid rgba(139,60,50,0.2);"></div>
+        </div>
+      </div>
+      <div class="filters-site">
+        <button class="filter-btn-site active" onclick="setFilterSite('all',this)">All</button>
+        <button class="filter-btn-site" onclick="setFilterSite('defense',this)">Defense</button>
+        <button class="filter-btn-site" onclick="setFilterSite('energy',this)">Energy</button>
+        <button class="filter-btn-site" onclick="setFilterSite('healthcare',this)">Healthcare</button>
+        <button class="filter-btn-site" onclick="setFilterSite('finance',this)">Finance</button>
+      </div>
+      <div class="map-container-site" id="map-container-site">
+        <div class="scanlines-site"></div>
+        <div class="tooltip-site" id="tooltip-site">
+          <div class="tt-name-site" id="tt-name-site"></div>
+          <div class="tt-sector-site" id="tt-sector-site"></div>
+          <div class="tt-threat-site" id="tt-threat-site"></div>
+          <div style="display:flex;align-items:center;gap:6px;margin-top:8px;">
+            <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(223,232,220,0.4);">Threat</div>
+            <div style="flex:1;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div id="tt-bar-site" style="height:100%;border-radius:2px;background:#8b3c32;"></div></div>
+          </div>
+        </div>
+        <svg id="map-svg-site" viewBox="0 0 960 600" style="display:block;width:100%;height:auto;"></svg>
+      </div>
+      <div class="map-footer-site">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="display:flex;align-items:center;gap:6px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.4);"><div style="width:8px;height:8px;border-radius:50%;background:#8b3c32;"></div>Active Subscriber</div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.4);"><div style="width:8px;height:8px;border-radius:50%;background:rgba(139,60,50,0.3);border:1px solid #8b3c32;"></div>Elevated Threat</div>
+        </div>
+        <div id="dot-count-site" style="font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1px;color:rgba(74,124,89,0.6);">7 organizations monitored</div>
+      </div>
+      <div style="text-align:center;margin-top:12px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.25);">Demonstration — subscriber locations are illustrative</div>
+    </div>
+  </div>
+</section>
+
 <section class="problem" id="problem">
   <div class="problem-inner">
     <div>
       <div class="section-label">The Problem</div>
-      <h2 class="section-title">Fragmented intelligence is a vulnerability.</h2>
-      <p class="section-body">Security teams across critical sectors are drowning in disconnected feeds — and that's just the cyber layer. Physical proximity threats, known actor pre-positioning, and human intelligence indicators exist in completely separate silos. Nobody is correlating all three into one actionable picture. The threat is known. The posture stays reactive. Adversaries count on this.</p>
+      <h2 class="section-title">Fragmented defenders are the vulnerability.</h2>
+      <p class="section-body">The intelligence exists. CISA publishes it. The FBI publishes it. NSA, Dragos, IBM — they all publish it. The problem was never the information. The problem is that every organization reads it alone, acts alone, and has no idea whether the company down the road in the same sector is watching the same threat. Decades of presidential directives, information sharing mandates, and agency coordination efforts have tried to fix this. The defenders are still on islands.</p>
     </div>
     <div class="problem-stats">
       <div class="stat-card"><div class="stat-number">70%</div><div class="stat-desc">of attacks target critical infrastructure sectors</div></div>
-      <div class="stat-card"><div class="stat-number">11+</div><div class="stat-desc">federal legacy systems most at risk remain unmodernized</div></div>
-      <div class="stat-card"><div class="stat-number">4+</div><div class="stat-desc">major agencies publishing advisories with no correlation layer</div></div>
-      <div class="stat-card"><div class="stat-number">0</div><div class="stat-desc">platforms aggregating all of them in one place, by sector</div></div>
+      <div class="stat-card"><div class="stat-number">20+</div><div class="stat-desc">years of coordination directives with no unified platform</div></div>
+      <div class="stat-card"><div class="stat-number">0</div><div class="stat-desc">platforms where defenders can see each other in real time</div></div>
+      <div class="stat-card"><div class="stat-number">4</div><div class="stat-desc">sectors. One map. Shared awareness.</div></div>
     </div>
   </div>
 </section>
@@ -347,13 +407,14 @@
   <div class="how">
     <div class="how-header">
       <div class="section-label">How It Works</div>
-      <h2 class="section-title">Aggregate. Correlate. Deliver.</h2>
-      <p class="section-body">Three steps between raw government intelligence and a security team that knows exactly what to do next.</p>
+      <h2 class="section-title">Aggregate. Correlate. Deliver. Coordinate.</h2>
+      <p class="section-body">Four steps between raw government intelligence and a defense network that watches together.</p>
     </div>
     <div class="how-steps">
       <div class="step"><div class="step-num">01 — Aggregate</div><h3>Every source. One place.</h3><p>Cyber advisories from CISA, NSA, FBI, DOD, IBM X-Force, Splunk, Cloudflare and more. Physical threat data from FARA filings, proximity reports, and open source human intelligence. All of it in one place, continuously, in real time.</p></div>
       <div class="step"><div class="step-num">02 — Correlate</div><h3>Connect the dots automatically.</h3><p>When a cyber campaign, a physical proximity indicator, and a known actor behavioral pattern align — we surface one unified alert. Not three separate feeds from three different agencies saying the same thing in different formats.</p></div>
-      <div class="step"><div class="step-num">03 — Deliver</div><h3>Full spectrum. Your sector.</h3><p>80% cyber threats. 10% physical and proximity intelligence. 10% known actor profiles and behavioral patterns. One brief. Plain language. Written for decision-makers, not just analysts.</p></div>
+      <div class="step"><div class="step-num">03 — Deliver</div><h3>Full spectrum. Your sector.</h3><p>80% cyber threats. 10% physical and proximity intelligence. 10% known actor profiles and behavioral patterns. One brief. Plain language. Written for decision-makers. The entry point to the network.</p></div>
+      <div class="step"><div class="step-num">04 — Coordinate</div><h3>See who else is watching.</h3><p>Every subscriber on the map. Every organization aware of who else in their sector and region is watching the same threat. The brief gets you in the door. The coordination is why you stay.</p></div>
     </div>
   </div>
 </section>
@@ -411,64 +472,6 @@
   </div>
 </section>
 
-<section style="background: rgba(11,14,11,0.92); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="map">
-  <div style="max-width: 1100px; margin: 0 auto;">
-    <div class="section-label">Live Threat Map</div>
-    <h2 class="section-title">Every subscriber. One map. Shared awareness.</h2>
-    <p class="section-body" style="margin-bottom: 16px;">Each dot is a subscribing organization. Click it and see exactly what threats are active in their region, sector, and proximity. Filter by industry. Watch the picture emerge.</p>
-    <p class="section-body" style="margin-bottom: 40px; color: rgba(223,232,220,0.4);">This is what coordinated resilience looks like. A defense contractor in Columbus can see that Anduril in Austin is watching the same threat. A bank in New York sees other financial institutions on the same platform. Shared awareness changes behavior. That's not just a product feature — that's a culture shift.</p>
-    <div class="map-wrap-site">
-      <div class="map-header-site">
-        <div class="map-title-site">Logical<span>Intelligence</span> — Live Threat Map</div>
-        <div class="map-header-right-site">
-          <div class="map-live-site"><div class="live-dot-site"></div> Live Feed Active</div>
-          <div class="last-updated-site" id="last-updated-site">Last updated: just now</div>
-        </div>
-      </div>
-      <div class="threat-status-bar-site">
-        <div class="threat-status-left-site">
-          <div class="threat-status-dot-site"></div>
-          <div class="threat-status-label-site">National Threat Level</div>
-          <div class="threat-status-value-site">Critical</div>
-        </div>
-        <div class="threat-levels-site">
-          <div class="level-block-site" style="background:#4a7c59;opacity:0.9;"></div>
-          <div class="level-block-site" style="background:#7a7c3a;opacity:0.9;"></div>
-          <div class="level-block-site" style="background:#c8922a;opacity:0.9;"></div>
-          <div class="level-block-site" style="background:#8b3c32;opacity:0.9;"></div>
-          <div class="level-block-site" style="background:rgba(139,60,50,0.15);border:1px solid rgba(139,60,50,0.2);"></div>
-        </div>
-      </div>
-      <div class="filters-site">
-        <button class="filter-btn-site active" onclick="setFilterSite('all',this)">All</button>
-        <button class="filter-btn-site" onclick="setFilterSite('defense',this)">Defense</button>
-        <button class="filter-btn-site" onclick="setFilterSite('energy',this)">Energy</button>
-        <button class="filter-btn-site" onclick="setFilterSite('healthcare',this)">Healthcare</button>
-        <button class="filter-btn-site" onclick="setFilterSite('finance',this)">Finance</button>
-      </div>
-      <div class="map-container-site" id="map-container-site">
-        <div class="scanlines-site"></div>
-        <div class="tooltip-site" id="tooltip-site">
-          <div class="tt-name-site" id="tt-name-site"></div>
-          <div class="tt-sector-site" id="tt-sector-site"></div>
-          <div class="tt-threat-site" id="tt-threat-site"></div>
-          <div style="display:flex;align-items:center;gap:6px;margin-top:8px;">
-            <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(223,232,220,0.4);">Threat</div>
-            <div style="flex:1;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;"><div id="tt-bar-site" style="height:100%;border-radius:2px;background:#8b3c32;"></div></div>
-          </div>
-        </div>
-        <svg id="map-svg-site" viewBox="0 0 960 600" style="display:block;width:100%;height:auto;"></svg>
-      </div>
-      <div class="map-footer-site">
-        <div style="display:flex;align-items:center;gap:16px;">
-          <div style="display:flex;align-items:center;gap:6px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.4);"><div style="width:8px;height:8px;border-radius:50%;background:#8b3c32;"></div>Active Subscriber</div>
-          <div style="display:flex;align-items:center;gap:6px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.4);"><div style="width:8px;height:8px;border-radius:50%;background:rgba(139,60,50,0.3);border:1px solid #8b3c32;"></div>Elevated Threat</div>
-        </div>
-        <div id="dot-count-site" style="font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1px;color:rgba(74,124,89,0.6);">7 organizations monitored</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="philosophy">
   <div class="philosophy-inner">
@@ -480,6 +483,7 @@
       <div class="phil-point"><h5>Left of Boom</h5><p>Detect pre-positioning before it becomes action. The watching is the threat.</p></div>
       <div class="phil-point"><h5>Proactive by Design</h5><p>Advisories after the fact don't stop exploitation. Early awareness does.</p></div>
       <div class="phil-point"><h5>Clarity Over Complexity</h5><p>Common sense applied to complex problems. Intelligence that makes sense.</p></div>
+      <div class="phil-point"><h5>Coordinated by Design</h5><p>One organization watching is awareness. Every organization watching together is resilience.</p></div>
     </div>
   </div>
 </section>
@@ -500,13 +504,13 @@
 
 <section class="cta">
   <div class="cta-inner">
-    <div class="section-label">Early Access</div>
-    <h2>Be first when we launch.</h2>
-    <p>We're building for defense contractors, healthcare systems, energy utilities, and financial services. If your organization needs one destination for correlated, sector-specific threat intelligence — get on the list.</p>
+    <div class="section-label">Get Coordinated</div>
+    <h2>Get on the map.</h2>
+    <p>We're building a coordination network for defense contractors, healthcare systems, energy utilities, and financial services. Your organization on the map. Your sector visible. Your threats shared. Get coordinated.</p>
     <form id="waitlist-form-2" action="https://formspree.io/f/meepaerp" method="POST" style="width:100%;max-width:480px;margin:0 auto 20px;">
       <div class="waitlist-form" style="margin-bottom:10px;">
         <input type="email" name="email" id="email-input-2" placeholder="your@organization.com" required>
-        <button type="submit">Request Access</button>
+        <button type="submit">Get on the Map</button>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
         <input type="text" name="name" placeholder="Your name" style="padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;color:var(--text);font-family:'Chakra Petch',sans-serif;font-size:13px;outline:none;">
