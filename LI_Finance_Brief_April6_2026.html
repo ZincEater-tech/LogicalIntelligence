@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LI Finance Brief — April 6, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJEFLCXBV2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJEFLCXBV2');
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff; --bg2: #f8f8f6; --text: #1a1c1a; --muted: #5a5c5a;
+      --green: #3d6b4a; --green-bright: #4a7c59; --green-dim: rgba(61,107,74,0.08); --green-border: rgba(61,107,74,0.25);
+      --red: #8b3c32; --red-dim: rgba(139,60,50,0.08); --red-border: rgba(139,60,50,0.2);
+      --gold: #a07632; --gold-dim: rgba(160,118,50,0.08);
+      --border: rgba(0,0,0,0.09);
+      --blue: #2d5a8a; --blue-dim: rgba(45,90,138,0.08); --blue-border: rgba(45,90,138,0.2);
+    }
+    html { background: #ffffff; min-height: 100%; }
+    body { font-family: 'Chakra Petch', sans-serif; background: #ffffff; color: var(--text); max-width: 900px; margin: 0 auto; padding: 40px 32px; }
+    .doc-header { border-bottom: 2px solid var(--blue); padding-bottom: 20px; margin-bottom: 28px; }
+    .doc-header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+    .doc-logo { display: flex; align-items: center; gap: 12px; }
+    .doc-logo-text { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; color: var(--text); }
+    .doc-logo-text span { color: var(--green); }
+    .doc-classification { text-align: right; }
+    .classification-badge { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--red-border); background: var(--red-dim); color: var(--red); border-radius: 2px; margin-bottom: 4px; }
+    .sample-badge { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--blue-border); background: var(--blue-dim); color: var(--blue); border-radius: 2px; margin-bottom: 6px; }
+    .doc-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); text-align: right; }
+    .doc-title-row { display: flex; justify-content: space-between; align-items: flex-end; }
+    .doc-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); }
+    .doc-subtitle { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-top: 4px; }
+    .threat-level-bar { display: flex; align-items: center; gap: 16px; background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--red); padding: 10px 16px; margin-bottom: 28px; border-radius: 2px; flex-wrap: wrap; }
+    .tl-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .tl-value { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); }
+    .tl-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+    .tl-summary { font-size: 12px; color: var(--muted); line-height: 1.5; flex: 1; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .section-tag { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; }
+    .tag-cyber { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
+    .tag-physical { background: var(--red-dim); color: var(--red); border: 1px solid var(--red-border); }
+    .tag-actor { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .tag-hipaa { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+    .section-pct { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 1px; color: var(--text); }
+    .section-title-text { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); flex: 1; }
+    .section-source { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+    .threat-item { background: #ffffff; border: 1px solid var(--border); border-radius: 2px; padding: 16px 20px; margin-bottom: 12px; border-left: 3px solid transparent; }
+    .threat-item.high { border-left-color: var(--red); }
+    .threat-item.medium { border-left-color: var(--gold); }
+    .threat-item.low { border-left-color: var(--green); }
+    .threat-item.blue { border-left-color: var(--blue); }
+    .threat-item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 12px; flex-wrap: wrap; }
+    .threat-name { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--text); }
+    .threat-badge { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+    .badge-critical { background: rgba(139,60,50,0.1); color: var(--red); border: 1px solid var(--red-border); }
+    .badge-high { background: rgba(160,118,50,0.1); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .badge-elevated { background: rgba(61,107,74,0.1); color: var(--green); border: 1px solid var(--green-border); }
+    .badge-compliance { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+    .threat-sources { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 10px; }
+    .threat-body { font-size: 13px; line-height: 1.85; color: #2a2c2a; margin-bottom: 10px; }
+    .threat-action { font-size: 12px; line-height: 1.7; color: var(--green); background: var(--green-dim); border: 1px solid var(--green-border); padding: 10px 14px; border-radius: 2px; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+    .exec-box { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 2px; padding: 20px 24px; }
+    .exec-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    .exec-body { font-size: 13px; line-height: 1.85; color: #2a2c2a; }
+    .exec-body p { margin-bottom: 12px; }
+    .exec-body p:last-child { margin-bottom: 0; }
+    .actor-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 20px 24px; margin-bottom: 16px; }
+    .actor-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; flex-wrap: wrap; }
+    .actor-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 1px; color: var(--text); }
+    .actor-alias { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 0.5px; color: var(--muted); margin-top: 2px; }
+    .actor-sponsor { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; background: var(--red-dim); color: var(--red); border: 1px solid var(--red-border); white-space: nowrap; }
+    .actor-body { font-size: 13px; line-height: 1.85; color: #2a2c2a; margin-bottom: 12px; }
+    .actor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .actor-stat { background: #ffffff; border: 1px solid var(--border); border-radius: 2px; padding: 10px 14px; }
+    .actor-stat-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .actor-stat-value { font-family: 'Chakra Petch', sans-serif; font-size: 12px; color: var(--text); line-height: 1.4; }
+    .stat-highlight { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+    .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 16px; text-align: center; }
+    .stat-number { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 32px; color: var(--red); }
+    .stat-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+    .doc-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 16px; border-top: 2px solid var(--blue); flex-wrap: wrap; gap: 8px; }
+    .footer-li { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 3px; text-transform: uppercase; }
+    .footer-li span { color: var(--green); }
+    .footer-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+    @media (max-width: 700px) {
+      body { padding: 20px 16px; }
+      .doc-header-top { flex-direction: column; gap: 12px; }
+      .doc-classification { text-align: left; }
+      .doc-title-row { flex-direction: column; gap: 8px; }
+      .doc-title { font-size: 22px; }
+      .threat-item-header { flex-direction: column; gap: 6px; }
+      .actor-header { flex-direction: column; gap: 8px; }
+      .actor-grid { grid-template-columns: 1fr; }
+      .stat-highlight { grid-template-columns: 1fr 1fr; }
+      .doc-footer { flex-direction: column; gap: 8px; }
+      div[style*="grid-template-columns: 1fr 1fr"] { display: block !important; }
+      div[style*="grid-template-columns: 1fr 1fr"] > div { margin-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="doc-header">
+    <div class="doc-header-top">
+      <div class="doc-logo">
+        <svg width="36" height="36" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs><clipPath id="gc"><circle cx="40" cy="40" r="18"/></clipPath></defs>
+          <polygon points="40,4 72,22 72,58 40,76 8,58 8,22" fill="none" stroke="#3d6b4a" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="40" cy="40" r="18" fill="none" stroke="#4a7c59" stroke-width="1.3" opacity="0.9"/>
+          <g clip-path="url(#gc)" opacity="0.4" stroke="#4a7c59" stroke-width="0.7" fill="none">
+            <ellipse cx="40" cy="40" rx="18" ry="5"/><ellipse cx="40" cy="40" rx="18" ry="10"/><ellipse cx="40" cy="40" rx="18" ry="15"/>
+            <ellipse cx="40" cy="40" rx="5" ry="18"/><ellipse cx="40" cy="40" rx="10" ry="18"/><ellipse cx="40" cy="40" rx="15" ry="18"/>
+            <line x1="22" y1="40" x2="58" y2="40"/><line x1="40" y1="22" x2="40" y2="58"/>
+          </g>
+          <circle cx="40" cy="40" r="1.8" fill="#4a7c59" opacity="0.8"/>
+          <circle cx="62" cy="18" r="3.5" fill="#8b3c32" opacity="0.9"/>
+        </svg>
+        <div>
+          <div class="doc-logo-text">Logical<span>Intelligence</span></div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;color:#5a5c5a;text-transform:uppercase;">Centralized Clarity over Cracked Confusion</div>
+        </div>
+      </div>
+      <div class="doc-classification">
+        <div class="sample-badge">Sample Brief &mdash; Preview of Subscriber Experience</div><br>
+        <div class="classification-badge">Subscriber Use Only</div>
+        <div class="doc-meta">TLP: AMBER &middot; Not for Public Release</div>
+        <div class="doc-meta" style="margin-top:2px;">Distribution: Financial Services Sector Subscribers</div>
+      </div>
+    </div>
+    <div class="doc-title-row">
+      <div>
+        <div class="doc-title">Financial Services Sector Intelligence Brief</div>
+        <div class="doc-subtitle">Correlated &middot; Sector-Specific &middot; Plain Language</div>
+      </div>
+      <div class="doc-date">
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-align:right;">Week of April 6, 2026</div>
+        <div class="doc-meta" style="text-align:right;margin-top:2px;">Sources: FBI &middot; CISA &middot; Google GTIG &middot; Microsoft &middot; TRM Labs &middot; Bloomberg &middot; American Banker &middot; OSINT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="threat-level-bar">
+    <div class="tl-dot"></div>
+    <div class="tl-label">National Threat Level</div>
+    <div class="tl-value">Critical</div>
+    <div class="tl-summary">North Korean hackers drained $285M from Drift Protocol after a 6-month social engineering operation. SitusAMC mortgage vendor breach exposes JPMorgan Chase, Citibank, and Morgan Stanley customer data &mdash; FBI investigating. Lloyds Banking app bug exposed 450,000 customers. Marquis breach now affects 672,000 across 700+ financial institutions. Axios npm supply chain attack impacts financial services software. Dutch Treasury portal breached, disrupting 1,600 public sector entities.</div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Executive Summary</span>
+      <span class="section-title-text">What You Need To Know This Week</span>
+    </div>
+    <div class="exec-box">
+      <div class="exec-label">For Decision Makers &mdash; Plain Language</div>
+      <div class="exec-body">
+        <p>This week demonstrates that North Korea is the single most aggressive financial threat actor in the world &mdash; and their primary weapon is not malware. It is social engineering. On April 1, DPRK-linked hackers drained $285 million from Drift Protocol, a Solana-based decentralized exchange, in approximately 12 minutes. But the attack began six months earlier at a crypto conference where the attackers posed as a legitimate quantitative trading firm. They met Drift contributors in person at multiple conferences across countries, deposited $1 million of their own money into the platform to build trust, shared malicious code repositories and fake wallet applications, and waited patiently for six months before executing the theft. This is the same social engineering playbook used in the Axios npm supply chain attack days earlier &mdash; cloned identities, fake collaboration platforms, long-term trust building, then exploitation. North Korea stole $2 billion in cryptocurrency in 2025, approximately 60% of all crypto stolen globally. They are funding nuclear weapons programs and military expansion with stolen financial assets.</p>
+        <p>Separately, a cyberattack on SitusAMC &mdash; a mortgage technology vendor used by hundreds of banks for loan origination, collections, and regulatory compliance &mdash; has potentially exposed sensitive customer data from JPMorgan Chase, Citibank, and Morgan Stanley. The FBI is investigating. The compromised data may include Social Security numbers and financial details from loan applications. This is a third-party supply chain attack at the highest level of the financial system: the three largest names in American banking, compromised not through their own networks but through a vendor most of their customers have never heard of.</p>
+        <p>The Marquis Financial Group breach has expanded to 672,000 individuals across 700+ financial institutions through an unpatched SonicWall firewall. A Lloyds Banking app bug exposed transaction data for nearly 450,000 customers. The Dutch Ministry of Finance took its treasury banking portal offline after unauthorized access, cutting digital access for 1,600 public sector entities. And the Axios npm supply chain attack affects any financial institution running JavaScript-based trading platforms, customer portals, or internal applications.</p>
+        <p>The bottom line: financial services is under coordinated attack from DPRK state actors, cybercriminal groups, and supply chain compromise. The common thread across every major incident this week is the same &mdash; attackers are not breaking in through technical vulnerabilities. They are logging in through stolen credentials, exploiting trust relationships, and compromising the vendors that financial institutions depend on. Identity is the perimeter. Third-party risk is the attack surface. Social engineering is the weapon.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY STATS -->
+  <div class="stat-highlight">
+    <div class="stat-card"><div class="stat-number">$285M</div><div class="stat-label">Drift Protocol Stolen (DPRK)</div></div>
+    <div class="stat-card"><div class="stat-number">672K</div><div class="stat-label">Marquis Individuals Affected</div></div>
+    <div class="stat-card"><div class="stat-number">450K</div><div class="stat-label">Lloyds Customers Exposed</div></div>
+    <div class="stat-card"><div class="stat-number">$5.56M</div><div class="stat-label">Avg Financial Breach Cost</div></div>
+  </div>
+
+  <!-- CYBER THREATS 80% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-cyber">Cyber Threats</span>
+      <span class="section-pct">80%</span>
+      <span class="section-title-text">Active Campaigns Targeting Financial Services</span>
+      <span class="section-source">FBI &middot; Google GTIG &middot; Microsoft &middot; TRM Labs &middot; Bloomberg &middot; ISMG</span>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Drift Protocol $285M Hack &mdash; North Korean 6-Month Social Engineering Operation</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: TRM Labs &middot; Bloomberg &middot; Fortune &middot; The Hacker News &middot; Hackread &middot; TechCrunch &middot; April 1&ndash;6, 2026</div>
+      <div class="threat-body">On April 1, DPRK-linked hackers drained $285 million from Drift Protocol in approximately 12 minutes &mdash; the largest DeFi hack of 2026 and the second-largest in Solana&rsquo;s history. The attack was not a code exploit. It was a six-month social engineering operation. <strong>Timeline:</strong> In late 2025, attackers approached Drift contributors at a major crypto conference, posing as a legitimate quantitative trading firm. They met contributors in person at conferences in multiple countries. Between December 2025 and January 2026, they deposited $1 million of their own money into a Drift Ecosystem Vault to establish credibility. They then used three attack vectors: (1) persuading a contributor to download a malicious wallet app via Apple TestFlight, (2) inducing a contributor to clone a malicious code repository, and (3) potentially exploiting known vulnerabilities in developer tools (VSCode/Cursor). Once inside, attackers manipulated a multisig migration to remove timelocks, manufactured a fictitious token (CarbonVote), manipulated oracles to treat it as legitimate collateral, and executed 31 rapid withdrawals in 12 minutes. On-chain fund flows trace to the same actors behind the October 2024 Radiant Capital exploit. TRM Labs and multiple security firms attribute the attack to DPRK-linked actors (UNC4736 / Golden Chollima). North Korea stole $2 billion in cryptocurrency in 2025 &mdash; approximately 60% of all crypto stolen globally. These funds directly support nuclear weapons programs and military expansion.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Financial institutions with DeFi exposure, cryptocurrency custody, or blockchain integration should immediately review multisig governance controls and implement timelocks on all administrative changes. Audit contributor and developer vetting processes for social engineering vulnerabilities. Train developers on recognizing social engineering through conference interactions, fake collaboration platforms, and malicious code repositories. Monitor for oracle manipulation and anomalous collateral inflation in any DeFi-integrated systems. Review exposure to Drift Protocol and affected downstream Solana protocols.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">SitusAMC Mortgage Vendor Breach &mdash; JPMorgan Chase, Citibank, Morgan Stanley Exposed</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Quantum Safe News Center &middot; The Times of India &middot; FBI &middot; 2025&ndash;2026</div>
+      <div class="threat-body">A cyberattack on SitusAMC, a mortgage technology vendor used by hundreds of banks for loan origination, collections, and regulatory compliance, has potentially exposed sensitive customer data from JPMorgan Chase, Citibank, and Morgan Stanley. The FBI is investigating. The compromised data may include Social Security numbers and financial details from loan applications. SitusAMC serves as essential infrastructure for the real estate lending industry &mdash; a single breach at this vendor level cascades to the largest names in American banking. A cybersecurity analyst stated that &ldquo;even the largest U.S. banks can be compromised indirectly when third-party service providers fall short.&rdquo; Financial regulators have warned banks that smaller technology partners often lack the necessary cybersecurity infrastructure. This breach underscores why third-party vendor risk management is no longer optional &mdash; it is the primary attack surface for financial institutions.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Financial institutions using SitusAMC services should contact SitusAMC directly for breach impact assessment. Audit all mortgage technology vendor relationships for breach notification requirements. Review vendor cybersecurity assessments and SOC 2 reports. Prepare customer notification procedures if data exfiltration is confirmed. Implement enhanced monitoring for identity theft and fraudulent account activity involving mortgage customer data. Coordinate with FBI through existing financial sector liaison channels.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Axios npm Supply Chain Attack &mdash; Financial Services Software Impact</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Google GTIG &middot; Microsoft &middot; Palo Alto Unit 42 &middot; SANS &middot; March 31, 2026</div>
+      <div class="threat-body">North Korean state-sponsored hackers (UNC1069 / Sapphire Sleet) hijacked the Axios npm package &mdash; 100 million weekly downloads, present in approximately 80% of cloud and code environments &mdash; and deployed a cross-platform Remote Access Trojan. Financial institutions are directly affected because Axios is widely used in trading platforms, customer-facing portals, mobile banking applications, internal dashboards, risk management systems, and regulatory reporting tools. The RAT harvested credentials, SSH keys, AWS tokens, and npm tokens. Any financial services application that ran npm install during the 3-hour exposure window on March 31 is potentially compromised. Combined with the Drift hack, North Korean actors conducted two simultaneous attack campaigns targeting the financial sector in the same week &mdash; one through social engineering and one through supply chain compromise. This represents a coordinated, multi-vector campaign against financial infrastructure.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Audit all npm dependencies across trading systems, customer portals, and internal applications for axios@1.14.1, axios@0.30.4, or plain-crypto-js. If found, treat affected systems as fully compromised and isolate from production financial networks. Rotate all credentials, API keys, and tokens on affected hosts. Pin axios to version 1.14.0 or earlier. Block traffic to sfrclak[.]com and 142.11.206.73. Coordinate with application vendors to confirm their dependency audits.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Lloyds Banking App Bug &mdash; 450,000 Customers&rsquo; Transaction Data Exposed</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: ISMG &middot; GovInfoSecurity &middot; April 2, 2026</div>
+      <div class="threat-body">A software vulnerability in the Lloyds Banking mobile application exposed transaction data for nearly 450,000 customers. This was not a cyberattack &mdash; it was an application-level flaw. However, it demonstrates the risk of software defects in financial services applications that handle sensitive transaction data. Application security testing, including dynamic analysis and penetration testing of mobile banking applications, is critical for preventing data exposure through non-malicious technical failures. The incident also highlights that not all data exposure requires an attacker &mdash; sometimes the vulnerability is in the application itself.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Review your organization&rsquo;s mobile application security testing program. Ensure dynamic application security testing (DAST) and penetration testing are conducted before every major release. Implement real-time monitoring for anomalous data access patterns in customer-facing applications. Audit API endpoints for proper access controls and data exposure limits.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Marquis Financial Group Breach Update &mdash; 672,000 Individuals, 700+ Institutions</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: Fox News &middot; Security Boulevard &middot; American Banker &middot; State AG Filings &middot; 2025&ndash;2026</div>
+      <div class="threat-body">The Marquis Financial Group breach has expanded to 672,000 confirmed affected individuals across 700+ financial institutions nationwide. Attackers exploited an unpatched SonicWall firewall vulnerability in August 2025, gaining access to systems containing names, addresses, card numbers, and other sensitive financial data. Marquis provides marketing and compliance services to banks and credit unions &mdash; concentrating sensitive customer data from hundreds of institutions in a single vendor environment. Texas accounts for the largest share of affected individuals with additional filings in Maine, Massachusetts, Iowa, and New Hampshire. Security experts note that exposed immutable identity data (SSNs, dates of birth) cannot be changed like passwords &mdash; once exposed, this information can be used indefinitely for account takeovers, new account fraud, and targeted scams referencing accurate personal and banking details.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Financial institutions using Marquis services should verify whether their customers are in the affected population. Implement enhanced fraud monitoring for account takeover and new account fraud patterns. Audit all vendor relationships for patch management requirements &mdash; the SonicWall vulnerability was known and had a patch available. Review third-party vendor contracts for cybersecurity compliance obligations and breach notification timelines.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Dutch Treasury Portal Breach &mdash; 1,600 Public Sector Entities Cut Off</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: ISMG &middot; Dutch Ministry of Finance Statement &middot; March&ndash;April 2026</div>
+      <div class="threat-body">The Dutch Ministry of Finance took its &ldquo;Mijn Schatkist&rdquo; treasury banking portal offline after detecting unauthorized access on March 19. The ministry subsequently shut down multiple systems on March 23, cutting digital access for approximately 1,600 public sector entities including ministries, agencies, educational institutions, social funds, and local governments. Users cannot view balances or initiate financial instruments such as loans or deposits through the portal. While funds remain accessible through standard banking channels, the operational disruption to government financial operations is significant. This demonstrates how a breach at a centralized financial platform can cascade across an entire government&rsquo;s operations &mdash; relevant for any financial institution providing infrastructure to government or institutional clients.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Financial institutions providing treasury, payment, or banking infrastructure to government or institutional clients should review their incident response plans for scenarios where the platform must be taken offline. Ensure alternative transaction pathways are documented and tested. Audit centralized platform access controls and monitoring for unauthorized access patterns.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Cisco IMC Authentication Bypass &mdash; CVE-2026-20093 (CVSS 9.8)</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: Cisco Advisory &middot; April 2, 2026</div>
+      <div class="threat-body">Cisco disclosed a critical authentication bypass in the Integrated Management Controller allowing unauthenticated remote attackers to gain admin access through a crafted HTTP request (CVE-2026-20093, CVSS 9.8). Financial institutions running Cisco server infrastructure in data centers and trading environments should patch immediately. A compromised IMC gives an attacker persistent access below the operating system level &mdash; invisible to most endpoint detection and trading system monitoring tools.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Patch all Cisco IMC instances immediately. Restrict IMC management interfaces to isolated management networks. Audit IMC access logs for unauthorized password change requests.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PHYSICAL 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-physical">Physical &amp; Proximity</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Social Engineering &amp; Human-Layer Targeting</span>
+      <span class="section-source">Drift Investigation &middot; Google GTIG &middot; FBI &middot; OSINT</span>
+    </div>
+
+    <div class="threat-item blue">
+      <div class="threat-item-header">
+        <div class="threat-name">Conference-Based Social Engineering &mdash; DPRK Targeting Financial Sector Personnel In Person</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Drift Investigation &middot; Hackread &middot; The Hacker News &middot; CrowdStrike &middot; April 6, 2026</div>
+      <div class="threat-body">The Drift hack revealed a social engineering methodology that should alarm every financial institution: North Korean operatives are attending conferences in person, posing as legitimate firms, and building trust relationships over months before executing attacks. This is not remote phishing &mdash; this is physical pre-positioning in the financial sector&rsquo;s professional ecosystem. The attackers met their targets face-to-face at multiple conferences across multiple countries, used real company identities, shared business cards, joined Slack and Telegram groups, and deposited real money to establish credibility. CrowdStrike describes Golden Chollima as targeting small fintech firms in the U.S., Canada, South Korea, India, and Western Europe to ensure &ldquo;baseline revenue generation for the DPRK regime.&rdquo; Financial sector employees attending conferences, joining industry collaboration groups, or engaging with new business partners should treat any unsolicited relationship-building as a potential targeting indicator &mdash; especially from unfamiliar firms seeking technical integration or partnership.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Brief all employees attending financial industry conferences on DPRK social engineering tactics. Implement verification protocols for any new business partnership that involves code sharing, application testing, or technical integration. Never clone code repositories or install applications from unverified sources, even when presented by seemingly legitimate business partners. Report any suspicious recruitment, partnership, or collaboration approaches to your security team and FBI CyWatch. Review and harden developer environment security &mdash; VSCode, Cursor, and similar tools are documented attack vectors.</div>
+    </div>
+
+    <div class="threat-item blue">
+      <div class="threat-item-header">
+        <div class="threat-name">Insider Threat &mdash; Coinbase Bribery Operation</div>
+        <span class="threat-badge badge-high">Elevated</span>
+      </div>
+      <div class="threat-sources">Sources: American Banker &middot; Coinbase Disclosure &middot; 2025</div>
+      <div class="threat-body">Continuing watch item from industry data: a threat actor bribed individuals performing services for Coinbase at overseas retail support locations to improperly access customer information. Instead of paying a $20 million extortion demand, Coinbase established a $20 million reward fund for information leading to arrest and conviction. This incident demonstrates that insider threats in financial services extend beyond traditional employees to contracted service providers operating in overseas locations with less oversight. Financial institutions with outsourced customer support, operations, or technology services should review access controls for overseas contractors with access to customer data.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Audit access privileges for all contracted and outsourced personnel, particularly those in overseas locations. Implement behavioral analytics to detect unusual access patterns by service personnel. Review data loss prevention controls for customer-facing support environments. Ensure insider threat programs cover contractors and third-party service providers, not just direct employees.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KNOWN ACTORS 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-actor">Known Actors</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Active Threat Actor Profiles &mdash; Financial Services</span>
+      <span class="section-source">MITRE ATT&CK &middot; Google GTIG &middot; Microsoft &middot; TRM Labs &middot; CrowdStrike</span>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">UNC4736 / Golden Chollima (DPRK)</div>
+          <div class="actor-alias">Linked to: Radiant Capital exploit (2024) &middot; Drift Protocol ($285M, 2026) &middot; BlueNoroff/Labyrinth Chollima offshoot</div>
+        </div>
+        <span class="actor-sponsor" style="background:rgba(160,100,30,0.08);color:#a06420;border:1px solid rgba(160,100,30,0.25);">DPRK State-Sponsored</span>
+      </div>
+      <div class="actor-body">Responsible for the $285 million Drift Protocol exploit. CrowdStrike describes Golden Chollima as primarily geared toward cryptocurrency theft targeting small fintech firms, ensuring &ldquo;baseline revenue generation for the DPRK regime.&rdquo; The Drift attack demonstrated unprecedented operational patience &mdash; six months of social engineering including in-person conference meetings, depositing $1M in real funds, and building trust through legitimate-appearing business relationships. On-chain fund flows trace directly to the Radiant Capital attackers. The group uses social engineering through conferences, fake collaboration platforms, malicious TestFlight apps, and poisoned code repositories. Unlike traditional cybercriminal groups, DPRK actors are funding state military programs, making them persistent, well-resourced, and willing to invest significant time and capital in each operation.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Social Engineering, Conference Infiltration, Oracle Manipulation, Multisig Exploitation</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">DeFi, Cryptocurrency, Fintech, Venture Capital, Blockchain</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Critical &middot; $285M stolen &middot; 6-month operation</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">UNC1069 / Sapphire Sleet (DPRK)</div>
+          <div class="actor-alias">Also tracked as: CryptoCore &middot; CageyChameleon &middot; BlueNoroff offshoot &middot; Active since 2018</div>
+        </div>
+        <span class="actor-sponsor" style="background:rgba(160,100,30,0.08);color:#a06420;border:1px solid rgba(160,100,30,0.25);">DPRK State-Sponsored</span>
+      </div>
+      <div class="actor-body">Responsible for the Axios npm supply chain compromise that affects financial services software dependencies. Historically focused on cryptocurrency and DeFi theft, now demonstrating capability to target the broader software supply chain. The social engineering tradecraft &mdash; cloned company identities, fake Slack workspaces with branded channels, fake Teams calls &mdash; mirrors the Drift attack pattern. Both UNC4736 and UNC1069 are DPRK-linked actors conducting simultaneous operations against the financial sector in the same week, suggesting coordinated campaign planning at the state level. Microsoft tracks the same actor as Sapphire Sleet. Stolen credentials from the Axios attack will enable follow-on financial sector operations for weeks to months.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Supply Chain Compromise, Social Engineering, npm Hijacking, Credential Theft</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Software Supply Chain, Financial Services, Cryptocurrency</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Critical &middot; Active &middot; Coordinated with UNC4736</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">ShinyHunters</div>
+          <div class="actor-alias">Extortion group &middot; Previously linked to: European Commission breach, TransUnion, Salesforce exploitation</div>
+        </div>
+        <span class="actor-sponsor" style="background:rgba(80,80,80,0.08);color:#555;border:1px solid rgba(80,80,80,0.2);">Cybercriminal</span>
+      </div>
+      <div class="actor-body">Continuing threat to financial services. ShinyHunters is responsible for the TransUnion breach via voice phishing (vishing) campaigns targeting Salesforce-connected systems. The group has demonstrated capability to breach financial infrastructure through identity-based attacks &mdash; abusing SSO, OAuth, and voice phishing to bypass MFA. Google researchers linked the tactics to Salesforce system exploitation, although Salesforce stated its platform was not compromised. ShinyHunters also claimed the European Commission breach. The group represents the leading edge of identity-based attacks against financial services, using social engineering and credential abuse rather than malware or network exploitation.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Vishing, SSO/OAuth Abuse, Salesforce Exploitation, Data Exfiltration</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Financial Services, Technology, Government, SaaS</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active &middot; Identity-based attacks &middot; Persistent</div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- REGULATORY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Regulatory &amp; Compliance</span>
+      <span class="section-title-text">Financial Sector Regulatory Updates</span>
+    </div>
+
+    <div class="threat-item blue">
+      <div class="threat-item-header">
+        <div class="threat-name">Third-Party Vendor Risk &mdash; Regulatory Pressure Increasing</div>
+        <span class="threat-badge badge-compliance">Compliance</span>
+      </div>
+      <div class="threat-sources">Sources: NYDFS &middot; SEC &middot; OCC &middot; 2026</div>
+      <div class="threat-body">The SitusAMC breach affecting JPMorgan Chase, Citibank, and Morgan Stanley &mdash; combined with the Marquis breach affecting 700+ institutions &mdash; will accelerate regulatory scrutiny of third-party vendor risk management in financial services. NYDFS has already imposed $144M+ in cybersecurity fines. SEC Regulation S-P enforcement continues. Financial regulators have repeatedly warned that smaller technology partners often lack adequate cybersecurity infrastructure, and that financial institutions bear responsibility for the security of their vendor ecosystem. Institutions should expect increased examination focus on third-party risk management programs, vendor cybersecurity assessments, and breach notification procedures in the coming quarters.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Review and update third-party risk management programs. Ensure all critical vendors have current SOC 2 Type II reports. Implement continuous monitoring of vendor cybersecurity posture. Document vendor breach notification requirements and response procedures. Prepare for regulatory examination focus on vendor risk management.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRIORITY ACTIONS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Priority Actions</span>
+      <span class="section-title-text">This Week&rsquo;s Non-Negotiables</span>
+    </div>
+    <div style="background:#ffffff;border:1px solid var(--border);border-radius:2px;padding:20px 24px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Immediate &mdash; This Week</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Contact SitusAMC for breach impact assessment if your institution uses their services<br>
+            2. Audit all npm dependencies for Axios supply chain compromise indicators<br>
+            3. Patch Cisco IMC against CVE-2026-20093 (CVSS 9.8)<br>
+            4. Brief all staff attending conferences on DPRK social engineering tactics<br>
+            5. Review DeFi and cryptocurrency exposure for Drift Protocol impact<br>
+            6. Implement enhanced fraud monitoring for Marquis-related account takeover patterns
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Near-Term &mdash; 30 Days</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Audit all third-party vendor cybersecurity assessments and SOC 2 reports<br>
+            2. Review vendor patch management obligations &mdash; SonicWall vulnerability was known<br>
+            3. Implement developer environment security controls (VSCode, code repositories)<br>
+            4. Deploy behavioral analytics for insider threat detection across contractors<br>
+            5. Review mobile application security testing program for customer-facing apps<br>
+            6. Prepare for regulatory examination focus on third-party risk management
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div class="footer-li">Logical<span>Intelligence</span></div>
+    <div class="footer-meta">LogicalIntelligence.us &middot; Week of April 6, 2026 &middot; Financial Services Sector Brief &middot; TLP: AMBER &middot; Subscriber Use Only</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;color:rgba(0,0,0,0.25);">Correlated from public sources. Not classified. For security awareness purposes.</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;"><a href="mailto:logicalintelligence.us@gmail.com" style="color:#4a7c59;text-decoration:none;">logicalintelligence.us@gmail.com</a></div>
+  </div>
+
+</body>
+</html>
