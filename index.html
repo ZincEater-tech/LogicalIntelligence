@@ -166,6 +166,19 @@
     .map-footer-site { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; flex-wrap: wrap; gap: 8px; }
     @keyframes pingSite { 0%{r:6;opacity:0.7} 100%{r:16;opacity:0} }
     .ping-ring-site { animation: pingSite 2s ease-out infinite; }
+    .sector-btn { font-family:'Fira Code',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(223,232,220,0.45);border:1px solid rgba(74,124,89,0.15);border-radius:2px;padding:10px 12px;background:transparent;cursor:pointer;transition:all 0.3s ease; }
+    .sector-btn:hover { color:rgba(223,232,220,0.8);border-color:rgba(74,124,89,0.4); }
+    .sector-btn.active { color:#dfe8dc;border-color:#4a7c59;background:rgba(74,124,89,0.12);box-shadow:0 0 12px rgba(74,124,89,0.15); }
+    .sector-panel { overflow:hidden;transition:max-height 0.35s ease, opacity 0.3s ease;background:rgba(15,21,15,0.95);border:1px solid rgba(74,124,89,0.2);border-top:none;border-radius:0 0 2px 2px;padding:0 4px; }
+    .brief-link { display:flex;align-items:center;gap:10px;padding:11px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.55);text-decoration:none;border-bottom:1px solid rgba(74,124,89,0.08);transition:all 0.2s; }
+    .brief-link:last-child { border-bottom:none; }
+    .brief-link:hover { background:rgba(74,124,89,0.1);color:#dfe8dc; }
+    .brief-link.bright { color:rgba(223,232,220,0.8); }
+    .brief-link.dim { color:rgba(223,232,220,0.3); }
+    .brief-dot { width:6px;height:6px;border-radius:50%;background:rgba(74,124,89,0.5);flex-shrink:0;transition:all 0.2s; }
+    .brief-dot.bright { background:#4a7c59;box-shadow:0 0 6px rgba(74,124,89,0.4); }
+    .brief-dot.dim { background:rgba(74,124,89,0.25); }
+    @media(max-width:600px){ .sector-btn{font-size:8px;padding:8px 6px;letter-spacing:1px;} }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJEFLCXBV2"></script>
   <script>
@@ -211,27 +224,31 @@
       <span style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#af3232;white-space:nowrap;">Live Threats</span>
     </div>
     <div style="overflow:hidden;flex:1;">
-      <div id="ticker-inner" style="display:flex;gap:48px;white-space:nowrap;animation:tickerScroll 55s linear infinite;">
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> North Korean hackers hijack Axios npm package — 100M+ weekly downloads compromised — Google/Huntress March 31 2026</span>
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Stryker 200K devices wiped via Intune — Handala claims 12PB destroyed — CISA Alert March 2026</span>
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Cisco IMC authentication bypass CVE-2026-20093 CVSS 9.8 — remote unauthenticated access — April 2026</span>
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Volt Typhoon embedded inside US utility control loops 300+ days — Dragos 2026</span>
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> European Commission cloud infrastructure breached — data exfiltrated — March 2026</span>
-        <span class="tick-item"><span class="tick-level high">HIGH</span> Hasbro network breach disclosed via SEC filing — investigation ongoing — April 1 2026</span>
-        <span class="tick-item"><span class="tick-level high">HIGH</span> Nissan hit by Everest ransomware group — data compromise under investigation — April 2026</span>
-        <span class="tick-item"><span class="tick-level high">HIGH</span> Siemens SICAM 8 ICS vulnerabilities — multiple products affected — CISA ICSA April 2 2026</span>
-        <span class="tick-item"><span class="tick-level high">HIGH</span> Russian intelligence targeting commercial messaging apps — CISA/FBI joint advisory March 2026</span>
-        <span class="tick-item"><span class="tick-level elevated">ELEVATED</span> FARA-flagged entities operating near Ohio defense corridor — OSINT March 2026</span>
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> North Korean hackers hijack Axios npm package — 100M+ weekly downloads compromised — Google/Huntress March 31 2026</span>
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Stryker 200K devices wiped via Intune — Handala claims 12PB destroyed — CISA Alert March 2026</span>
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Cisco IMC authentication bypass CVE-2026-20093 CVSS 9.8 — remote unauthenticated access — April 2026</span>
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Volt Typhoon embedded inside US utility control loops 300+ days — Dragos 2026</span>
-        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> European Commission cloud infrastructure breached — data exfiltrated — March 2026</span>
-        <span class="tick-item"><span class="tick-level high">HIGH</span> Hasbro network breach disclosed via SEC filing — investigation ongoing — April 1 2026</span>
-        <span class="tick-item"><span class="tick-level high">HIGH</span> Nissan hit by Everest ransomware group — data compromise under investigation — April 2026</span>
-        <span class="tick-item"><span class="tick-level high">HIGH</span> Siemens SICAM 8 ICS vulnerabilities — multiple products affected — CISA ICSA April 2 2026</span>
-        <span class="tick-item"><span class="tick-level high">HIGH</span> Russian intelligence targeting commercial messaging apps — CISA/FBI joint advisory March 2026</span>
-        <span class="tick-item"><span class="tick-level elevated">ELEVATED</span> FARA-flagged entities operating near Ohio defense corridor — OSINT March 2026</span>
+      <div id="ticker-inner" style="display:flex;gap:48px;white-space:nowrap;animation:tickerScroll 65s linear infinite;">
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Anthropic Mythos Preview autonomously finds and exploits zero-days in every major OS and browser — restricted April 8 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Mandiant M-Trends 2026: adversary handoff times collapsed to 22 seconds — voice phishing now #2 initial vector</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> CISA warns Iran-linked hackers targeting PLCs in US power grid — NERC actively monitoring — April 8 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Drift Protocol $285M hack confirmed 6-month DPRK social engineering operation — fund flows traced to Radiant Capital</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> CPUID supply chain attack — trojanized CPU-Z and HWMonitor distribute STX RAT — April 9-10 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Adobe Acrobat Reader zero-day CVE-2026-34621 actively exploited since Dec 2025 — CISA KEV April 13 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Booking.com data breach confirmed — customer reservation data exposed — WhatsApp fraud underway April 14 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> ShinyHunters publishes 78.6M Rockstar Games records via Anodot/Snowflake third-party SaaS compromise — April 14 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> Brockton Hospital ambulances diverted after Anubis ransomware — Massachusetts healthcare under sustained targeting</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> KAMACITE spent 4 months scanning US industrial devices — SYLVANITE inside US electric utility — Dragos 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> FBI dismantles W3LLSTORE phishing market — $20M fraud operation targeting financial institutions — April 12 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> AI-assisted development creating velocity gap — critical vulnerabilities up 400% — CrowdStrike eCrime breakout 29 min</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Anthropic Mythos Preview autonomously finds and exploits zero-days in every major OS and browser — restricted April 8 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Mandiant M-Trends 2026: adversary handoff times collapsed to 22 seconds — voice phishing now #2 initial vector</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> CISA warns Iran-linked hackers targeting PLCs in US power grid — NERC actively monitoring — April 8 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Drift Protocol $285M hack confirmed 6-month DPRK social engineering operation — fund flows traced to Radiant Capital</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> CPUID supply chain attack — trojanized CPU-Z and HWMonitor distribute STX RAT — April 9-10 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Adobe Acrobat Reader zero-day CVE-2026-34621 actively exploited since Dec 2025 — CISA KEV April 13 2026</span>
+        <span class="tick-item"><span class="tick-level critical">CRITICAL</span> Booking.com data breach confirmed — customer reservation data exposed — WhatsApp fraud underway April 14 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> ShinyHunters publishes 78.6M Rockstar Games records via Anodot/Snowflake third-party SaaS compromise — April 14 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> Brockton Hospital ambulances diverted after Anubis ransomware — Massachusetts healthcare under sustained targeting</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> KAMACITE spent 4 months scanning US industrial devices — SYLVANITE inside US electric utility — Dragos 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> FBI dismantles W3LLSTORE phishing market — $20M fraud operation targeting financial institutions — April 12 2026</span>
+        <span class="tick-item"><span class="tick-level high">HIGH</span> AI-assisted development creating velocity gap — critical vulnerabilities up 400% — CrowdStrike eCrime breakout 29 min</span>
       </div>
     </div>
   </div>
@@ -305,47 +322,32 @@
     </form>
     <p class="form-note">No spam. Early access only. Defense, healthcare, energy, finance.</p>
     <p class="success-msg" id="success-msg">You're on the list. We'll be in touch.</p>
-    <div style="margin-top: 24px; position: relative; display: inline-block;" id="brief-dropdown-wrap">
-      <button onclick="toggleBriefMenu()" style="display:inline-flex;align-items:center;gap:10px;font-family:'Fira Code',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(223,232,220,0.55);border:1px solid rgba(223,232,220,0.15);border-radius:2px;padding:10px 20px;background:transparent;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.color='#dfe8dc';this.style.borderColor='rgba(223,232,220,0.35)'" onmouseout="this.style.color='rgba(223,232,220,0.55)';this.style.borderColor='rgba(223,232,220,0.15)'">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="7" height="9" rx="1" stroke="currentColor" stroke-width="1"/><line x1="3" y1="4" x2="6" y2="4" stroke="currentColor" stroke-width="0.8"/><line x1="3" y1="6" x2="7" y2="6" stroke="currentColor" stroke-width="0.8"/><line x1="3" y1="8" x2="5" y2="8" stroke="currentColor" stroke-width="0.8"/></svg>
-        Sample Briefs
-        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 2.5L4 5.5L7 2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-      </button>
-      <div id="brief-menu" style="display:none;position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#0f150f;border:1px solid rgba(74,124,89,0.3);border-radius:2px;min-width:300px;z-index:200;overflow:visible;max-height:480px;overflow-y:auto;">
-        <div style="padding:10px 16px 6px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4a7c59;border-bottom:1px solid rgba(74,124,89,0.2);">Week of April 6, 2026</div>
-        <a href="LI_Defense_Brief_April6_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:10px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.6);text-decoration:none;border-bottom:1px solid rgba(74,124,89,0.1);transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
-          <div style="width:6px;height:6px;border-radius:50%;background:#4a7c59;flex-shrink:0;"></div>
-          Defense Sector
-        </a>
-        <a href="LI_Healthcare_Brief_April6_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:10px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.6);text-decoration:none;border-bottom:1px solid rgba(74,124,89,0.1);transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
-          <div style="width:6px;height:6px;border-radius:50%;background:#4a7c59;flex-shrink:0;"></div>
-          Healthcare Sector
-        </a>
-        <a href="LI_Energy_Brief_April6_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:10px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.6);text-decoration:none;border-bottom:1px solid rgba(74,124,89,0.1);transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
-          <div style="width:6px;height:6px;border-radius:50%;background:#4a7c59;flex-shrink:0;"></div>
-          Energy &amp; Utilities Sector
-        </a>
-        <a href="LI_Finance_Brief_April6_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:10px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.6);text-decoration:none;border-bottom:1px solid rgba(74,124,89,0.2);transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
-          <div style="width:6px;height:6px;border-radius:50%;background:#4a7c59;flex-shrink:0;"></div>
-          Financial Services Sector
-        </a>
-        <div style="padding:10px 16px 6px;font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(223,232,220,0.3);border-bottom:1px solid rgba(74,124,89,0.1);">Week of March 30, 2026</div>
-        <a href="LI_Defense_Brief_March30_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:10px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.35);text-decoration:none;border-bottom:1px solid rgba(74,124,89,0.1);transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
-          <div style="width:6px;height:6px;border-radius:50%;background:rgba(74,124,89,0.4);flex-shrink:0;"></div>
-          Defense Sector
-        </a>
-        <a href="LI_Healthcare_Brief_March30_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:10px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.35);text-decoration:none;border-bottom:1px solid rgba(74,124,89,0.1);transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
-          <div style="width:6px;height:6px;border-radius:50%;background:rgba(74,124,89,0.4);flex-shrink:0;"></div>
-          Healthcare Sector
-        </a>
-        <a href="LI_Energy_Brief_March30_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:10px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.35);text-decoration:none;border-bottom:1px solid rgba(74,124,89,0.1);transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
-          <div style="width:6px;height:6px;border-radius:50%;background:rgba(74,124,89,0.4);flex-shrink:0;"></div>
-          Energy &amp; Utilities Sector
-        </a>
-        <a href="LI_Finance_Brief_March30_2026.html" target="_blank" style="display:flex;align-items:center;gap:10px;padding:10px 16px;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(223,232,220,0.35);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(74,124,89,0.08)'" onmouseout="this.style.background='transparent'">
-          <div style="width:6px;height:6px;border-radius:50%;background:rgba(74,124,89,0.4);flex-shrink:0;"></div>
-          Financial Services Sector
-        </a>
+    <div style="margin-top: 24px; max-width: 700px; margin-left: auto; margin-right: auto;" id="sector-briefs-wrap">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:4px;">
+        <button onclick="toggleSector('defense')" id="btn-defense" class="sector-btn">Defense</button>
+        <button onclick="toggleSector('healthcare')" id="btn-healthcare" class="sector-btn">Healthcare</button>
+        <button onclick="toggleSector('energy')" id="btn-energy" class="sector-btn">Energy</button>
+        <button onclick="toggleSector('finance')" id="btn-finance" class="sector-btn">Finance</button>
+      </div>
+      <div id="panel-defense" class="sector-panel" style="display:none;">
+        <a href="LI_Defense_Brief_April13_2026.html" target="_blank" class="brief-link bright"><span class="brief-dot bright"></span>Week of April 13, 2026</a>
+        <a href="LI_Defense_Brief_April6_2026.html" target="_blank" class="brief-link"><span class="brief-dot"></span>Week of April 6, 2026</a>
+        <a href="LI_Defense_Brief_March30_2026.html" target="_blank" class="brief-link dim"><span class="brief-dot dim"></span>Week of March 30, 2026</a>
+      </div>
+      <div id="panel-healthcare" class="sector-panel" style="display:none;">
+        <a href="LI_Healthcare_Brief_April13_2026.html" target="_blank" class="brief-link bright"><span class="brief-dot bright"></span>Week of April 13, 2026</a>
+        <a href="LI_Healthcare_Brief_April6_2026.html" target="_blank" class="brief-link"><span class="brief-dot"></span>Week of April 6, 2026</a>
+        <a href="LI_Healthcare_Brief_March30_2026.html" target="_blank" class="brief-link dim"><span class="brief-dot dim"></span>Week of March 30, 2026</a>
+      </div>
+      <div id="panel-energy" class="sector-panel" style="display:none;">
+        <a href="LI_Energy_Brief_April13_2026.html" target="_blank" class="brief-link bright"><span class="brief-dot bright"></span>Week of April 13, 2026</a>
+        <a href="LI_Energy_Brief_April6_2026.html" target="_blank" class="brief-link"><span class="brief-dot"></span>Week of April 6, 2026</a>
+        <a href="LI_Energy_Brief_March30_2026.html" target="_blank" class="brief-link dim"><span class="brief-dot dim"></span>Week of March 30, 2026</a>
+      </div>
+      <div id="panel-finance" class="sector-panel" style="display:none;">
+        <a href="LI_Finance_Brief_April13_2026.html" target="_blank" class="brief-link bright"><span class="brief-dot bright"></span>Week of April 13, 2026</a>
+        <a href="LI_Finance_Brief_April6_2026.html" target="_blank" class="brief-link"><span class="brief-dot"></span>Week of April 6, 2026</a>
+        <a href="LI_Finance_Brief_March30_2026.html" target="_blank" class="brief-link dim"><span class="brief-dot dim"></span>Week of March 30, 2026</a>
       </div>
     </div>
   </div>
@@ -605,7 +607,23 @@
   function animateDrops(){ctx.clearRect(0,0,canvas.width,canvas.height);drops.forEach(d=>{drawDrop(d);d.y+=d.speed;if(d.y>canvas.height+20){d.y=-20;d.x=Math.random()*canvas.width;d.opacity=Math.random()*0.55+0.18;}});requestAnimationFrame(animateDrops);}
   animateDrops();
 
-  function toggleBriefMenu(){const menu=document.getElementById('brief-menu');menu.style.display=menu.style.display==='none'?'block':'none';}
+  function toggleSector(sector){
+    const sectors=['defense','healthcare','energy','finance'];
+    sectors.forEach(s=>{
+      const panel=document.getElementById('panel-'+s);
+      const btn=document.getElementById('btn-'+s);
+      if(s===sector&&panel.style.display==='none'){
+        panel.style.display='block';
+        panel.style.maxHeight='0';panel.style.opacity='0';
+        requestAnimationFrame(()=>{panel.style.maxHeight='300px';panel.style.opacity='1';});
+        btn.classList.add('active');
+      } else {
+        panel.style.maxHeight='0';panel.style.opacity='0';
+        setTimeout(()=>{panel.style.display='none';},300);
+        btn.classList.remove('active');
+      }
+    });
+  }
   document.addEventListener('click',function(e){const wrap=document.getElementById('brief-dropdown-wrap');if(wrap&&!wrap.contains(e.target)){document.getElementById('brief-menu').style.display='none';}});
 
   document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});

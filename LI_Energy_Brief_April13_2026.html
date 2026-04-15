@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LI Energy Brief — April 13, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJEFLCXBV2"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RJEFLCXBV2');</script>
+  <style>
+    *, *::before, *::after { box-sizing:border-box;margin:0;padding:0; }
+    :root { --bg:#ffffff;--bg2:#f8f8f6;--text:#1a1c1a;--muted:#5a5c5a;--green:#3d6b4a;--green-bright:#4a7c59;--green-dim:rgba(61,107,74,0.08);--green-border:rgba(61,107,74,0.25);--red:#8b3c32;--red-dim:rgba(139,60,50,0.08);--red-border:rgba(139,60,50,0.2);--gold:#a07632;--gold-dim:rgba(160,118,50,0.08);--border:rgba(0,0,0,0.09);--blue:#2d5a8a;--blue-dim:rgba(45,90,138,0.08);--blue-border:rgba(45,90,138,0.2); }
+    html { background:#ffffff;min-height:100%; } body { font-family:'Chakra Petch',sans-serif;background:#ffffff;color:var(--text);max-width:900px;margin:0 auto;padding:40px 32px; }
+    .doc-header{border-bottom:2px solid var(--blue);padding-bottom:20px;margin-bottom:28px;} .doc-header-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;} .doc-logo{display:flex;align-items:center;gap:12px;} .doc-logo-text{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:22px;letter-spacing:3px;text-transform:uppercase;color:var(--text);} .doc-logo-text span{color:var(--green);} .doc-classification{text-align:right;} .classification-badge{display:inline-block;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border:1px solid var(--red-border);background:var(--red-dim);color:var(--red);border-radius:2px;margin-bottom:4px;} .sample-badge{display:inline-block;font-family:'Fira Code',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border:1px solid var(--blue-border);background:var(--blue-dim);color:var(--blue);border-radius:2px;margin-bottom:6px;} .doc-meta{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);text-align:right;} .doc-title-row{display:flex;justify-content:space-between;align-items:flex-end;} .doc-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:28px;letter-spacing:2px;text-transform:uppercase;color:var(--text);} .doc-subtitle{font-family:'Fira Code',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-top:4px;}
+    .threat-level-bar{display:flex;align-items:center;gap:16px;background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--red);padding:10px 16px;margin-bottom:28px;border-radius:2px;flex-wrap:wrap;} .tl-label{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap;} .tl-value{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:16px;letter-spacing:2px;text-transform:uppercase;color:var(--red);} .tl-dot{width:7px;height:7px;border-radius:50%;background:var(--red);} .tl-summary{font-size:12px;color:var(--muted);line-height:1.5;flex:1;}
+    .section{margin-bottom:32px;} .section-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border);flex-wrap:wrap;} .section-tag{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:2px;} .tag-cyber{background:var(--green-dim);color:var(--green);border:1px solid var(--green-border);} .tag-physical{background:var(--red-dim);color:var(--red);border:1px solid var(--red-border);} .tag-actor{background:var(--gold-dim);color:var(--gold);border:1px solid rgba(160,118,50,0.25);} .tag-hipaa{background:var(--blue-dim);color:var(--blue);border:1px solid var(--blue-border);} .section-pct{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:18px;letter-spacing:1px;color:var(--text);} .section-title-text{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--text);flex:1;} .section-source{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);}
+    .threat-item{background:#ffffff;border:1px solid var(--border);border-radius:2px;padding:16px 20px;margin-bottom:12px;border-left:3px solid transparent;} .threat-item.high{border-left-color:var(--red);} .threat-item.medium{border-left-color:var(--gold);} .threat-item.blue{border-left-color:var(--blue);} .threat-item-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:12px;flex-wrap:wrap;} .threat-name{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--text);} .threat-badge{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:2px;white-space:nowrap;} .badge-critical{background:rgba(139,60,50,0.1);color:var(--red);border:1px solid var(--red-border);} .badge-high{background:rgba(160,118,50,0.1);color:var(--gold);border:1px solid rgba(160,118,50,0.25);} .badge-elevated{background:rgba(61,107,74,0.1);color:var(--green);border:1px solid var(--green-border);} .badge-compliance{background:var(--blue-dim);color:var(--blue);border:1px solid var(--blue-border);} .threat-sources{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:0.5px;color:var(--muted);margin-bottom:10px;} .threat-body{font-size:13px;line-height:1.85;color:#2a2c2a;margin-bottom:10px;} .threat-action{font-size:12px;line-height:1.7;color:var(--green);background:var(--green-dim);border:1px solid var(--green-border);padding:10px 14px;border-radius:2px;}
+    .divider{border:none;border-top:1px solid var(--border);margin:32px 0;} .exec-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:2px;padding:20px 24px;} .exec-label{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;} .exec-body{font-size:13px;line-height:1.85;color:#2a2c2a;} .exec-body p{margin-bottom:12px;} .exec-body p:last-child{margin-bottom:0;}
+    .actor-card{background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:20px 24px;margin-bottom:16px;} .actor-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px;flex-wrap:wrap;} .actor-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:16px;letter-spacing:1px;color:var(--text);} .actor-alias{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:0.5px;color:var(--muted);margin-top:2px;} .actor-sponsor{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:2px;background:var(--red-dim);color:var(--red);border:1px solid var(--red-border);white-space:nowrap;} .actor-body{font-size:13px;line-height:1.85;color:#2a2c2a;margin-bottom:12px;} .actor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;} .actor-stat{background:#ffffff;border:1px solid var(--border);border-radius:2px;padding:10px 14px;} .actor-stat-label{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;} .actor-stat-value{font-family:'Chakra Petch',sans-serif;font-size:12px;color:var(--text);line-height:1.4;}
+    .stat-highlight{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;} .stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:16px;text-align:center;} .stat-number{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:32px;color:var(--red);} .stat-label{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+    .doc-footer{display:flex;justify-content:space-between;align-items:center;margin-top:40px;padding-top:16px;border-top:2px solid var(--blue);flex-wrap:wrap;gap:8px;} .footer-li{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:16px;letter-spacing:3px;text-transform:uppercase;} .footer-li span{color:var(--green);} .footer-meta{font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);}
+    @media(max-width:700px){body{padding:20px 16px;}.doc-header-top{flex-direction:column;gap:12px;}.doc-classification{text-align:left;}.doc-title-row{flex-direction:column;gap:8px;}.doc-title{font-size:22px;}.threat-item-header{flex-direction:column;gap:6px;}.actor-header{flex-direction:column;gap:8px;}.actor-grid{grid-template-columns:1fr;}.stat-highlight{grid-template-columns:1fr 1fr;}.doc-footer{flex-direction:column;gap:8px;}div[style*="grid-template-columns: 1fr 1fr"]{display:block !important;}div[style*="grid-template-columns: 1fr 1fr"]>div{margin-bottom:20px;}}
+  </style>
+</head>
+<body>
+
+  <div class="doc-header">
+    <div class="doc-header-top">
+      <div class="doc-logo">
+        <svg width="36" height="36" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="gc"><circle cx="40" cy="40" r="18"/></clipPath></defs><polygon points="40,4 72,22 72,58 40,76 8,58 8,22" fill="none" stroke="#3d6b4a" stroke-width="1.2" opacity="0.6"/><circle cx="40" cy="40" r="18" fill="none" stroke="#4a7c59" stroke-width="1.3" opacity="0.9"/><g clip-path="url(#gc)" opacity="0.4" stroke="#4a7c59" stroke-width="0.7" fill="none"><ellipse cx="40" cy="40" rx="18" ry="5"/><ellipse cx="40" cy="40" rx="18" ry="10"/><ellipse cx="40" cy="40" rx="18" ry="15"/><ellipse cx="40" cy="40" rx="5" ry="18"/><ellipse cx="40" cy="40" rx="10" ry="18"/><ellipse cx="40" cy="40" rx="15" ry="18"/><line x1="22" y1="40" x2="58" y2="40"/><line x1="40" y1="22" x2="40" y2="58"/></g><circle cx="40" cy="40" r="1.8" fill="#4a7c59" opacity="0.8"/><circle cx="62" cy="18" r="3.5" fill="#8b3c32" opacity="0.9"/></svg>
+        <div>
+          <div class="doc-logo-text">Logical<span>Intelligence</span></div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;color:#5a5c5a;text-transform:uppercase;">Centralized Clarity over Cracked Confusion</div>
+        </div>
+      </div>
+      <div class="doc-classification">
+        <div class="sample-badge">Sample Brief &mdash; Preview of Subscriber Experience</div><br>
+        <div class="classification-badge">Subscriber Use Only</div>
+        <div class="doc-meta">TLP: AMBER &middot; Not for Public Release</div>
+        <div class="doc-meta" style="margin-top:2px;">Distribution: Energy &amp; Utilities Sector Subscribers</div>
+      </div>
+    </div>
+    <div class="doc-title-row">
+      <div>
+        <div class="doc-title">Energy &amp; Utilities Sector Intelligence Brief</div>
+        <div class="doc-subtitle">Correlated &middot; Sector-Specific &middot; Plain Language</div>
+      </div>
+      <div class="doc-date">
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-align:right;">Week of April 13, 2026</div>
+        <div class="doc-meta" style="text-align:right;margin-top:2px;">Sources: CISA &middot; NERC &middot; Dragos &middot; CSIS &middot; Mandiant &middot; Anthropic &middot; Utility Dive &middot; OSINT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="threat-level-bar">
+    <div class="tl-dot"></div>
+    <div class="tl-label">National Threat Level</div>
+    <div class="tl-value">Critical</div>
+    <div class="tl-summary">CISA warns Iran-linked hackers targeting programmable logic controllers in U.S. power grid, water, and wastewater. NERC &ldquo;actively monitoring the grid.&rdquo; CSIS: Iran&rsquo;s cyber posture is now sustained, not episodic. Dragos: Russian-linked KAMACITE spent 4 months scanning U.S. industrial devices; SYLVANITE operating inside a U.S. electric utility. Electrum (Sandworm) conducted first-ever DER cyberattack in Poland. Anthropic Mythos Preview AI can autonomously exploit zero-days &mdash; energy legacy systems most exposed. Mandiant: adversary handoffs collapsed to 22 seconds.</div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Executive Summary</span>
+      <span class="section-title-text">What You Need To Know This Week</span>
+    </div>
+    <div class="exec-box">
+      <div class="exec-label">For Decision Makers &mdash; Plain Language</div>
+      <div class="exec-body">
+        <p>On April 8, CISA issued a direct warning: Iran-linked hackers are actively targeting programmable logic controllers used in U.S. power grid operations, water, and wastewater systems. NERC confirmed it is &ldquo;actively monitoring the grid.&rdquo; This comes during the sixth week of the US-Israeli war against Iran, and CSIS published an analysis this week stating that Iran&rsquo;s approach to cyber conflict is no longer episodic or symbolic &mdash; it is a sustained, strategic posture that treats cyberspace as an extension of state power. Iranian actors are pre-positioning access inside energy networks not just for immediate disruption but for future escalation, creating latent risk that may only surface during moments of geopolitical crisis.</p>
+        <p>Russia-linked adversaries are equally active. Dragos&rsquo;s 2026 report revealed that KAMACITE &mdash; the access development team that enables ELECTRUM (Sandworm) &mdash; spent four months systematically scanning internet-exposed industrial devices across the United States, targeting HMIs, variable frequency drives, meters, and cellular gateways to map entire control loops. Dragos also observed SYLVANITE, a Stage 1 access group, operating inside a U.S. electric utility network and handing footholds directly to ICS-capable adversaries like VOLTZITE (Volt Typhoon). Separately, ELECTRUM conducted the first-ever cyberattack targeting distributed energy resources in Poland &mdash; deploying wiper malware that destroyed remote terminal units and corrupted HMI data. The system operator lost view and control of renewable energy facilities. CISA issued a follow-up alert urging U.S. operators to review the Polish report.</p>
+        <p>The strategic threat shifted further this week with Anthropic&rsquo;s announcement that its Mythos Preview AI model can autonomously find and exploit zero-day vulnerabilities in every major operating system. Energy infrastructure runs on systems with 20-30 year lifecycles, legacy firmware, and operating systems that cannot be easily patched. When AI models can find zero-days in modern systems, they will certainly find exploitable vulnerabilities in the SCADA and ICS infrastructure that the energy sector depends on. Mandiant&rsquo;s M-Trends 2026 confirmed adversary handoff times have collapsed to 22 seconds.</p>
+        <p>The bottom line: the U.S. energy grid is not being breached loudly at a point in time &mdash; it is being inhabited silently over time. Multiple nation-state actors are inside or actively probing U.S. energy infrastructure simultaneously. The grid is not as insulated from disruption as traditional security models assumed. Energy executives who have not invested in OT-specific threat detection and incident response capabilities are operating on borrowed time.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY STATS -->
+  <div class="stat-highlight">
+    <div class="stat-card"><div class="stat-number">4mo</div><div class="stat-label">KAMACITE Scanning U.S. ICS</div></div>
+    <div class="stat-card"><div class="stat-number">22s</div><div class="stat-label">Adversary Handoff (M-Trends)</div></div>
+    <div class="stat-card"><div class="stat-number">20+</div><div class="stat-label">ICS Threat Groups (Dragos)</div></div>
+    <div class="stat-card"><div class="stat-number">1st</div><div class="stat-label">DER Cyberattack (Poland)</div></div>
+  </div>
+
+  <!-- CYBER THREATS 80% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-cyber">Cyber Threats</span>
+      <span class="section-pct">80%</span>
+      <span class="section-title-text">Active Campaigns Targeting Energy &amp; Utilities</span>
+      <span class="section-source">CISA &middot; NERC &middot; Dragos &middot; CSIS &middot; Mandiant &middot; Anthropic</span>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">CISA Warning: Iran-Linked Hackers Targeting PLCs in U.S. Power Grid and Water Systems</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: CISA Advisory &middot; Utility Dive &middot; NERC &middot; April 8, 2026</div>
+      <div class="threat-body">CISA issued an advisory on April 8 warning that hackers affiliated with Iran are actively targeting programmable logic controllers (PLCs) used in the energy sector, water and wastewater systems, and government facilities. NERC confirmed it is &ldquo;actively monitoring the grid&rdquo; in response. The advisory was issued during the sixth week of the US-Israeli war against Iran, indicating that Iranian cyber operations against U.S. critical infrastructure are escalating in direct response to the kinetic conflict. PLCs are the fundamental building blocks of industrial automation &mdash; they control pumps, valves, circuit breakers, and other physical systems. Compromising a PLC gives an attacker the ability to cause physical effects: opening valves, tripping breakers, disrupting water treatment processes. CSIS analysis published this week confirmed that Iran&rsquo;s approach to cyber conflict has shifted from episodic to sustained, treating cyberspace as an extension of state power against critical infrastructure.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Audit all internet-exposed PLCs immediately. Ensure no PLCs are directly accessible from the internet without VPN and MFA. Implement network monitoring for anomalous PLC communications. Review CISA advisory for specific Iran-linked indicators of compromise. Coordinate with your regional NERC entity on grid monitoring status. Brief control room operators on the elevated Iranian threat to PLC infrastructure.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Dragos 2026: KAMACITE Scanning U.S. Industrial Devices, SYLVANITE Inside U.S. Utility</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Dragos 2026 OT/ICS Cybersecurity Year in Review &middot; April 2026</div>
+      <div class="threat-body">Dragos&rsquo;s 2026 report reveals that KAMACITE &mdash; the access development team that directly enables ELECTRUM (Sandworm/Russia) &mdash; spent four months systematically scanning internet-exposed industrial devices across the United States. KAMACITE targeted HMIs, variable frequency drives, meters, and cellular gateways in deliberate sequence to map entire control loops across energy and critical infrastructure sectors. Separately, Dragos observed SYLVANITE, a Stage 1 access group, operating inside a U.S. electric utility network and handing footholds directly to ICS-capable adversaries including VOLTZITE (Volt Typhoon). Dragos now tracks over twenty ICS threat groups &mdash; up from five in 2018. The report states that &ldquo;electric environments are not being breached loudly at a point in time; they are being inhabited silently over time.&rdquo; The adversaries are not just maintaining access &mdash; they are building the operational intelligence required to cause physical disruption when ordered to act.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Conduct an immediate audit of all internet-exposed industrial devices &mdash; HMIs, VFDs, meters, cellular gateways. Implement the Dragos/SANS ICS Five Critical Controls. Deploy OT-specific network monitoring capable of inspecting ICS protocols. Hunt for SYLVANITE and KAMACITE indicators in your OT environment. If you are a U.S. electric utility, request a proactive assessment from Dragos or CISA.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Electrum (Sandworm) &mdash; First-Ever Cyberattack on Distributed Energy Resources in Poland</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Dragos &middot; CyberScoop &middot; CISA &middot; January&ndash;February 2026</div>
+      <div class="threat-body">ELECTRUM (tracked by others as Sandworm) conducted the first-ever cyberattack targeting distributed energy resources (DERs) &mdash; smaller wind, solar, and CHP facilities being added to grids worldwide. The attack targeted a Polish power system, deploying wiper malware through vulnerable internet-facing edge devices. The malware destroyed remote terminal units (RTUs), corrupted HMI data, and caused loss of view and control between facilities and distribution system operators. While the renewable energy systems continued producing power, the operators could not control or monitor them &mdash; a loss of situational awareness that is the prerequisite for grid instability. CISA issued a follow-up alert urging U.S. operators to review the Polish report and strengthen edge device security. The Polish CERT compared the attack to &ldquo;deliberate arson.&rdquo; This attack is significant because DERs are being deployed rapidly across the U.S. and globally, often faster than they are secured. The grid is becoming more capable but also more exposed.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Operators of distributed energy resources (solar, wind, battery storage, CHP) must audit all edge devices and remote access pathways. Implement firmware integrity monitoring on RTUs. Ensure DER management systems are segmented from business IT networks. Review CISA&rsquo;s guidance on the Poland attack. Coordinate with DER equipment vendors on patch status for internet-facing devices. Recognize that DER environments are now confirmed targets for nation-state destructive attacks.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Anthropic Mythos Preview &mdash; AI Zero-Day Discovery and Energy Legacy System Exposure</div>
+        <span class="threat-badge badge-critical">Critical &mdash; Capability Shift</span>
+      </div>
+      <div class="threat-sources">Sources: Anthropic &middot; The Hacker News &middot; Help Net Security &middot; April 8, 2026</div>
+      <div class="threat-body">Anthropic&rsquo;s unreleased Mythos Preview AI model autonomously found and exploited zero-day vulnerabilities in every major operating system and browser. Energy infrastructure is uniquely exposed to this capability shift: SCADA systems run on operating systems with 20-30 year lifecycles. ICS devices often run legacy firmware that has never been audited by modern tools. Physical assets cannot be rebooted for patching without safety incidents. Edge devices connecting DER systems to the grid were not designed with cybersecurity in mind. When AI models can autonomously find zero-days in modern, well-maintained software, they will find orders of magnitude more exploitable vulnerabilities in the legacy systems that the energy grid depends on. Palo Alto Networks warned similar capabilities are &ldquo;weeks or months from proliferation.&rdquo; Energy sector defenders must prepare now for a world where adversaries can discover vulnerabilities in their infrastructure faster than vendors can produce patches.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Prioritize reducing attack surface on all OT systems &mdash; every internet-exposed device is a target. Implement compensating controls for systems that cannot be patched: network isolation, protocol-aware monitoring, access restrictions. Begin evaluating AI-augmented vulnerability scanning for OT environments. Accept that patching alone is no longer sufficient &mdash; defense-in-depth with monitoring and segmentation is mandatory.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Adobe Acrobat Reader Zero-Day &mdash; CVE-2026-34621 Actively Exploited</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: Adobe &middot; CISA KEV &middot; April 11&ndash;13, 2026</div>
+      <div class="threat-body">Adobe patched a critical Acrobat Reader zero-day (CVE-2026-34621, CVSS 8.6) actively exploited since December 2025 via malicious PDFs. Energy utilities exchange PDF documents constantly with regulators (NERC, FERC, state PUCs), vendors, contractors, and government agencies. Phishing emails delivering malicious PDFs are disguised as compliance filings, inspection reports, and vendor communications. CISA added to KEV catalog with April 27 deadline.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Patch Adobe Acrobat Reader immediately. Instruct staff not to open PDF attachments from unverified senders. Block &ldquo;Adobe Synchronizer&rdquo; User Agent traffic.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">CPUID Supply Chain Attack &mdash; Utility IT Staff Targeted</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: Kaspersky &middot; The Hacker News &middot; April 9&ndash;13, 2026</div>
+      <div class="threat-body">CPUID&rsquo;s website was compromised for 19 hours (April 9&ndash;10), serving trojanized CPU-Z and HWMonitor installers that deployed STX RAT. These hardware monitoring tools are used by utility IT staff, OT engineers, and data center administrators &mdash; the people with privileged access to SCADA systems and control networks. STX RAT harvests credentials, session cookies, VPN credentials, and password manager data. A single infected workstation used by an OT engineer provides a bridge from IT to OT networks.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Check all IT and OT workstations for CPUID downloads April 9&ndash;10. Isolate and investigate if found. Block C2 95.216.51[.]236. Implement application allowlisting on OT-adjacent workstations.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PHYSICAL 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-physical">Physical &amp; Proximity</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Pre-Positioning &amp; Physical Infrastructure Indicators</span>
+      <span class="section-source">CSIS &middot; Dragos &middot; FARA &middot; OSINT</span>
+    </div>
+
+    <div class="threat-item blue">
+      <div class="threat-item-header">
+        <div class="threat-name">Iran Cyber Posture Shift &mdash; From Episodic to Sustained Campaign Against Critical Infrastructure</div>
+        <span class="threat-badge badge-critical">Strategic</span>
+      </div>
+      <div class="threat-sources">Sources: CSIS &middot; Industrial Cyber &middot; April 2026</div>
+      <div class="threat-body">CSIS published analysis this week identifying that Iran&rsquo;s approach to cyber conflict is no longer episodic or symbolic. It is a sustained, strategic posture that treats cyberspace as an extension of state power, particularly against critical infrastructure. Iranian actors, including state-linked and proxy hacktivist groups, are positioned to target energy, water, and transportation sectors, exploiting legacy ICS and weak segmentation. These operations are not just about immediate disruption &mdash; they are about pre-positioning access for future escalation, creating latent risk inside networks that may only surface during moments of geopolitical crisis. The blend of capability and intent makes the current threat environment more volatile than previous Iranian cyber campaigns. For energy utilities, this means the threat is not a single attack &mdash; it is a persistent presence that may activate at a time chosen by the adversary, not the defender.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Energy utilities should assume Iranian actors are probing or present in their environments. Conduct threat hunts specifically targeting Iranian TTPs: default credentials on PLCs, internet-exposed HMIs, and Modbus/DNP3 anomalies. Coordinate with sector ISACs on Iran-specific threat intelligence. Brief executive leadership on the CSIS assessment framing Iran as a sustained strategic threat, not an episodic one.</div>
+    </div>
+
+    <div class="threat-item blue">
+      <div class="threat-item-header">
+        <div class="threat-name">Grid Being &ldquo;Inhabited Silently&rdquo; &mdash; Multiple Nation-States Inside U.S. Infrastructure</div>
+        <span class="threat-badge badge-high">Elevated</span>
+      </div>
+      <div class="threat-sources">Sources: Dragos &middot; CISA &middot; Mandiant &middot; 2026</div>
+      <div class="threat-body">This week&rsquo;s intelligence creates a composite picture that is more concerning than any individual threat item. Volt Typhoon (China) remains embedded in utility control loops. KAMACITE (Russia) spent four months mapping U.S. industrial control loops. SYLVANITE (multi-national) is operating inside a U.S. electric utility and handing access to ICS-capable adversaries. Iran is actively targeting PLCs in U.S. power grid operations. ELECTRUM (Russia) demonstrated destructive DER capability in Poland. Dragos now tracks over 20 ICS threat groups. The grid is not being attacked &mdash; it is being prepared for attack. Multiple nation-states are building the access, intelligence, and capability to disrupt U.S. energy infrastructure at a time of their choosing. This is the full-spectrum pre-positioning that this brief&rsquo;s 80/10/10 framework is designed to correlate.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Energy executives should present this composite threat picture to boards and regulators. The threat is not hypothetical &mdash; it is documented and active. Investment in OT visibility, ICS-specific incident response, and grid resilience should be treated as operational imperatives, not discretionary spending.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KNOWN ACTORS 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-actor">Known Actors</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Active Threat Actor Profiles &mdash; Energy Sector</span>
+      <span class="section-source">MITRE ATT&CK &middot; Dragos &middot; CISA &middot; CSIS &middot; Mandiant</span>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">KAMACITE / ELECTRUM (Russia)</div>
+          <div class="actor-alias">ELECTRUM synonymous with Sandworm &middot; KAMACITE enables ELECTRUM access &middot; Caused Ukraine grid attacks 2015/2016</div>
+        </div>
+        <span class="actor-sponsor" style="background:rgba(80,80,80,0.08);color:#555;border:1px solid rgba(80,80,80,0.2);">Russian State-Sponsored</span>
+      </div>
+      <div class="actor-body">KAMACITE spent four months in 2025 systematically scanning internet-exposed U.S. industrial devices to map entire control loops. ELECTRUM conducted the first-ever DER cyberattack in Poland, deploying wiper malware that destroyed RTUs and corrupted HMI data. These two entities work as a team: KAMACITE develops access, ELECTRUM executes destructive operations. They have caused real power outages in Ukraine (2015, 2016) and are now actively building the intelligence and access required to do the same in the United States and NATO allies. Dragos describes their current posture as &ldquo;deliberate, active preparation for operational impact.&rdquo;</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">ICS Scanning, Edge Device Exploitation, Wiper Malware, RTU Destruction, DER Targeting</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Electric Grid, DER/Renewables, Natural Gas, Water</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Critical &middot; 4-month U.S. scanning campaign &middot; Poland DER attack</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Volt Typhoon / VOLTZITE (PRC)</div>
+          <div class="actor-alias">Also known as: Bronze Silhouette &middot; Vanguard Panda &middot; SYLVANITE handing access to VOLTZITE</div>
+        </div>
+        <span class="actor-sponsor" style="background:rgba(160,100,30,0.08);color:#a06420;border:1px solid rgba(160,100,30,0.25);">PRC State-Sponsored</span>
+      </div>
+      <div class="actor-body">Remains embedded inside U.S. critical infrastructure. Dragos confirmed SYLVANITE operating inside a U.S. electric utility and handing footholds directly to VOLTZITE. This confirms the multi-actor handoff model: one group develops access, another prepares for disruption. Volt Typhoon&rsquo;s mission remains pre-positioning for disruption during a potential Taiwan scenario. The combination of SYLVANITE access delivery + VOLTZITE operational capability + AI-enabled zero-day discovery represents a compound threat with no historical precedent.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">LOLBins, SOHO Router C2, NTDS.dit Theft, Receiving SYLVANITE Handoffs</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Energy, Water, Telecom, Transportation, Defense</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active &middot; Embedded &middot; SYLVANITE handoff confirmed</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Iranian PLC-Targeting Actors</div>
+          <div class="actor-alias">CISA Advisory April 8 &middot; NERC actively monitoring &middot; Sustained strategic posture per CSIS</div>
+        </div>
+        <span class="actor-sponsor">Iranian State-Sponsored</span>
+      </div>
+      <div class="actor-body">CISA warned on April 8 that Iran-affiliated hackers are targeting PLCs in U.S. energy, water, and government facilities during the sixth week of the US-Israeli-Iran conflict. CSIS analysis confirms this is not episodic &mdash; Iran now treats cyberspace as a sustained extension of state power against critical infrastructure. Iranian actors are pre-positioning access for future escalation, exploiting legacy ICS and weak segmentation. The combination of Iranian PLC targeting, Handala&rsquo;s destructive operations against other sectors, and the sustained wartime context creates the highest Iranian cyber threat to U.S. energy infrastructure since the conflict began.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">PLC Targeting, Default Credentials, Internet-Exposed ICS, Pre-Positioning</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Energy, Water, Wastewater, Government Facilities</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Critical &middot; Active PLC targeting &middot; NERC monitoring grid</div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRIORITY ACTIONS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Priority Actions</span>
+      <span class="section-title-text">This Week&rsquo;s Non-Negotiables</span>
+    </div>
+    <div style="background:#ffffff;border:1px solid var(--border);border-radius:2px;padding:20px 24px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Immediate &mdash; This Week</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Audit all internet-exposed PLCs &mdash; Iran is actively targeting them now<br>
+            2. Patch Adobe Acrobat Reader against CVE-2026-34621<br>
+            3. Check IT/OT workstations for CPUID downloads April 9&ndash;10<br>
+            4. Review CISA advisory on Iran PLC targeting for specific IOCs<br>
+            5. Audit all DER edge devices and remote access pathways (Poland attack context)<br>
+            6. Coordinate with NERC regional entity on grid monitoring status
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Near-Term &mdash; 30 Days</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Implement Dragos/SANS ICS Five Critical Controls across OT environments<br>
+            2. Deploy OT-specific network monitoring with ICS protocol inspection<br>
+            3. Hunt for KAMACITE, SYLVANITE, and VOLTZITE indicators<br>
+            4. Segment DER management systems from business IT networks<br>
+            5. Present composite multi-nation-state threat picture to board and regulators<br>
+            6. Begin evaluating AI-augmented vulnerability scanning for OT systems
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div class="footer-li">Logical<span>Intelligence</span></div>
+    <div class="footer-meta">LogicalIntelligence.us &middot; Week of April 13, 2026 &middot; Energy &amp; Utilities Sector Brief &middot; TLP: AMBER &middot; Subscriber Use Only</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;color:rgba(0,0,0,0.25);">Correlated from public sources. Not classified. For security awareness purposes.</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;"><a href="mailto:logicalintelligence.us@gmail.com" style="color:#4a7c59;text-decoration:none;">logicalintelligence.us@gmail.com</a></div>
+  </div>
+
+</body>
+</html>

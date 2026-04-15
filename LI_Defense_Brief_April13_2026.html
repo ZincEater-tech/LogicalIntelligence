@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LI Defense Brief — April 13, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Chakra+Petch:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJEFLCXBV2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJEFLCXBV2');
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff; --bg2: #f8f8f6; --text: #1a1c1a; --muted: #5a5c5a;
+      --green: #3d6b4a; --green-bright: #4a7c59; --green-dim: rgba(61,107,74,0.08); --green-border: rgba(61,107,74,0.25);
+      --red: #8b3c32; --red-dim: rgba(139,60,50,0.08); --red-border: rgba(139,60,50,0.2);
+      --gold: #a07632; --gold-dim: rgba(160,118,50,0.08);
+      --border: rgba(0,0,0,0.09);
+      --blue: #2d5a8a; --blue-dim: rgba(45,90,138,0.08); --blue-border: rgba(45,90,138,0.2);
+    }
+    html { background: #ffffff; min-height: 100%; }
+    body { font-family: 'Chakra Petch', sans-serif; background: #ffffff; color: var(--text); max-width: 900px; margin: 0 auto; padding: 40px 32px; }
+    .doc-header { border-bottom: 2px solid var(--blue); padding-bottom: 20px; margin-bottom: 28px; }
+    .doc-header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+    .doc-logo { display: flex; align-items: center; gap: 12px; }
+    .doc-logo-text { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 3px; text-transform: uppercase; color: var(--text); }
+    .doc-logo-text span { color: var(--green); }
+    .doc-classification { text-align: right; }
+    .classification-badge { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--red-border); background: var(--red-dim); color: var(--red); border-radius: 2px; margin-bottom: 4px; }
+    .sample-badge { display: inline-block; font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border: 1px solid var(--blue-border); background: var(--blue-dim); color: var(--blue); border-radius: 2px; margin-bottom: 6px; }
+    .doc-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); text-align: right; }
+    .doc-title-row { display: flex; justify-content: space-between; align-items: flex-end; }
+    .doc-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); }
+    .doc-subtitle { font-family: 'Fira Code', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-top: 4px; }
+    .threat-level-bar { display: flex; align-items: center; gap: 16px; background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--red); padding: 10px 16px; margin-bottom: 28px; border-radius: 2px; flex-wrap: wrap; }
+    .tl-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .tl-value { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); }
+    .tl-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+    .tl-summary { font-size: 12px; color: var(--muted); line-height: 1.5; flex: 1; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .section-tag { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; }
+    .tag-cyber { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
+    .tag-physical { background: var(--red-dim); color: var(--red); border: 1px solid var(--red-border); }
+    .tag-actor { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .tag-hipaa { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+    .section-pct { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 1px; color: var(--text); }
+    .section-title-text { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; color: var(--text); flex: 1; }
+    .section-source { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+    .threat-item { background: #ffffff; border: 1px solid var(--border); border-radius: 2px; padding: 16px 20px; margin-bottom: 12px; border-left: 3px solid transparent; }
+    .threat-item.high { border-left-color: var(--red); }
+    .threat-item.medium { border-left-color: var(--gold); }
+    .threat-item.low { border-left-color: var(--green); }
+    .threat-item.blue { border-left-color: var(--blue); }
+    .threat-item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 12px; flex-wrap: wrap; }
+    .threat-name { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--text); }
+    .threat-badge { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+    .badge-critical { background: rgba(139,60,50,0.1); color: var(--red); border: 1px solid var(--red-border); }
+    .badge-high { background: rgba(160,118,50,0.1); color: var(--gold); border: 1px solid rgba(160,118,50,0.25); }
+    .badge-elevated { background: rgba(61,107,74,0.1); color: var(--green); border: 1px solid var(--green-border); }
+    .badge-compliance { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+    .threat-sources { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 10px; }
+    .threat-body { font-size: 13px; line-height: 1.85; color: #2a2c2a; margin-bottom: 10px; }
+    .threat-action { font-size: 12px; line-height: 1.7; color: var(--green); background: var(--green-dim); border: 1px solid var(--green-border); padding: 10px 14px; border-radius: 2px; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+    .exec-box { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 2px; padding: 20px 24px; }
+    .exec-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    .exec-body { font-size: 13px; line-height: 1.85; color: #2a2c2a; }
+    .exec-body p { margin-bottom: 12px; }
+    .exec-body p:last-child { margin-bottom: 0; }
+    .actor-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 20px 24px; margin-bottom: 16px; }
+    .actor-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; flex-wrap: wrap; }
+    .actor-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 1px; color: var(--text); }
+    .actor-alias { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 0.5px; color: var(--muted); margin-top: 2px; }
+    .actor-sponsor { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; background: var(--red-dim); color: var(--red); border: 1px solid var(--red-border); white-space: nowrap; }
+    .actor-body { font-size: 13px; line-height: 1.85; color: #2a2c2a; margin-bottom: 12px; }
+    .actor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .actor-stat { background: #ffffff; border: 1px solid var(--border); border-radius: 2px; padding: 10px 14px; }
+    .actor-stat-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .actor-stat-value { font-family: 'Chakra Petch', sans-serif; font-size: 12px; color: var(--text); line-height: 1.4; }
+    .stat-highlight { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+    .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 16px; text-align: center; }
+    .stat-number { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 32px; color: var(--red); }
+    .stat-label { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+    .doc-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 16px; border-top: 2px solid var(--blue); flex-wrap: wrap; gap: 8px; }
+    .footer-li { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 3px; text-transform: uppercase; }
+    .footer-li span { color: var(--green); }
+    .footer-meta { font-family: 'Fira Code', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+    @media (max-width: 700px) {
+      body { padding: 20px 16px; }
+      .doc-header-top { flex-direction: column; gap: 12px; }
+      .doc-classification { text-align: left; }
+      .doc-title-row { flex-direction: column; gap: 8px; }
+      .doc-title { font-size: 22px; }
+      .threat-item-header { flex-direction: column; gap: 6px; }
+      .actor-header { flex-direction: column; gap: 8px; }
+      .actor-grid { grid-template-columns: 1fr; }
+      .stat-highlight { grid-template-columns: 1fr 1fr; }
+      .doc-footer { flex-direction: column; gap: 8px; }
+      div[style*="grid-template-columns: 1fr 1fr"] { display: block !important; }
+      div[style*="grid-template-columns: 1fr 1fr"] > div { margin-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="doc-header">
+    <div class="doc-header-top">
+      <div class="doc-logo">
+        <svg width="36" height="36" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <defs><clipPath id="gc"><circle cx="40" cy="40" r="18"/></clipPath></defs>
+          <polygon points="40,4 72,22 72,58 40,76 8,58 8,22" fill="none" stroke="#3d6b4a" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="40" cy="40" r="18" fill="none" stroke="#4a7c59" stroke-width="1.3" opacity="0.9"/>
+          <g clip-path="url(#gc)" opacity="0.4" stroke="#4a7c59" stroke-width="0.7" fill="none">
+            <ellipse cx="40" cy="40" rx="18" ry="5"/><ellipse cx="40" cy="40" rx="18" ry="10"/><ellipse cx="40" cy="40" rx="18" ry="15"/>
+            <ellipse cx="40" cy="40" rx="5" ry="18"/><ellipse cx="40" cy="40" rx="10" ry="18"/><ellipse cx="40" cy="40" rx="15" ry="18"/>
+            <line x1="22" y1="40" x2="58" y2="40"/><line x1="40" y1="22" x2="40" y2="58"/>
+          </g>
+          <circle cx="40" cy="40" r="1.8" fill="#4a7c59" opacity="0.8"/>
+          <circle cx="62" cy="18" r="3.5" fill="#8b3c32" opacity="0.9"/>
+        </svg>
+        <div>
+          <div class="doc-logo-text">Logical<span>Intelligence</span></div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;color:#5a5c5a;text-transform:uppercase;">Centralized Clarity over Cracked Confusion</div>
+        </div>
+      </div>
+      <div class="doc-classification">
+        <div class="sample-badge">Sample Brief &mdash; Preview of Subscriber Experience</div><br>
+        <div class="classification-badge">Subscriber Use Only</div>
+        <div class="doc-meta">TLP: AMBER &middot; Not for Public Release</div>
+        <div class="doc-meta" style="margin-top:2px;">Distribution: Defense Sector Subscribers</div>
+      </div>
+    </div>
+    <div class="doc-title-row">
+      <div>
+        <div class="doc-title">Defense Sector Intelligence Brief</div>
+        <div class="doc-subtitle">Correlated &middot; Sector-Specific &middot; Plain Language</div>
+      </div>
+      <div class="doc-date">
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-align:right;">Week of April 13, 2026</div>
+        <div class="doc-meta" style="text-align:right;margin-top:2px;">Sources: Anthropic &middot; Mandiant/Google GTIG &middot; CrowdStrike &middot; CISA &middot; Check Point &middot; Fortinet &middot; Kaspersky &middot; OSINT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="threat-level-bar">
+    <div class="tl-dot"></div>
+    <div class="tl-label">National Threat Level</div>
+    <div class="tl-value">Critical</div>
+    <div class="tl-summary">Anthropic&rsquo;s Mythos Preview AI model autonomously found and exploited zero-day vulnerabilities in every major operating system and browser &mdash; restricted to prevent proliferation. Mandiant M-Trends 2026: adversary handoff times collapsed to 22 seconds. CrowdStrike: average eCrime breakout 29 minutes. CPUID supply chain attack distributed STX RAT through trojanized CPU-Z and HWMonitor. Adobe Acrobat Reader actively exploited zero-day (CVE-2026-34621). Iran password-spraying 300+ Israeli M365 organizations. AI-assisted development creating 400% surge in critical vulnerabilities.</div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Executive Summary</span>
+      <span class="section-title-text">What You Need To Know This Week</span>
+    </div>
+    <div class="exec-box">
+      <div class="exec-label">For Decision Makers &mdash; Plain Language</div>
+      <div class="exec-body">
+        <p>The rules of cyber offense just changed. On April 8, Anthropic announced that its unreleased Mythos Preview AI model autonomously found and exploited zero-day vulnerabilities in every major operating system and every major web browser. The model discovered a 27-year-old vulnerability in OpenBSD, a 16-year-old flaw in FFmpeg, and a 17-year-old remote code execution vulnerability in FreeBSD that grants unauthenticated root access &mdash; all without human assistance. Anthropic&rsquo;s previous best model had a near-zero success rate at autonomous exploit development. Mythos Preview achieved 181 working exploits on the same test set. Anthropic is not releasing Mythos Preview publicly and has formed Project Glasswing with AWS, Apple, Cisco, CrowdStrike, Google, JPMorgan Chase, Microsoft, NVIDIA, and Palo Alto Networks to use the model defensively. But Palo Alto Networks&rsquo; Wendi Whitmore warned that similar capabilities are &ldquo;weeks or months from proliferation.&rdquo; Defense contractors must assume that adversaries &mdash; including nation-state actors &mdash; will soon have access to AI models that can find and exploit vulnerabilities faster than human defenders can patch them.</p>
+        <p>That timeline pressure is compounded by Mandiant&rsquo;s M-Trends 2026 report, which documents that adversary handoff times &mdash; the interval between initial access and transfer to a ransomware operator or secondary threat group &mdash; have collapsed from over 8 hours in 2022 to 22 seconds in 2025. CrowdStrike&rsquo;s 2026 Global Threat Report puts average eCrime breakout time at 29 minutes. Voice phishing has surpassed email phishing as the #2 initial infection vector at 11%, while email phishing dropped to 6%. Attackers are not sending emails &mdash; they are calling your help desk.</p>
+        <p>On the supply chain front, CPUID&rsquo;s official website was compromised for approximately 19 hours on April 9&ndash;10, serving trojanized versions of CPU-Z and HWMonitor that deployed STX RAT. These are standard tools used by IT professionals, system administrators, and data center engineers &mdash; exactly the people with privileged access inside defense contractor networks. Separately, Adobe patched a critical Acrobat Reader zero-day (CVE-2026-34621) that has been actively exploited since December 2025 via malicious PDFs. CISA added it to the KEV catalog with an April 27 deadline. Defense contractors exchange PDFs constantly &mdash; every one of them is now a potential attack vector until patching is complete.</p>
+        <p>The bottom line: offense is accelerating on every front. AI models that can autonomously find and exploit zero-days. Adversary handoffs measured in seconds. Supply chain attacks targeting the tools that IT professionals trust. Zero-days delivered through the PDF files that every organization opens every day. The window between vulnerability and exploitation is closing, and defense contractors that operate on monthly patch cycles are already behind.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY STATS -->
+  <div class="stat-highlight">
+    <div class="stat-card"><div class="stat-number">22s</div><div class="stat-label">Adversary Handoff Time (M-Trends)</div></div>
+    <div class="stat-card"><div class="stat-number">29m</div><div class="stat-label">Avg eCrime Breakout (CrowdStrike)</div></div>
+    <div class="stat-card"><div class="stat-number">181</div><div class="stat-label">Mythos Exploits vs Opus 4.6&rsquo;s 2</div></div>
+    <div class="stat-card"><div class="stat-number">400%</div><div class="stat-label">Critical Vuln Surge (AI Code)</div></div>
+  </div>
+
+  <!-- CYBER THREATS 80% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-cyber">Cyber Threats</span>
+      <span class="section-pct">80%</span>
+      <span class="section-title-text">Active Campaigns &amp; Capability Shifts Targeting Defense</span>
+      <span class="section-source">Anthropic &middot; Mandiant &middot; CrowdStrike &middot; CISA &middot; Kaspersky &middot; Check Point</span>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Anthropic Mythos Preview &mdash; AI Autonomously Finds and Exploits Zero-Days in Every Major OS</div>
+        <span class="threat-badge badge-critical">Critical &mdash; Capability Shift</span>
+      </div>
+      <div class="threat-sources">Sources: Anthropic Project Glasswing &middot; The Hacker News &middot; Help Net Security &middot; Tom&rsquo;s Hardware &middot; SecurityWeek &middot; April 8, 2026</div>
+      <div class="threat-body">Anthropic announced that its unreleased Claude Mythos Preview model has autonomously discovered thousands of high-severity zero-day vulnerabilities in every major operating system and every major web browser. Key findings: a 27-year-old denial-of-service vulnerability in OpenBSD&rsquo;s TCP SACK implementation, a 16-year-old vulnerability in FFmpeg&rsquo;s H.264 codec, and a 17-year-old remote code execution vulnerability in FreeBSD&rsquo;s NFS server (CVE-2026-4747) granting unauthenticated root access. The model wrote a web browser exploit chaining four vulnerabilities with a JIT heap spray that escaped both renderer and OS sandboxes. It built Linux kernel privilege escalation exploits from CVE identifiers in under a day at a cost under $2,000. Anthropic stated these capabilities &ldquo;emerged as a downstream consequence of general improvements in code, reasoning, and autonomy&rdquo; &mdash; they were not explicitly trained. Anthropic formed Project Glasswing with AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorgan Chase, the Linux Foundation, Microsoft, NVIDIA, and Palo Alto Networks. The model is restricted and not publicly available. However, the capability now exists and will proliferate. Palo Alto Networks&rsquo; Wendi Whitmore warned similar capabilities are &ldquo;weeks or months from proliferation.&rdquo; Non-expert Anthropic engineers with no formal security training asked Mythos to find RCE vulnerabilities overnight and woke up to complete, working exploits. The cost of finding and weaponizing zero-days has collapsed from millions of dollars to a credit card and an API key.</div>
+      <div class="threat-action"><strong>Action Required:</strong> This is a paradigm shift for defense contractors. Assume that adversaries &mdash; including nation-state actors &mdash; will have similar capabilities within months. Prioritize reducing attack surface now: patch everything, segment aggressively, harden edge devices. Conduct an immediate inventory of all internet-facing systems and eliminate unnecessary exposure. Accelerate adoption of defense-in-depth architectures that assume the perimeter will be breached. Begin budget conversations now for AI-augmented defensive security tooling. Engage with industry ISACs on emerging AI threat intelligence sharing.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Mandiant M-Trends 2026 &mdash; Adversary Handoffs Collapse to 22 Seconds</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Mandiant/Google GTIG M-Trends 2026 &middot; SecurityWeek &middot; Help Net Security &middot; March 24, 2026</div>
+      <div class="threat-body">Mandiant&rsquo;s M-Trends 2026 report, based on over 500,000 hours of incident response investigations in 2025, documents a structural shift in the threat landscape. The median time between initial access and handoff to a secondary threat group collapsed from over 8 hours in 2022 to 22 seconds in 2025. Initial access brokers are pre-staging the secondary group&rsquo;s malware during the initial infection &mdash; the ransomware operator is fully equipped to launch the moment they touch the network. CrowdStrike&rsquo;s 2026 Global Threat Report puts average eCrime breakout time at 29 minutes. <strong>Initial infection vectors shifted dramatically:</strong> exploits remain #1 at 32%, but voice phishing (vishing) surged to #2 at 11% &mdash; displacing email phishing, which dropped to 6%. Prior compromise is now the #1 initial vector for ransomware at 30%, doubling from 2024. Modern ransomware groups are targeting backup infrastructure, identity services, and virtualization management planes before encrypting production systems &mdash; a &ldquo;recovery denial&rdquo; strategy that forces organizations to choose between paying or rebuilding from scratch.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Restructure SOC workflows around 22-second response windows &mdash; automated detection and containment are now mandatory, not optional. Train help desk and IT support staff to verify identity through multiple channels before processing requests &mdash; voice phishing is the new email phishing. Implement phishing-resistant MFA (FIDO2/WebAuthn). Harden backup infrastructure and ensure backup systems are air-gapped or immutable. Audit prior compromises &mdash; if you were breached and remediated, assume the attacker sold your access.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">CPUID Supply Chain Attack &mdash; Trojanized CPU-Z and HWMonitor Deploy STX RAT</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Kaspersky Securelist &middot; The Hacker News &middot; SecurityWeek &middot; eSentire &middot; April 9&ndash;13, 2026</div>
+      <div class="threat-body">Unknown threat actors compromised CPUID&rsquo;s official website (cpuid.com) for approximately 19 hours on April 9&ndash;10, replacing download links for CPU-Z, HWMonitor, HWMonitor Pro, and PerfMonitor with trojanized executables hosted on attacker-controlled Cloudflare R2 storage. The trojanized installers deployed STX RAT through a five-stage in-memory attack chain using DLL sideloading via a malicious CRYPTBASE.dll. STX RAT harvests browser credentials, session cookies, crypto wallet keys, password manager data, VPN and FTP credentials, and other sensitive information. Over 150 users downloaded malicious variants, with confirmed infections across multiple sectors and countries. The attacker is assessed as Russian-speaking, either financially motivated or operating as an initial access broker. <strong>Why this matters for defense:</strong> CPU-Z and HWMonitor are standard tools used by IT professionals, system administrators, and data center engineers &mdash; the same people who hold privileged access to defense contractor networks. A single infected machine inside a defense contractor provides a foothold for lateral movement, credential theft, and persistent access. The attacker reused C2 infrastructure from a prior campaign using trojanized FileZilla, indicating an ongoing operation targeting trusted software distribution channels.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Check all workstations for CPU-Z, HWMonitor, HWMonitor Pro, or PerfMonitor downloads between April 9, 15:00 UTC and April 10, 10:00 UTC. If found, treat the machine as compromised &mdash; isolate, scan, rotate all credentials. Block C2 indicator 95.216.51[.]236 and domain supp0v3[.]com. Review download policies for system administration tools &mdash; verify checksums against known-good hashes before execution. Implement application allowlisting on privileged workstations.</div>
+    </div>
+
+    <div class="threat-item high">
+      <div class="threat-item-header">
+        <div class="threat-name">Adobe Acrobat Reader Zero-Day &mdash; CVE-2026-34621 (CVSS 8.6) Actively Exploited</div>
+        <span class="threat-badge badge-critical">Critical</span>
+      </div>
+      <div class="threat-sources">Sources: Adobe APSB26-43 &middot; CISA KEV Catalog &middot; EXPMON &middot; The Hacker News &middot; April 11&ndash;13, 2026</div>
+      <div class="threat-body">Adobe released emergency updates for a critical prototype pollution vulnerability in Acrobat Reader (CVE-2026-34621) that has been actively exploited in the wild since December 2025. Malicious PDFs execute JavaScript to fingerprint systems, steal local data, and deliver follow-on exploits including remote code execution and sandbox escape. CISA added the vulnerability to the KEV catalog on April 13 with a federal patch deadline of April 27. The attack requires user interaction &mdash; opening a malicious PDF &mdash; making it an ideal weapon for spear-phishing campaigns targeting defense contractor personnel. Exploitation has been observed via phishing emails disguised as invoices, legal documents, and HR communications. Defense contractors exchange thousands of PDF documents daily with government clients, subcontractors, and partners. Until every instance of Acrobat Reader is patched, every PDF is a potential attack vector.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Patch Adobe Acrobat Reader immediately across all endpoints. If immediate patching is not feasible, instruct all employees not to open PDF files from untrusted sources. Block all HTTP/HTTPS traffic containing the &ldquo;Adobe Synchronizer&rdquo; string in the User Agent field. Monitor endpoints for prototype pollution indicators. Brief employees that malicious PDFs are being delivered via phishing &mdash; even from apparently trusted senders.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">Iran Password-Spraying 300+ Israeli Microsoft 365 Organizations</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: Check Point &middot; The Hacker News &middot; April 6, 2026</div>
+      <div class="threat-body">An Iran-nexus threat actor is conducting a sustained password-spraying campaign targeting Microsoft 365 environments in Israel and the UAE. Check Point documented three distinct attack waves on March 3, March 13, and March 23, 2026, targeting over 300 Israeli organizations. The campaign exploits the ongoing Middle East conflict. Defense contractors with Israeli defense partnerships, joint ventures, or shared M365 environments are directly in the targeting aperture. Password spraying remains one of the simplest and most effective initial access techniques &mdash; it only requires one weak password across hundreds of accounts to succeed.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Audit all M365 environments for password-spray indicators &mdash; high volumes of failed authentication from single IPs or IP ranges targeting multiple accounts. Enforce conditional access policies blocking authentication from known malicious IP ranges. Deploy phishing-resistant MFA on all M365 accounts. Review authentication logs for Israeli or UAE-linked accounts in shared environments.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">AI-Assisted Development Creating &ldquo;Velocity Gap&rdquo; &mdash; Critical Vulnerabilities Up 400%</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: The Hacker News &middot; Industry Analysis &middot; April 13, 2026</div>
+      <div class="threat-body">Analysis of the AI-assisted software development landscape reveals a structural problem: the density of high-impact vulnerabilities is scaling faster than remediation workflows. While raw alert volume grew 52% year-over-year, prioritized critical risk grew by nearly 400%. The ratio of critical findings to raw alerts nearly tripled. The most common elevation factors were High Business Priority (27.76%) and PII Processing (22.08%). In modern environments, where a vulnerability lives is now more important than what the vulnerability is. This is directly relevant to defense contractors adopting AI coding tools for software development &mdash; the code is being generated faster than security teams can audit it, and the vulnerabilities being introduced are increasingly severe. Meanwhile, Anthropic&rsquo;s Mythos Preview demonstrates that AI can find and exploit those same vulnerabilities autonomously. The velocity gap between AI-generated code and AI-discovered exploits represents a new category of systemic risk.</div>
+      <div class="threat-action"><strong>Action Required:</strong> If your organization uses AI coding assistants (Copilot, Claude Code, Cursor, or similar), implement mandatory security review gates before code reaches production. Audit AI-generated code with the same rigor as human-authored code &mdash; AI coding tools do not write secure code by default. Prioritize vulnerabilities based on business context and data sensitivity, not just CVSS scores. Expand AppSec team capacity to match AI-accelerated development velocity.</div>
+    </div>
+
+    <div class="threat-item medium">
+      <div class="threat-item-header">
+        <div class="threat-name">DPRK Using GitHub as Command &amp; Control &mdash; Targeting South Korea</div>
+        <span class="threat-badge badge-high">High</span>
+      </div>
+      <div class="threat-sources">Sources: Fortinet FortiGuard Labs &middot; The Hacker News &middot; April 6, 2026</div>
+      <div class="threat-body">DPRK-linked threat actors are using GitHub as command-and-control infrastructure in multi-stage attacks targeting South Korean organizations. The attack chain uses obfuscated Windows shortcut (LNK) files as the initial access vector, dropping decoy PDFs while establishing persistent C2 via GitHub repositories. Using GitHub for C2 makes detection significantly harder because GitHub traffic is legitimate and expected in most enterprise environments. Defense contractors with South Korean partnerships or subcontractors should be aware that DPRK actors are using development infrastructure as an attack platform.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Monitor for anomalous GitHub API access patterns from endpoints that don&rsquo;t normally interact with GitHub. Implement network monitoring for LNK file execution from email or web downloads. Brief employees on the risk of opening shortcut files from unknown sources. Review South Korean partnership environments for indicators of DPRK targeting.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PHYSICAL 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-physical">Physical &amp; Proximity</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Offensive Cyber Expansion &amp; Proximity Indicators</span>
+      <span class="section-source">Defense One &middot; FARA &middot; OSINT</span>
+    </div>
+
+    <div class="threat-item blue">
+      <div class="threat-item-header">
+        <div class="threat-name">US Offensive Cyber Debate &mdash; Private Sector Drawn Deeper Into Operations</div>
+        <span class="threat-badge badge-elevated">Strategic</span>
+      </div>
+      <div class="threat-sources">Sources: Defense One &middot; April 12, 2026</div>
+      <div class="threat-body">The White House is expanding the market for offensive cyber capabilities and drawing more of the private sector into that ecosystem, even as policy boundaries remain unclear. A former NSA official and current venture partner stated the government is in the market for vulnerability scanning, exploit development, tooling to analyze cyber threat data, and digital infrastructure to obscure the origin of covert cyber operations. One executive predicted the government will &ldquo;contract for cyber operations under carefully crafted contracts.&rdquo; Defense-industrial-base firms and boutique cyber companies that sell to the military cyber and intelligence community are being joined by Silicon Valley companies discussing offensive cyber ideas for the first time. This development is significant for defense contractors: the offensive cyber market is expanding, creating both new business opportunities and new exposure for companies that participate. The legal and policy framework around private sector involvement in offensive operations remains undefined.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Defense contractors evaluating offensive cyber market opportunities should engage legal counsel on the evolving policy framework. Monitor CYBERCOM and NSA contract vehicle announcements for new offensive capability requirements. Ensure internal security posture meets the heightened standard expected of companies with offensive capabilities &mdash; adversaries will prioritize targeting companies known to have such tools.</div>
+    </div>
+
+    <div class="threat-item blue">
+      <div class="threat-item-header">
+        <div class="threat-name">Ohio Corridor &mdash; FARA-Flagged Entities (Continuing Watch)</div>
+        <span class="threat-badge badge-compliance">Monitor</span>
+      </div>
+      <div class="threat-sources">Sources: FARA Registration Database &middot; OSINT</div>
+      <div class="threat-body">Continuing watch item. Two entities with foreign principal registrations under FARA remain active within proximity of defense facilities in the Columbus/Dayton/Wright-Patterson AFB corridor. No new filings identified this week. This watch item remains active as standing context for all defense sector threat assessments in the Ohio region.</div>
+      <div class="threat-action"><strong>Action Required:</strong> Maintain heightened physical security awareness. Report unusual vendor or surveillance activity to facility security officers. Cross-reference new vendor relationships against the FARA registration database.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KNOWN ACTORS 10% -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-actor">Known Actors</span>
+      <span class="section-pct">10%</span>
+      <span class="section-title-text">Active Threat Actor Profiles &mdash; Defense Sector</span>
+      <span class="section-source">MITRE ATT&CK &middot; Mandiant &middot; CrowdStrike &middot; Anthropic &middot; CISA</span>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Handala Hack Team (MOIS) &mdash; Continuing</div>
+          <div class="actor-alias">131+ documented attacks &middot; Stryker fully restored &middot; PSK Wind Technologies &middot; FBI Director breach</div>
+        </div>
+        <span class="actor-sponsor">Iranian State-Sponsored</span>
+      </div>
+      <div class="actor-body">No new confirmed operations this week, but Handala remains the most operationally active Iranian cyber group in the current conflict. The Iran password-spraying campaign targeting 300+ Israeli M365 organizations (documented by Check Point) is consistent with the broader Iranian cyber escalation pattern that Handala operates within. Defense contractors should maintain heightened vigilance &mdash; Handala has demonstrated the capability and willingness to target Fortune 500 companies and is explicitly motivated by geopolitical retaliation rather than financial gain.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Destructive Wipes, MDM Weaponization, Supply Chain Compromise, Data Publication</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Healthcare/MedTech, Defense, Energy, Intelligence Community</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active &middot; 131+ attacks &middot; Watching for next operation</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">Volt Typhoon (Voltzite) &mdash; Continuing</div>
+          <div class="actor-alias">Also known as: Bronze Silhouette &middot; Vanguard Panda &middot; Insidious Taurus</div>
+        </div>
+        <span class="actor-sponsor" style="background:rgba(160,100,30,0.08);color:#a06420;border:1px solid rgba(160,100,30,0.25);">PRC State-Sponsored</span>
+      </div>
+      <div class="actor-body">No change in posture. Volt Typhoon remains embedded inside U.S. critical infrastructure networks into Q2 2026. The Anthropic Mythos Preview announcement is relevant context: if AI models can now autonomously find zero-days in operating systems and network infrastructure, adversaries with similar capabilities can discover new exploitation pathways into the same infrastructure where Volt Typhoon is already pre-positioned. The convergence of AI-enabled vulnerability discovery and existing nation-state pre-positioning represents an unprecedented compound threat.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">LOLBins, SOHO Router C2, NTDS.dit Credential Theft, OT Pre-Positioning</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Energy, Defense, Telecom, Transportation</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active &middot; Embedded &middot; Persistent &middot; Compound AI risk</div></div>
+      </div>
+    </div>
+
+    <div class="actor-card">
+      <div class="actor-header">
+        <div>
+          <div class="actor-name">ShinyHunters &mdash; Active</div>
+          <div class="actor-alias">Rockstar Games via Anodot/Snowflake &middot; European Commission &middot; TransUnion &middot; TELUS Digital</div>
+        </div>
+        <span class="actor-sponsor" style="background:rgba(80,80,80,0.08);color:#555;border:1px solid rgba(80,80,80,0.2);">Cybercriminal</span>
+      </div>
+      <div class="actor-body">ShinyHunters published 78.6 million stolen records from Rockstar Games on April 14 after the company refused to pay ransom. The breach was executed through Anodot, a third-party SaaS platform, exploiting stolen authentication tokens to access Rockstar&rsquo;s Snowflake environment. This is the same third-party SaaS compromise pattern ShinyHunters used against TransUnion, the European Commission, and TELUS Digital. Defense contractors using cloud-hosted SaaS analytics, cost monitoring, or business intelligence platforms should audit the authentication token hygiene of every third-party integration that touches their Snowflake, AWS, or Azure environments. ShinyHunters does not need to hack your network &mdash; they hack your vendor and walk through the front door.</div>
+      <div class="actor-grid">
+        <div class="actor-stat"><div class="actor-stat-label">Primary TTPs</div><div class="actor-stat-value">Third-Party SaaS Exploitation, Token Theft, Vishing, Snowflake/Cloud Targeting</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Target Sectors</div><div class="actor-stat-value">Technology, Financial Services, Government, Defense (indirect via SaaS)</div></div>
+        <div class="actor-stat"><div class="actor-stat-label">Activity Level</div><div class="actor-stat-value" style="color:#8b3c32;">Active &middot; Rockstar Games data published today &middot; Escalating</div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRIORITY ACTIONS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag tag-hipaa">Priority Actions</span>
+      <span class="section-title-text">This Week&rsquo;s Non-Negotiables</span>
+    </div>
+    <div style="background:#ffffff;border:1px solid var(--border);border-radius:2px;padding:20px 24px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:10px;">Immediate &mdash; This Week</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Patch Adobe Acrobat Reader against CVE-2026-34621 immediately &mdash; actively exploited since December<br>
+            2. Check all workstations for CPUID tool downloads April 9&ndash;10 &mdash; treat affected machines as compromised<br>
+            3. Train help desk staff on voice phishing verification procedures &mdash; vishing is now #2 initial vector<br>
+            4. Audit all third-party SaaS integrations for authentication token hygiene (ShinyHunters pattern)<br>
+            5. Review M365 authentication logs for password-spray indicators if you have Israeli partnerships<br>
+            6. Deploy phishing-resistant MFA (FIDO2/WebAuthn) on all critical systems
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Near-Term &mdash; 30 Days</div>
+          <div style="font-size:13px;line-height:1.9;color:var(--text);">
+            1. Restructure SOC workflows for 22-second detection and containment &mdash; automate what can be automated<br>
+            2. Reduce internet-facing attack surface &mdash; AI-enabled adversaries will find every exposed vulnerability<br>
+            3. Air-gap or implement immutable backup infrastructure (recovery denial is the new ransomware strategy)<br>
+            4. Implement security review gates for AI-generated code before production deployment<br>
+            5. Conduct tabletop exercise simulating AI-accelerated zero-day exploitation<br>
+            6. Begin evaluating AI-augmented defensive security tooling for vulnerability discovery
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div class="footer-li">Logical<span>Intelligence</span></div>
+    <div class="footer-meta">LogicalIntelligence.us &middot; Week of April 13, 2026 &middot; Defense Sector Brief &middot; TLP: AMBER &middot; Subscriber Use Only</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;color:rgba(0,0,0,0.25);">Correlated from public sources. Not classified. For security awareness purposes.</div>
+    <div style="font-family:'Fira Code',monospace;font-size:9px;letter-spacing:1px;"><a href="mailto:logicalintelligence.us@gmail.com" style="color:#4a7c59;text-decoration:none;">logicalintelligence.us@gmail.com</a></div>
+  </div>
+
+</body>
+</html>
